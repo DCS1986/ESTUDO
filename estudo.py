@@ -2076,7 +2076,272 @@ SETORES = {
             },
         },
     },
-    "💧 Saneamento": {"tickers": [], "em_construcao": True},
+    "💧 Saneamento": {
+        "tickers": ["SBSP3", "CSMG3", "SAPR4"],
+        "tagline": "O setor mais defensivo da bolsa — e o mais transformado em 2024-2026. Sabesp e Copasa privatizadas, Sanepar ainda estatal. O mesmo negócio regulado, três momentos completamente diferentes.",
+        "logica": {
+            "titulo": "O que move o setor de saneamento",
+            "texto": (
+                "Saneamento é, conceitualmente, o negócio mais simples da bolsa: "
+                "monopólio regional, tarifa regulada, demanda inelástica. "
+                "Ninguém deixa de usar água quando a tarifa sobe. Ninguém tem escolha de fornecedor. "
+                "Mas o detalhe que o investidor precisa dominar é o modelo regulatório — "
+                "porque é ele que determina quanto a empresa pode cobrar, quanto investe e quando é remunerada. "
+                "Em 2024-2026, o setor passou pela maior transformação em décadas: "
+                "Sabesp privatizada em julho de 2024, Copasa privatizada em junho de 2026, "
+                "ambas com a Equatorial como investidora de referência. "
+                "O playbook é o mesmo: turnaround operacional + aceleração de capex + universalização. "
+                "Quem entende esse modelo entende as três."
+            ),
+            "drivers": [
+                ("BRR — Base de Remuneração Regulatória: o ativo que gera tudo", (
+                    "A BRR é o valor dos ativos reconhecidos pelo regulador. "
+                    "Sobre ela incide o WACC regulatório (custo de capital definido pela agência), "
+                    "gerando a 'receita regulatória' que sustenta a tarifa. "
+                    "Quanto maior a BRR (mais investimento reconhecido), maior a receita autorizada. "
+                    "Por isso o capex de universalização é o motor de crescimento do setor — "
+                    "cada real investido e reconhecido vira receita recorrente por décadas."
+                )),
+                ("Revisão tarifária periódica — o evento que define tudo", (
+                    "A cada 4-5 anos, o regulador revisita o WACC, o OPEX eficiente e a BRR. "
+                    "Uma revisão favorável aumenta a receita autorizada; desfavorável comprime. "
+                    "É o maior risco e a maior oportunidade do setor. "
+                    "Sabesp: revisão anual até 2030 (processo de universalização acelerado). "
+                    "Sanepar: revisão 2025-2028 entregou apenas 3,77% — mercado frustrado."
+                )),
+                ("Marco Legal do Saneamento (2020) e a universalização", (
+                    "A Lei 14.026/2020 estabeleceu metas de universalização: "
+                    "99% de acesso a água e 90% a esgoto até 2033. "
+                    "Isso criou o ambiente para privatizações — "
+                    "empresas privadas têm mais capital e incentivo para investir. "
+                    "Brasil ainda teria déficit de ~100 mi de pessoas sem acesso pleno a esgoto — "
+                    "é o mercado endereçável que justifica o capex de R$70 bi da Sabesp."
+                )),
+                ("Turnaround operacional — o motor pós-privatização", (
+                    "Empresas estatais de saneamento têm ineficiência estrutural: "
+                    "excesso de pessoal, opex descontrolado, investimento politicamente motivado. "
+                    "A Equatorial provou no setor elétrico que consegue cortar 40-50% do opex em 2-3 anos. "
+                    "Sabesp: opex caiu de R$11,8 bi para R$8,8 bi em 2025 — R$3 bi cortados em 1 ano. "
+                    "Copasa: expectativa de R$6,1 bi de EBITDA em 2028 vs R$3,5 bi em 2026."
+                )),
+                ("Capex e universalização — o paradoxo do crescimento", (
+                    "Para crescer a BRR (e a receita futura), a empresa precisa investir. "
+                    "Para investir, precisa se endividar. Para se endividar, precisa de tarifa adequada. "
+                    "É um ciclo virtuoso — quando o regulador reconhece o investimento. "
+                    "E vicioso — quando o regulador atrasa o reconhecimento ou "
+                    "destina os ganhos para os consumidores em vez do acionista (caso dos precatórios da Sanepar)."
+                )),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "Status atual",
+                "Controlador",
+                "Área de concessão",
+                "Tamanho (BRR estimada)",
+                "Meta de capex",
+                "WACC regulatório (ref.)",
+                "Fase operacional",
+                "Dividendo (DY)",
+                "Risco principal",
+            ],
+            "grupos": [
+                {"label": "Privatizadas — playbook Equatorial em andamento", "tickers": ["SBSP3", "CSMG3"]},
+                {"label": "Estatal — aguarda ciclo regulatório", "tickers": ["SAPR4"]},
+            ],
+            "empresas": {
+                "SBSP3": {
+                    "nome": "Sabesp",
+                    "cor": "#3B82F6",
+                    "Status atual": ("Privatizada — jul/2024", "maior oferta de saneamento da história: R$14,8 bi"),
+                    "Controlador": ("Equatorial (15%) + mercado", "Estado de SP retém 18%; Equatorial tem lock-up de 5 anos"),
+                    "Área de concessão": ("375 municípios — SP", "22% da população brasileira; 31% do PIB nacional — a melhor área do país"),
+                    "Tamanho (BRR estimada)": ("R$88 bi (2024) → R$158 bi (2030)", "maior BRR do setor; cresce R$20 bi só em 2026"),
+                    "Meta de capex": ("R$70 bi até 2029", "quase 3x o capex histórico anual — universalização acelerada"),
+                    "WACC regulatório (ref.)": ("~7,86% real", "menor do setor — SP tem risco menor; mas volume de investimento compensa"),
+                    "Fase operacional": ("Turnaround avançado", "opex cortou R$3 bi em 1 ano; metas à frente do cronograma"),
+                    "Dividendo (DY)": ("DY crescente (50% em 2026-27 → 100% em 2030)", "payout sobe conforme universalização avança"),
+                    "Risco principal": ("Execução do capex de R$70 bi + revisão tarifária política (gov. Tarcísio em 2026)", ""),
+                },
+                "CSMG3": {
+                    "nome": "Copasa",
+                    "cor": "#22C55E",
+                    "Status atual": ("Privatizada — jun/2026", "operação de R$8-10 bi; modelo similar à Sabesp"),
+                    "Controlador": ("Equatorial (até 30%) + mercado", "Estado de MG retém ~5% + golden share; privatização concluída em junho"),
+                    "Área de concessão": ("Minas Gerais", "maior estado do Brasil em extensão; 3ª economia; grande déficit de esgoto"),
+                    "Tamanho (BRR estimada)": ("R$15,5 bi (2025) → crescendo", "BRR menor que Sabesp, mas WACC regulatório maior — compensação estrutural"),
+                    "Meta de capex": ("R$21 bi até 2030", "EBITDA projetado R$6,1 bi em 2028 vs R$3,5 bi em 2026"),
+                    "WACC regulatório (ref.)": ("~9,42% real (vs 7,86% da Sabesp)", "maior WACC = maior rentabilidade regulatória; diferencial estrutural da Copasa"),
+                    "Fase operacional": ("Turnaround iniciando", "privatização concluída em junho — Equatorial assumindo gestão; ganhos de eficiência a capturar"),
+                    "Dividendo (DY)": ("DY baixo no início (~3%)", "ação subiu 126% em 12 meses — expectativa já foi antecipada"),
+                    "Risco principal": ("Execução do turnaround + regulação mineira + concessionamento BH em definição", ""),
+                },
+                "SAPR4": {
+                    "nome": "Sanepar",
+                    "cor": "#F59E0B",
+                    "Status atual": ("Estatal do Paraná", "controle do governo do PR; sem processo de privatização no horizonte"),
+                    "Controlador": ("Governo do Paraná", "maioria acionária estatal; sem perspectiva de privatização no curto prazo"),
+                    "Área de concessão": ("346 municípios — PR", "Paraná tem alta cobertura histórica de água; déficit maior em esgoto"),
+                    "Tamanho (BRR estimada)": ("Menor que pares", "empresa mais madura e eficiente; menor potencial de crescimento da BRR"),
+                    "Meta de capex": ("Ciclo conservador", "empresa quase universalizada em água; foco em esgoto e modernização"),
+                    "WACC regulatório (ref.)": ("Definido pela AGEPAR", "revisão tarifária 2025-2028: +3,77% — abaixo das expectativas do mercado"),
+                    "Fase operacional": ("Operação madura", "alta cobertura histórica; menor potencial de crescimento que os pares em turnaround"),
+                    "Dividendo (DY)": ("DY ~5% (histórico)", "precatórios R$4 bi destinados aos usuários — frustrou expectativa de dividendo extraordinário"),
+                    "Risco principal": ("Revisão tarifária conservadora + precatórios para consumidores + estatal sem catalisador de privatização", ""),
+                },
+            },
+        },
+        "perfis": {
+            "SBSP3": {
+                "nome": "Sabesp (Companhia de Saneamento Básico do Estado de SP)",
+                "fundacao": "1973",
+                "sede": "São Paulo, SP",
+                "tagline": "A maior empresa de saneamento da América Latina. Privatizada em 2024 pela maior oferta de saneamento da história — e o turnaround mais ambicioso do setor começa agora.",
+                "modelo": (
+                    "A Sabesp é um monopólio de saneamento no estado de São Paulo — "
+                    "atende 375 municípios, incluindo a capital e a Grande São Paulo, "
+                    "que sozinhas concentram 22% da população brasileira e 31% do PIB nacional. "
+                    "Em julho de 2024, o governo de SP vendeu 32% das ações por R$14,8 bi — "
+                    "a maior oferta de saneamento da história do Brasil (demanda de R$187 bi). "
+                    "A Equatorial pagou R$6,9 bi por 15% e assumiu como investidora de referência. "
+                    "O modelo pós-privatização tem três vetores: (1) turnaround operacional "
+                    "(opex cortou R$3 bi em 2025 — de R$11,8 para R$8,8 bi); "
+                    "(2) aceleração de capex (R$20 bi em 2026, quase 3x o histórico anual); "
+                    "(3) universalização e crescimento da BRR. "
+                    "Cada real investido e reconhecido pela ARSESP vira receita regulatória futura — "
+                    "o motor de valorização de longo prazo. "
+                    "O CEO Carlos Piani (ex-Equatorial Maranhão) declarou: 'Estamos à frente das metas, "
+                    "o que nos permite sonhar' — sinalizando possível expansão para outras concessões."
+                ),
+                "receita": [
+                    ("Água — tarifa regulada", "~65%", "distribuição de água tratada para 375 municípios paulistas"),
+                    ("Esgoto — tarifa regulada", "~33%", "coleta e tratamento; meta de 90% de cobertura até 2033"),
+                    ("Outros serviços", "~2%", "resíduos, construção para terceiros, serviços técnicos"),
+                ],
+                "vantagens": [
+                    "Melhor área de concessão do Brasil: SP concentra 22% da população e 31% do PIB — demanda e renda acima da média",
+                    "Turnaround comprovado: R$3 bi de opex cortados em 1 ano — a Equatorial provou que consegue fazer em saneamento o que fez em energia",
+                    "BRR crescendo de R$88 bi para R$158 bi até 2030 — cada real de capex vira receita regulatória futura",
+                    "Política de dividendos crescente: 50% do lucro em 2026-27, chegando a 100% a partir de 2030",
+                    "Revisão tarifária anual até 2030 — ciclo curto reduz o risco de investimento não reconhecido",
+                ],
+                "riscos": [
+                    "Execução do capex de R$70 bi: quase 3x o histórico — escassez de empreiteiros, licenças e pessoal capacitado",
+                    "Revisão tarifária politicamente sensível: Tarcísio de Freitas com agenda eleitoral em 2026 pode pressionar tarifas",
+                    "Residências irregulares incluídas na universalização: custo e operacionalização incertos",
+                    "Valuation já captura parte da transformação: ação subiu muito desde a privatização — margem de segurança menor",
+                    "Lock-up da Equatorial até 2029: limitação de liquidez do controlador no curto prazo",
+                ],
+                "barreira": (
+                    "O monopólio regulado é a barreira definitiva. "
+                    "Nenhuma empresa entra em São Paulo para concorrer com a Sabesp — "
+                    "a concessão vai até 2060 em contrato único com 375 municípios. "
+                    "Quem quer saneamento na região metropolitana de SP, paga para a Sabesp. "
+                    "E com a aceleração do capex e o reconhecimento tarifário anual, "
+                    "cada ano que passa aumenta os ativos da base regulatória — "
+                    "criando uma barreira de ativos que vai crescendo com o tempo."
+                ),
+            },
+            "CSMG3": {
+                "nome": "Copasa (Companhia de Saneamento de Minas Gerais)",
+                "fundacao": "1963 (como COMAG; Copasa desde 1974)",
+                "sede": "Belo Horizonte, MG",
+                "tagline": "A segunda maior privatização de saneamento do Brasil — concluída em junho de 2026. Mesma Equatorial, mesmo playbook, maior WACC regulatório. O turnaround começa agora.",
+                "modelo": (
+                    "A Copasa atende Minas Gerais — o maior estado do Brasil em extensão territorial, "
+                    "com importantes economias agropecuária, industrial e mineral. "
+                    "Em junho de 2026, o governo de MG concluiu a privatização: "
+                    "a Equatorial assumiu ~30% como investidora de referência, "
+                    "em operação estimada em R$8-10 bi. "
+                    "O diferencial estrutural da Copasa vs Sabesp: o WACC regulatório. "
+                    "A ARSAE (agência mineira) fixou WACC real de ~9,42% vs ~7,86% da ARSESP. "
+                    "Isso significa que MG remunera cada real de ativo regulatório a uma taxa 20% maior "
+                    "que São Paulo — mesmo com BRR menor, a rentabilidade por real investido é superior. "
+                    "O playbook é idêntico ao da Sabesp: turnaround operacional "
+                    "(EBITDA projetado de R$3,5 bi em 2026 para R$6,1 bi em 2028, CAGR de 30%+), "
+                    "aceleração de capex (R$3,1 bi em 2026 a R$4,5 bi em 2030) "
+                    "e crescimento da BRR de R$15,5 bi para R$36+ bi até 2030."
+                ),
+                "receita": [
+                    ("Água — tarifa regulada (ARSAE/MG)", "~60%", "abastecimento em MG; 3ª revisão tarifária com reajuste de 6,56% em 2026"),
+                    ("Esgoto — tarifa regulada", "~38%", "cobertura de esgoto ainda abaixo da média nacional — maior espaço de crescimento"),
+                    ("Resíduos e outros", "~2%", "coleta e tratamento de resíduos industriais; serviços complementares"),
+                ],
+                "vantagens": [
+                    "WACC regulatório de 9,42% real: 20% maior que Sabesp — maior retorno por real de ativo reconhecido",
+                    "Maior crescimento relativo da BRR: de R$15,5 bi para R$36 bi até 2030 (vs crescimento proporcionalmente menor da Sabesp)",
+                    "Mesmo controlador da Sabesp: Equatorial com playbook comprovado — menos incerteza de execução",
+                    "Valuation ainda atrativo: ação subiu 126% em 12 meses mas ainda negocia abaixo de pares privatizados equivalentes",
+                    "MG tem grande déficit de esgoto: enorme runway de universalização = décadas de crescimento da BRR",
+                ],
+                "riscos": [
+                    "Turnaround ainda no início: privatização concluída em junho — ganhos de eficiência ainda a capturar",
+                    "Concessionamento de BH: renovação do contrato com Belo Horizonte foi condição da privatização — qualquer ajuste impacta a base",
+                    "Regulação mineira: ARSAE pode ser mais conservadora que ARSESP no reconhecimento de investimentos",
+                    "Risco político residual: Estado de MG retém 5% + golden share — ainda pode interferir em decisões estratégicas",
+                    "Valuation precificou boa parte: ação já subiu muito com expectativa de privatização; execução precisa corresponder",
+                ],
+                "barreira": (
+                    "Monopólio regulado em Minas Gerais — mesmo modelo da Sabesp. "
+                    "Mas a Copasa tem uma vantagem adicional: o WACC mais alto da ARSAE "
+                    "cria uma 'vantagem regulatória' estrutural que não depende de gestão, "
+                    "mas de metodologia da agência. "
+                    "E com a Equatorial como controladora — que já provou em 7 distribuidoras de energia "
+                    "que consegue transformar ativos ineficientes em geradores de valor — "
+                    "a tese de turnaround tem o executor mais credenciado do setor."
+                ),
+            },
+            "SAPR4": {
+                "nome": "Sanepar (Companhia de Saneamento do Paraná)",
+                "fundacao": "1963",
+                "sede": "Curitiba, PR",
+                "tagline": "O saneamento do Paraná — eficiente, estatal e sem catalisador. Operação madura, tarifa conservadora, precatórios que foram para o consumidor em vez do acionista.",
+                "modelo": (
+                    "A Sanepar é a empresa de saneamento do Paraná — controlada pelo governo estadual. "
+                    "Opera 346 concessões municipais, com cobertura de água já alta historicamente "
+                    "(Paraná tem índices acima da média nacional). O foco atual é expansão de esgoto "
+                    "e modernização das redes. "
+                    "Diferente das pares privatizadas, a Sanepar não passou por turnaround — "
+                    "já era uma empresa relativamente eficiente. "
+                    "O grande evento de 2026 foi a decisão da AGEPAR sobre os R$4 bi de precatórios "
+                    "(dinheiro recebido via vitória judicial): a agência regulatória determinou "
+                    "que o valor será repassado aos consumidores via redução de tarifa, "
+                    "e não distribuído como dividendo extraordinário. "
+                    "O mercado frustrado explica a queda de ~8% das ações em 2026. "
+                    "Também em 2026, a revisão tarifária entregou apenas 2,49% (IRT) — "
+                    "bem abaixo da inflação — comprimindo margens e frustrou as expectativas."
+                ),
+                "receita": [
+                    ("Água — tarifa regulada (AGEPAR/PR)", "~55%", "cobertura histórica alta no PR; crescimento via novos usuários e reajuste tarifário"),
+                    ("Esgoto — tarifa regulada", "~43%", "déficit de esgoto no Paraná ainda a ser endereçado — maior runway de crescimento"),
+                    ("Outros serviços", "~2%", "resíduos industriais; serviços técnicos para municípios"),
+                ],
+                "vantagens": [
+                    "Operação madura e eficiente: sem o 'mato alto' das estatais que vão para privatização — base operacional sólida",
+                    "Cobertura alta de água: menor risco operacional e de qualidade; Paraná tem melhores indicadores do setor",
+                    "Dívida controlada: dívida líquida/EBITDA de 0,71x — folga para investimento sem comprometer a estrutura financeira",
+                    "P/VP abaixo de 1x: negocia abaixo do valor patrimonial — piso de proteção para o investidor",
+                    "Estado do Paraná: melhor qualidade de crédito entre os estados brasileiros — menor risco de interferência política irresponsável",
+                ],
+                "riscos": [
+                    "Precatórios para consumidores: R$4 bi que o mercado esperava como dividendo foram para os usuários — frustrou a tese de dividendo extraordinário",
+                    "Revisão tarifária conservadora: IRT 2026 de 2,49% (abaixo da inflação) comprime receita real",
+                    "Sem catalisador de privatização: governo do PR não sinaliza privatização; sem repricing de múltiplo no horizonte",
+                    "Crescimento limitado: empresa mais madura = menor crescimento de BRR = menor expansão de receita vs pares",
+                    "Lucro pressionado: 1T26 com queda de 70,8% (efeito base de comparação alta + itens não recorrentes de 2025)",
+                ],
+                "barreira": (
+                    "346 concessões municipais no Paraná — o mesmo monopólio regulado dos pares. "
+                    "A Sanepar tem uma vantagem específica: décadas de relacionamento com os municípios paranaenses "
+                    "e um histórico de qualidade de serviço que reduz o risco de revogação de concessões. "
+                    "O Paraná tem o melhor perfil de pagadores do Brasil — "
+                    "inadimplência menor, consumo per capita maior, renda acima da média. "
+                    "A barreira aqui é mais operacional do que de turnaround: "
+                    "quem tentasse entrar não teria como competir por concessões já consolidadas."
+                ),
+            },
+        },
+    },
     "⛏️ Mineração": {"tickers": [], "em_construcao": True},
     "🛢️ Petróleo & Gás": {
         "tickers": ["PETR4", "PRIO3"],
