@@ -880,7 +880,290 @@ SETORES = {
             },
         },
     },
-    "🛡️ Seguradoras": {"tickers": [], "em_construcao": True},
+    "🛡️ Seguradoras": {
+        "tickers": ["BBSE3", "CXSE3", "PSSA3", "IRBR3"],
+        "tagline": "Quatro empresas com o mesmo rótulo 'seguradora', mas quatro modelos completamente diferentes. O IRB não é sequer uma seguradora — é o seguro das seguradoras.",
+        "logica": {
+            "titulo": "O que move o setor de seguros",
+            "texto": (
+                "O mercado frequentemente coloca BBSE3, CXSE3, PSSA3 e IRBR3 no mesmo balde. É um erro. "
+                "A BB Seguridade e a Caixa Seguridade são distribuidoras de seguros que não assumem risco — "
+                "usam a rede do banco controlador como canal de vendas e repassam o risco às seguradoras parceiras. "
+                "A Porto é uma seguradora de verdade: assume risco, paga sinistro, compete por frota segurada. "
+                "O IRB é uma resseguradora — o seguro das seguradoras, que nenhum consumidor final contrata diretamente. "
+                "São quatro posições diferentes na cadeia do risco, cada uma com drivers, métricas e riscos distintos."
+            ),
+            "drivers": [
+                ("Resultado de subscrição (Combined Ratio)", "A métrica mais importante de uma seguradora real (Porto, IRB). "
+                 "Combined Ratio = (sinistros + despesas) / prêmios. Abaixo de 100% = lucro na operação. "
+                 "Para distribuidoras (BBSE, CXSE), esse conceito não se aplica — elas não carregam o risco."),
+                ("Resultado financeiro (Float)", "Toda seguradora cobra o prêmio antes de pagar o sinistro. "
+                 "O dinheiro no meio tempo é investido — é o float, o coração do modelo de Buffett. "
+                 "Selic alta turbina esse resultado: BBSE, CXSE e IRBR se beneficiam muito em juro alto. "
+                 "Queda da Selic comprime esse motor."),
+                ("Taxa Selic e ciclo de juros", "Impacto duplo: o float rende mais em juro alto, e as reservas técnicas (previdência, capitalização) "
+                 "se valorizam. BBSE tem ~23% do lucro vindo do resultado financeiro no 1T26 (+59% a/a). "
+                 "É o maior risco de médio prazo: quando os juros caírem, esse motor perde força."),
+                ("Sinistralidade e eventos climáticos", "Seca, enchentes, granizo — são os inimigos da seguradora que assume risco. "
+                 "Porto paga os carros danificados. IRB paga as seguradoras que pagaram. "
+                 "BBSE e CXSE não pagam sinistro — o risco fica com a Mapfre (BBSE) e com as parceiras (CXSE)."),
+                ("Canal de distribuição", "Quem vende o seguro e a que custo? BBSE usa o BB (70 mi de clientes). "
+                 "CXSE usa a Caixa + 4.000 agências + 13.000 lotéricas. Porto usa 46.000 corretores independentes + exclusividade no Itaú. "
+                 "Canal cativo (banco) tem custo de aquisição menor e base captiva. Corretores têm mais volatilidade."),
+                ("Penetração do seguro no Brasil", "O Brasil tem baixíssima penetração de seguros vs. PIB. "
+                 "Seguro saúde, vida e residencial têm espaço enorme para crescer. "
+                 "É o driver estrutural de longo prazo para todo o setor."),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "O que é de verdade",
+                "Quem assume o risco do sinistro",
+                "Canal de distribuição",
+                "Produto principal",
+                "Sensibilidade à Selic",
+                "Sinistralidade como risco",
+                "Exposição política/regulatória",
+                "Payout e DY (ref.)",
+                "Risco principal",
+            ],
+            "empresas": {
+                "BBSE3": {
+                    "nome": "BB Seguridade",
+                    "cor": "#F59E0B",
+                    "O que é de verdade": ("Distribuidora de seguros", "não é seguradora — não assume risco"),
+                    "Quem assume o risco do sinistro": ("Mapfre + Principal Financial Group", "parceiros assumem todo o risco", "badge-green"),
+                    "Canal de distribuição": ("Banco do Brasil", "70 milhões de clientes, rede exclusiva"),
+                    "Produto principal": ("Seguros rural + vida + previdência", "Brasilseg + Brasilprev + Brasilcap"),
+                    "Sensibilidade à Selic": ("Muito positiva", "resultado financeiro = 23% do lucro; +59% em juro alto", "badge-green"),
+                    "Sinistralidade como risco": ("Indireto", "se Mapfre quebrar, o contrato é afetado — mas improvável", "badge-green"),
+                    "Exposição política/regulatória": ("Alta", "controlada pelo BB (estatal); contrato expira em 2033", "badge-red"),
+                    "Payout e DY (ref.)": ("~95% de payout", "DY ~11-12%"),
+                    "Risco principal": ("Selic caindo + agro pressionando rural + contrato com BB vence em 2033", ""),
+                },
+                "CXSE3": {
+                    "nome": "Caixa Seguridade",
+                    "cor": "#F97316",
+                    "O que é de verdade": ("Distribuidora de seguros", "mesma lógica da BBSE — canal bancário exclusivo"),
+                    "Quem assume o risco do sinistro": ("Seguradoras parceiras", "CXSE distribui e recebe comissão; não carrega risco", "badge-green"),
+                    "Canal de distribuição": ("Caixa Econômica Federal", "4.000 agências + 13.000 lotéricas + R$1 tri em crédito imobiliário"),
+                    "Produto principal": ("Seguro habitacional (MIP + DFI)", "obrigatório por lei em todo financiamento imobiliário"),
+                    "Sensibilidade à Selic": ("Positiva", "float das reservas rende mais; menor exposição que BBSE", "badge-yellow"),
+                    "Sinistralidade como risco": ("Mínimo", "distribuidora pura — parceiras assumem o risco", "badge-green"),
+                    "Exposição política/regulatória": ("Muito alta", "controlada pela Caixa (estatal); dependência total do crédito imobiliário federal", "badge-red"),
+                    "Payout e DY (ref.)": ("~90% de payout", "DY ~7-8%"),
+                    "Risco principal": ("Dependência do crédito habitacional da CEF + risco político estatal", ""),
+                },
+                "PSSA3": {
+                    "nome": "Porto",
+                    "cor": "#3B82F6",
+                    "O que é de verdade": ("Seguradora completa", "assume risco, paga sinistro, compete por frota"),
+                    "Quem assume o risco do sinistro": ("A própria Porto", "underwriting próprio — lucra ou perde com o combined ratio", "badge-red"),
+                    "Canal de distribuição": ("46.000 corretores independentes + exclusividade no Itaú", "canal pulverizado + parceria estratégica"),
+                    "Produto principal": ("Auto (39%) + Saúde + Residencial + Porto Bank", "4 verticais — era 90% auto, agora diversificada"),
+                    "Sensibilidade à Selic": ("Moderada positiva", "float rende mais, mas sinistros afetam independente da Selic", "badge-yellow"),
+                    "Sinistralidade como risco": ("Alto", "granizo, furacão, acidente, fraude — paga ela mesma", "badge-red"),
+                    "Exposição política/regulatória": ("Baixa", "privada; família Garfinkel + Itaú controlam; sem interferência estatal", "badge-green"),
+                    "Payout e DY (ref.)": ("~50-60% de payout", "DY ~5-6% — reinveste mais para crescer"),
+                    "Risco principal": ("Sinistralidade elevada em auto; competição agressiva de preço no mercado", ""),
+                },
+                "IRBR3": {
+                    "nome": "IRB Brasil Re",
+                    "cor": "#22C55E",
+                    "O que é de verdade": ("Resseguradora", "seguro DAS seguradoras — nicho único na B3"),
+                    "Quem assume o risco do sinistro": ("O próprio IRB", "assume risco das seguradoras (cedentes) em troca de prêmio de resseguro", "badge-red"),
+                    "Canal de distribuição": ("Seguradoras (cedentes)", "Porto, Bradesco, Caixa, etc. transferem parte do risco para o IRB"),
+                    "Produto principal": ("Resseguro patrimonial + vida + rural + riscos especiais", "invisível para o consumidor final"),
+                    "Sensibilidade à Selic": ("Positiva", "float das reservas técnicas rende mais em juro alto", "badge-yellow"),
+                    "Sinistralidade como risco": ("Muito alto", "catástrofes, enchentes, acidentes de aviação — o IRB é o último a pagar", "badge-red"),
+                    "Exposição política/regulatória": ("Moderada", "regulado pela SUSEP; histórico de fraude contábil em 2020 pesa na reputação", "badge-yellow"),
+                    "Payout e DY (ref.)": ("25% de payout (iniciado)", "DY ~3% — turnaround ainda recente"),
+                    "Risco principal": ("Catástrofes globais + disciplina de subscrição + expansão para seguro direto ainda não provada", ""),
+                },
+            },
+        },
+        "perfis": {
+            "BBSE3": {
+                "nome": "BB Seguridade",
+                "fundacao": "2012 (IPO)",
+                "sede": "Brasília, DF",
+                "tagline": "O maior pagador de dividendos do setor. Uma distribuidora de seguros disfarçada de seguradora — e isso é exatamente o que a torna tão lucrativa.",
+                "modelo": (
+                    "A BB Seguridade não assume risco de seguro. Ela distribui seguros, previdência e capitalização "
+                    "pela rede do Banco do Brasil — 70 milhões de clientes, mais de 3.500 pontos de atendimento — "
+                    "e cobra comissão sobre os prêmios vendidos. O risco de sinistro fica com as seguradoras parceiras: "
+                    "a Mapfre (joint venture em seguros, 74,9% BB + 25,1% Mapfre) e a Principal Financial Group "
+                    "(previdência, via Brasilprev). A estrutura é enxuta e capital-light: payout de ~95% porque "
+                    "não precisa reter capital para cobrir sinistros. "
+                    "O resultado tem dois motores: o operacional (crescimento de prêmios, receita de corretagem, sinistralidade "
+                    "das parceiras) e o financeiro (reservas técnicas da Brasilprev e Brasilcap investidas na Selic). "
+                    "Em juro alto, o segundo motor turbina o lucro — no 1T26 foi +59% a/a e representou 23% do lucro. "
+                    "O ponto de atenção é que esse boost some quando a Selic cair."
+                ),
+                "receita": [
+                    ("BB Corretora (distribuição/comissão)", "~40%", "receita de corretagem sobre todos os produtos distribuídos"),
+                    ("Brasilprev (previdência)", "~35%", "taxa de gestão + resultado financeiro das reservas (PGBL/VGBL)"),
+                    ("Brasilseg (seguros)", "~20%", "participação nos resultados da JV com a Mapfre"),
+                    ("Brasilcap (capitalização)", "~5%", "títulos de capitalização — distribuídos pelo BB"),
+                ],
+                "vantagens": [
+                    "Modelo capital-light: não assume risco de sinistro → payout de 95% → DY de 11-12%",
+                    "Canal exclusivo com 70 milhões de clientes do BB — custo de aquisição praticamente zero",
+                    "Brasilprev: líder em previdência privada no Brasil; reservas crescendo 10% a/a",
+                    "Resultado financeiro expressivo: Selic alta turbina o float das reservas de previdência e capitalização",
+                    "P/L de apenas 7-8x — desconto histórico vs. média do mercado (13-14x)",
+                ],
+                "riscos": [
+                    "Contrato de distribuição com o BB vence em 2033 — mercado desconta pela incerteza de renovação",
+                    "Queda da Selic reduz o resultado financeiro que turbinou o lucro recente",
+                    "Agro pressionando: sinistros rurais da Brasilseg aumentaram com El Niño e inadimplência rural",
+                    "Dependência total do Banco do Brasil como canal — qualquer mudança estratégica do controlador afeta direto",
+                    "Prêmios da Brasilseg em queda de 2,3% em 2026 — desaceleração operacional",
+                ],
+                "barreira": (
+                    "O contrato de exclusividade com o BB e o tamanho da base de clientes são inreplicáveis. "
+                    "Nenhuma seguradora privada tem acesso a 70 milhões de clientes com custo de aquisição zero. "
+                    "Brasilprev é a maior gestora de previdência privada do Brasil — liderança construída em décadas. "
+                    "O problema é que toda essa vantagem depende de um contrato com o estado."
+                ),
+            },
+            "CXSE3": {
+                "nome": "Caixa Seguridade",
+                "fundacao": "2015 (IPO em 2021)",
+                "sede": "Brasília, DF",
+                "tagline": "A distribuidora do crédito habitacional. Onde tem financiamento da Caixa, tem seguro da CXSE — e por lei.",
+                "modelo": (
+                    "A lógica da CXSE é idêntica à da BBSE: distribui seguros pela rede da Caixa Econômica Federal "
+                    "e recebe comissão sem assumir o risco de sinistro. Mas o produto-âncora é diferente — e mais defensivo. "
+                    "Todo financiamento imobiliário no Brasil exige por lei dois seguros obrigatórios: MIP (Morte e Invalidez) "
+                    "e DFI (Danos Físicos ao Imóvel). São embutidos na parcela e cobrados por 10 a 35 anos. "
+                    "Cada novo financiamento da Caixa (que detém mais de R$1 tri em carteira imobiliária) "
+                    "gera automaticamente mais um contrato de seguro que dura décadas — é o efeito empilhamento. "
+                    "A base de recorrência cresce enquanto os contratos antigos ainda estão ativos e os novos chegam. "
+                    "No 1T26 entregou lucro de ~R$1,14 bi (+ROE de 65,9%) e DY projetado de ~7-8% para 2026."
+                ),
+                "receita": [
+                    ("Seguro habitacional (MIP + DFI)", "~55%", "obrigatório por lei — base recorrente e crescente"),
+                    ("Prestamista e vida", "~20%", "seguro do crédito consignado e pessoal da Caixa"),
+                    ("Previdência e capitalização", "~15%", "produtos financeiros da rede Caixa"),
+                    ("Residencial e outros", "~10%", "seguros patrimoniais para clientes da Caixa"),
+                ],
+                "vantagens": [
+                    "Efeito empilhamento: cada financiamento gera contrato de 10-35 anos — recorrência que cresce automaticamente",
+                    "Seguro habitacional é obrigatório por lei — não há opção de 'não comprar' para quem financia",
+                    "Mais de 60% de market share em seguro habitacional — posição de dominância que nenhum concorrente replica",
+                    "Canal com 4.000 agências + 13.000 lotéricas — capilaridade ímpar para o público de menor renda",
+                    "ROE de 65,9% no 1T26 — extraordinário para qualquer empresa, de qualquer setor",
+                ],
+                "riscos": [
+                    "100% dependente da Caixa como canal e controladora — risco político estatal elevado",
+                    "Prestamista pressionado: juros altos reduzem crédito consignado e pessoal",
+                    "Resultado financeiro ajuda hoje (Selic alta), mas perde força quando os juros caírem",
+                    "Valuation mais esticado que BBSE — P/L de 11-13x já precifica boa parte da qualidade",
+                    "Qualquer mudança na política habitacional federal (FGTS, Minha Casa) impacta diretamente",
+                ],
+                "barreira": (
+                    "A exclusividade com a Caixa + a lei que obriga o seguro habitacional = monopólio prático. "
+                    "Nenhuma seguradora privada consegue entrar nesse mercado sem ser o parceiro oficial da CEF. "
+                    "E o efeito empilhamento cria uma receita que cresce por décadas sem esforço de vendas adicional — "
+                    "é o modelo mais defensivo e previsível de toda a lista."
+                ),
+            },
+            "PSSA3": {
+                "nome": "Porto",
+                "fundacao": "1945",
+                "sede": "São Paulo, SP",
+                "tagline": "A maior seguradora não-vida do Brasil. Saiu do risco de ser 'só auto' e virou um ecossistema de seguros, serviços e finanças.",
+                "modelo": (
+                    "A Porto é a única seguradora real desta lista — ela assume risco, subscreve apólices, "
+                    "paga sinistros. Não é distribuidora de banco. Nasceu em 1945 como seguradora de automóveis "
+                    "e por décadas foi sinônimo de 'seguro de carro'. O problema: auto tinha sinistralidade alta "
+                    "e margens comprimidas. A virada estratégica foi deliberada: diluir o auto (que era 90% da receita) "
+                    "e crescer nas verticais mais rentáveis. Em 2025, auto era apenas 39%. "
+                    "Hoje opera em quatro verticais: Porto Seguro (auto, residencial, empresarial), "
+                    "Porto Saúde (planos de saúde e odonto, crescendo forte), Porto Bank (cartão de crédito, consórcio) "
+                    "e Porto Serviços (assistências). "
+                    "A parceria com o Itaú (exclusividade para auto e residencial nos canais do banco) "
+                    "é uma alavanca de distribuição que nenhum concorrente tem — o Itaú Seguro de Auto é, "
+                    "na prática, operado pela Porto."
+                ),
+                "receita": [
+                    ("Auto (Porto Seguro + Itaú + Azul Seguros)", "~39%", "líder de mercado em auto — mas já foi 90%"),
+                    ("Porto Saúde (planos de saúde e odonto)", "~25%", "crescendo forte — maior margem que auto"),
+                    ("Residencial e empresarial", "~15%", "cross-sell com auto e parceria Itaú"),
+                    ("Porto Bank (cartão, consórcio, financiamento)", "~12%", "vertical financeira em expansão"),
+                    ("Porto Serviços (assistências)", "~9%", "B2C e B2B2C — reforça retenção e loyalty"),
+                ],
+                "vantagens": [
+                    "Diversificação real: auto 39% da receita — se o mercado de carros parar, a Porto não para",
+                    "Porto Saúde crescendo com margens superiores ao auto — driver estrutural dos próximos anos",
+                    "Exclusividade nos canais do Itaú: acesso a mais de 50 milhões de clientes com custo de aquisição reduzido",
+                    "Taxa de renovação 10 pp acima da média do mercado — fidelidade de cliente acima da concorrência",
+                    "18 milhões de clientes únicos — base para cross-sell de saúde, banco e serviços",
+                ],
+                "riscos": [
+                    "Sinistralidade alta: ela paga o que a natureza e os acidentes custam — granizo, enchente, fraude",
+                    "Competição agressiva em auto: concorrentes praticando preços baixos para ganhar mercado",
+                    "Porto Saúde: custo dos planos de saúde cresce sistematicamente acima da inflação",
+                    "DY menor (~5-6%) — reinveste mais para crescer; não é banco de renda no curto prazo",
+                    "Valuation mais alto (P/L ~10x) após forte valorização — margem de segurança menor",
+                ],
+                "barreira": (
+                    "A exclusividade no Itaú + 80 anos de marca + rede de 46.000 corretores. "
+                    "Um novo entrante levaria décadas para construir a confiança que um corretor tem com a Porto. "
+                    "O contrato com o Itaú é uma alavanca que qualquer outra seguradora pagaria bilhões para ter. "
+                    "E a liderança em auto (com a sinistralidade controlada que têm) cria um banco de dados de risco "
+                    "que é vantagem competitiva de subscrição."
+                ),
+            },
+            "IRBR3": {
+                "nome": "IRB Brasil Re",
+                "fundacao": "1939 (Governo Vargas)",
+                "sede": "Rio de Janeiro, RJ",
+                "tagline": "O seguro das seguradoras. O único papel da B3 que nenhum consumidor final conhece — e que é fundamental para que todo o mercado de seguros funcione.",
+                "modelo": (
+                    "O IRB é uma resseguradora — uma categoria completamente diferente das outras três. "
+                    "Quando a Porto vende um seguro de carro de R$200.000, ela pode não querer carregar 100% desse risco "
+                    "no balanço. Então ela 'cede' parte do risco ao IRB, pagando um prêmio de resseguro. "
+                    "Se o carro for roubado, a Porto paga ao cliente e o IRB ressarce parte para a Porto. "
+                    "O IRB não tem cliente pessoa física. Seus clientes são as seguradoras (chamadas de 'cedentes'). "
+                    "A métrica-rei é o Combined Ratio — se for abaixo de 100%, a operação de subscrição dá lucro. "
+                    "O IRB passou por uma crise grave em 2020 (fraude contábil, Combined Ratio de 140%+). "
+                    "Desde 2022 está em turnaround: Combined Ratio voltou para ~85-90%, resultado de subscrição "
+                    "cresceu 74,5% no 1T26, sinistralidade doméstica caiu para 35%. "
+                    "Em 2026 anunciou expansão para seguro direto (criação de duas seguradoras próprias) — "
+                    "é uma mudança estrutural do modelo que o mercado ainda está digerindo."
+                ),
+                "receita": [
+                    ("Resultado de subscrição (prêmios - sinistros - despesas)", "~53%", "coração do negócio — R$180 mi no 1T26, +74,5% a/a"),
+                    ("Resultado financeiro (float das reservas)", "~47%", "reservas técnicas investidas rendendo a Selic"),
+                ],
+                "vantagens": [
+                    "Único ressegurador de grande porte listado na B3 — sem comparável doméstico",
+                    "Turnaround concluído: Combined Ratio de 140%+ em 2020 para ~85-90% em 2026",
+                    "Solvência regulatória de 287% — capital de sobra para crescer e distribuir dividendos",
+                    "Mercado de resseguro no Brasil cresceu 7,1% no 1T26 — vento a favor estrutural",
+                    "A partir de 2027, reforma tributária (CBS/IBS) zera alíquota do resseguro — potencial ganho de rentabilidade",
+                    "Base de dados técnicos de 80+ anos de riscos brasileiros — vantagem de subscrição inreplicável",
+                ],
+                "riscos": [
+                    "Catástrofes de grande escala: enchente, furacão, acidente de aviação podem gerar perda pontual enorme",
+                    "Histórico de fraude contábil em 2020 — credibilidade ainda em reconstrução com investidores institucionais",
+                    "Expansão para seguro direto em 2026 é aposta não provada — pode consumir capital e desviar foco",
+                    "Sinistralidade internacional elevada (~93%) — mercado externo é menos lucrativo que o doméstico",
+                    "Dividend yield baixo (~3%) — turnaround recente limita distribuição; ainda não é banco de renda",
+                ],
+                "barreira": (
+                    "80 anos de base de dados técnicos de risco no Brasil. "
+                    "Uma resseguradora nova levaria décadas para ter a confiança técnica para assumir "
+                    "resseguros de aviação, petróleo ou grandes riscos industriais. "
+                    "O IRB sabe exatamente quanto custa um incêndio numa plataforma de petróleo no Brasil — "
+                    "e essa informação vale mais do que qualquer capital. "
+                    "Mais o oligopólio regulatório: a SUSEP controla a abertura de novas resseguradoras."
+                ),
+            },
+        },
+    },
     "⚡ Utilities Elétricas": {"tickers": [], "em_construcao": True},
     "🏗️ Incorporadoras": {"tickers": [], "em_construcao": True},
     "💧 Saneamento": {"tickers": [], "em_construcao": True},
