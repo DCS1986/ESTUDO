@@ -1170,7 +1170,518 @@ SETORES = {
             },
         },
     },
-    "⚡ Utilities Elétricas": {"tickers": [], "em_construcao": True},
+    "⚡ Utilities Elétricas": {
+        "tickers": ["TAEE11", "ISAE4", "EGIE3", "EQTL3", "CPFE3", "AXIA3"],
+        "tickers_sub": ["CMIG4", "CPLE3"],
+        "label_sub": "Estatais integradas",
+        "tagline": "Transmissão, distribuição e geração são três negócios com riscos, receitas e métricas completamente diferentes. Colocar todas no mesmo balde é o erro mais comum do investidor de renda.",
+        "logica": {
+            "titulo": "A lógica do setor elétrico — três negócios dentro de um rótulo",
+            "texto": (
+                "O setor elétrico brasileiro tem uma particularidade que poucos investidores internalizam: "
+                "transmissão, distribuição e geração são modelos de negócio radicalmente diferentes, "
+                "com riscos distintos, indexações distintas e métricas distintas. "
+                "Transmissoras recebem a RAP (Receita Anual Permitida) e não dependem de quanto "
+                "energia passa pela linha. Distribuidoras recebem pela energia que entregam, sofrem com "
+                "inadimplência e furto, e têm revisão tarifária periódica. Geradoras dependem de "
+                "chuva (hidrelétricas), vento (eólicas), sol (solares) ou preço de gás (térmicas). "
+                "Quem entende essas três lógicas lê qualquer resultado do setor em minutos."
+            ),
+            "drivers": [
+                ("RAP — Receita Anual Permitida (transmissão)", "O coração da transmissão. A ANEEL define quanto a transmissora "
+                 "recebe por ano pela disponibilidade das linhas, independente de quanto energia passa. "
+                 "Reajustada anualmente por IPCA ou IGPM conforme o contrato. Quanto maior o IGPM vs IPCA, "
+                 "melhor para quem tem contratos indexados ao IGPM (como a Taesa, ~60% em IGPM). "
+                 "Prazo típico: 30 anos. É o ativo mais próximo de 'renda fixa de longo prazo' na B3."),
+                ("Revisão tarifária (distribuição)", "A cada 4-5 anos a ANEEL redefine o WACC regulatório e os custos eficientes "
+                 "da distribuidora. Revisão favorável aumenta a margem; revisão desfavorável comprime. "
+                 "É o risco estrutural das distribuidoras — independe de quanto a empresa gerencie bem."),
+                ("Hidrologia e GSF (geração hidrelétrica)", "GSF = fator de geração. Se chove abaixo da média, as hidrelétricas "
+                 "geram menos que o contratado e precisam comprar energia no mercado (custo extra). "
+                 "O risco hidrológico é o motivo pelo qual geradoras puras são mais voláteis que transmissoras."),
+                ("Curtailment (corte de geração)", "O ONS corta a geração de renováveis quando há sobreoferta no sistema. "
+                 "A ENGIE projeta curtailment de 26% em 2026 e 32% em 2027 — energia que foi investida "
+                 "mas não pode ser vendida. Afeta eólicas e solares, especialmente no Nordeste."),
+                ("Taxa de juros (Selic)", "Utilities são duration longa — o valor presente dos fluxos futuros é muito "
+                 "sensível à taxa de desconto. Selic alta comprime o valuation de transmissoras e "
+                 "geradoras, e aumenta o custo da dívida das distribuidoras. Quando a Selic cai, "
+                 "as utilities sobem — é a equação que explica o IEEX (índice do setor)."),
+                ("Inadimplência e perdas (distribuição)", "Distribuidoras têm dois inimigos silenciosos: a inadimplência "
+                 "(consumidor não paga) e as perdas técnicas/não-técnicas (furto de energia). "
+                 "A ANEEL permite repassar parte das perdas para a tarifa, mas o excedente fica com "
+                 "a distribuidora. É o risco que a Equatorial sabe gerenciar melhor que os pares."),
+                ("Mercado Livre de Energia (ACL)", "Grandes consumidores podem comprar energia diretamente de geradoras, "
+                 "fora da distribuidora local. A expansão do Mercado Livre pressiona distribuidoras "
+                 "(perdem clientes) e abre oportunidades para geradoras (contratos bilaterais de longo prazo)."),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "Segmento principal",
+                "Como ganha dinheiro",
+                "Indexação da receita",
+                "Risco hidrológico/climático",
+                "Risco regulatório",
+                "Sensibilidade à Selic",
+                "Perfil de dividendo",
+                "Risco principal",
+            ],
+            "grupos": [
+                {"label": "Transmissoras puras", "tickers": ["TAEE11", "ISAE4"]},
+                {"label": "Geradora + integradas privadas", "tickers": ["EGIE3", "AXIA3", "CPFE3", "EQTL3"]},
+            ],
+            "empresas": {
+                "TAEE11": {
+                    "nome": "Taesa",
+                    "cor": "#F59E0B",
+                    "Segmento principal": ("Transmissão pura", "13.000 km de linhas, 109 subestações, 18 estados"),
+                    "Como ganha dinheiro": ("RAP — disponibilidade das linhas", "não depende de quanto energia passa"),
+                    "Indexação da receita": ("~60% IGPM + ~40% IPCA", "em IGPM alto, receita cresce mais que os custos (IPCA)"),
+                    "Risco hidrológico/climático": ("Zero", "transmissão não gera energia — independe de chuva", "badge-green"),
+                    "Risco regulatório": ("Moderado", "revisão de RAP na renovação de concessões; concessões antigas têm metodologia diferente", "badge-yellow"),
+                    "Sensibilidade à Selic": ("Alta negativa", "duration longa; Selic alta comprime valuation", "badge-red"),
+                    "Perfil de dividendo": ("Payout ~100%", "DY 7-10%; mas capex futuro e alavancagem (4,7x) podem comprimir"),
+                    "Risco principal": ("Alavancagem alta + concessões antigas com metodologia de RAP diferente + capex de R$2,2 bi pendente", ""),
+                },
+                "ISAE4": {
+                    "nome": "ISA Energia (ex-Transmissão Paulista)",
+                    "cor": "#22C55E",
+                    "Segmento principal": ("Transmissão pura", "maior malha privada do Sudeste; ISA Colombia é controladora"),
+                    "Como ganha dinheiro": ("RAP — disponibilidade das linhas", "concessões novas com metodologia mais previsível"),
+                    "Indexação da receita": ("IPCA", "contratos mais novos, metodologia mais transparente e previsível"),
+                    "Risco hidrológico/climático": ("Zero", "transmissão pura — sem exposição climática", "badge-green"),
+                    "Risco regulatório": ("Baixo", "concessões de categoria II/III, mais transparentes; TIR real de 7,7%", "badge-green"),
+                    "Sensibilidade à Selic": ("Alta negativa", "duration longa; valuation comprimido em juro alto", "badge-red"),
+                    "Perfil de dividendo": ("Payout alto", "DY 8-9%; menor alavancagem que Taesa"),
+                    "Risco principal": ("Controlador colombiano (ISA) — decisões estratégicas vindas de fora", ""),
+                },
+                "EGIE3": {
+                    "nome": "Engie Brasil",
+                    "cor": "#3B82F6",
+                    "Segmento principal": ("Geração renovável + transmissão nascente", "~12,9 GW; 70% hídrica + eólica + solar; 4.500 km de gás (TAG)"),
+                    "Como ganha dinheiro": ("PPAs (contratos de longo prazo) + PLD spot + RAP de transmissão", "maior geradora privada do Brasil"),
+                    "Indexação da receita": ("IPCA (PPAs) + PLD mercado livre", "parcela exposta ao preço spot é volátil"),
+                    "Risco hidrológico/climático": ("Alto", "70% hídrica; seca afeta geração; curtailment 26% projetado em 2026", "badge-red"),
+                    "Risco regulatório": ("Moderado", "revisão periódica de PPAs e regras do mercado livre", "badge-yellow"),
+                    "Sensibilidade à Selic": ("Moderada negativa", "alavancagem elevada; mas ativos de longa vida protegem parcialmente", "badge-yellow"),
+                    "Perfil de dividendo": ("Payout 55% (mínimo)", "DY ~4-5%; ciclo de capex pesado reduz payout temporariamente"),
+                    "Risco principal": ("Curtailment crescente + ciclo de capex pesado (Jirau + transmissão) + Selic alta comprime valuation", ""),
+                },
+                "AXIA3": {
+                    "nome": "Axia Energia (ex-Eletrobras)",
+                    "cor": "#A78BFA",
+                    "Segmento principal": ("Geração hídrica + transmissão", "a maior do Brasil; privatizada em 2022"),
+                    "Como ganha dinheiro": ("Cotas de energia (portfólio cativo) + ACL + RAP", "processo de descotização em andamento"),
+                    "Indexação da receita": ("IPCA (maioria) + preço livre", "portfólio mais descontratado vs pares; TIR implícita ~10%"),
+                    "Risco hidrológico/climático": ("Alto", "gigante hídrica; GSF e seca afetam diretamente", "badge-red"),
+                    "Risco regulatório": ("Muito alto", "acordo com governo (CDE, descotização) ainda sendo digerido; risco político pós-privatização", "badge-red"),
+                    "Sensibilidade à Selic": ("Alta negativa", "duration muito longa; empresa de menor custo = mais sensível à taxa de desconto", "badge-red"),
+                    "Perfil de dividendo": ("DY ~6-7%", "dividendos expressivos após reestruturação, mas portfólio mais descontratado limita"),
+                    "Risco principal": ("Complexidade pós-privatização + risco político (governo ainda questiona acordos) + portfólio mais descontratado", ""),
+                },
+                "CPFE3": {
+                    "nome": "CPFL Energia",
+                    "cor": "#EF4444",
+                    "Segmento principal": ("Distribuidora integrada + geração", "2ª maior distribuidora (14% de mercado); 10,3 mi de clientes; controlada pela State Grid China"),
+                    "Como ganha dinheiro": ("Tarifa de distribuição regulada + receita de geração", "concessões renovadas por 30 anos em 2026"),
+                    "Indexação da receita": ("IGPM/IPCA (reajuste tarifário) + ciclo de revisão ANEEL", "distribuição: receita regulada; geração: PPAs e mercado livre"),
+                    "Risco hidrológico/climático": ("Moderado", "tem geração própria (4.411 MW), mas distribuição é 70%+ do EBITDA", "badge-yellow"),
+                    "Risco regulatório": ("Alto", "revisão tarifária define a rentabilidade da distribuição; WACC regulatório é o driver", "badge-red"),
+                    "Sensibilidade à Selic": ("Alta negativa", "alavancagem + valuation de duration longa", "badge-red"),
+                    "Perfil de dividendo": ("Payout ~78%", "DY 8-9%; consistente; favorecido pela State Grid que quer retorno"),
+                    "Risco principal": ("Controlador chinês (State Grid) — pode priorizar interesse geopolítico vs. rentabilidade; revisão tarifária ANEEL", ""),
+                },
+                "EQTL3": {
+                    "nome": "Equatorial Energia",
+                    "cor": "#F97316",
+                    "Segmento principal": ("Distribuidora + saneamento + geração", "a melhor alocadora de capital do setor; adquire distribuidoras problemáticas e recupera"),
+                    "Como ganha dinheiro": ("Tarifa de distribuição + taxa de saneamento + geração", "modelo de turnaround: compra barato, recupera, vende ou retém"),
+                    "Indexação da receita": ("Tarifa regulada + revisão ANEEL", "foco em distribuidoras com maior potencial de recuperação de perdas"),
+                    "Risco hidrológico/climático": ("Baixo", "foco em distribuição; geração é minoritária no resultado", "badge-green"),
+                    "Risco regulatório": ("Moderado", "WACC regulatório é crítico, mas a gestão operacional compensa a regulação adversa", "badge-yellow"),
+                    "Sensibilidade à Selic": ("Alta negativa", "empresa growth com duration longa; Selic alta comprime valuation do crescimento futuro", "badge-red"),
+                    "Perfil de dividendo": ("Payout ~25%", "DY 2-4%; reinveste quase tudo para crescer — não é banco de renda"),
+                    "Risco principal": ("Alavancagem em fase de expansão (3,5x) + integração de Sabesp (15%) + execução em saneamento ainda não provada", ""),
+                },
+                "CMIG4": {
+                    "nome": "Cemig",
+                    "cor": "#6B7280",
+                    "Segmento principal": ("Estatal integrada MG", "maior distribuidora do Brasil + geração + transmissão; controlada por Minas Gerais"),
+                    "Como ganha dinheiro": ("Distribuição + geração + transmissão + comercialização", "holding com subsidiárias (Cemig D, Cemig GT)"),
+                    "Indexação da receita": ("Tarifa regulada + PPAs + RAP", "portfólio diversificado mas com risco político estatal"),
+                    "Risco hidrológico/climático": ("Alto", "significativa geração hídrica própria", "badge-red"),
+                    "Risco regulatório": ("Alto", "estatal estadual sujeita a interferência política de Minas Gerais; debate de federalização", "badge-red"),
+                    "Sensibilidade à Selic": ("Alta negativa", "empresa alavancada e de duration longa", "badge-red"),
+                    "Perfil de dividendo": ("Payout variável", "DY 8-12%; mas sujeito a decisões políticas do Estado de MG"),
+                    "Risco principal": ("Risco político (governo MG + debate de federalização) + posição vendida em energia + alavancagem", ""),
+                },
+                "CPLE3": {
+                    "nome": "Copel",
+                    "cor": "#6B7280",
+                    "Segmento principal": ("Ex-estatal integrada PR", "privatizada em 2023; geração + transmissão + distribuição no Paraná"),
+                    "Como ganha dinheiro": ("Distribuição Paraná + geração hídrica + transmissão", "privatização abriu caminho para eficiência operacional"),
+                    "Indexação da receita": ("Tarifa regulada + PPAs + RAP", "perfil mais transparente pós-privatização"),
+                    "Risco hidrológico/climático": ("Alto", "forte presença hídrica no Paraná (Iguaçu, Jordão)", "badge-red"),
+                    "Risco regulatório": ("Moderado", "privatizada reduz risco político; ainda ajustando eficiência operacional", "badge-yellow"),
+                    "Sensibilidade à Selic": ("Alta negativa", "alavancagem + duration longa", "badge-red"),
+                    "Perfil de dividendo": ("Payout variável pós-privatização", "DY 6-8%; gestão privada focada em eficiência e capital"),
+                    "Risco principal": ("Integração pós-privatização ainda em curso; resultado financeiro ainda não normalizou", ""),
+                },
+            },
+        },
+        "perfis": {
+            "TAEE11": {
+                "nome": "Taesa (Transmissora Aliança de Energia Elétrica)",
+                "fundacao": "2009 (parceria Cemig + ISA Colombia)",
+                "sede": "Belo Horizonte, MG",
+                "tagline": "A NTN-B da bolsa. Receita de longo prazo indexada à inflação, payout de 100%, sem risco climático. O preço que se paga é a alavancagem.",
+                "modelo": (
+                    "A Taesa é a transmissora pura mais conhecida da B3. Opera mais de 13.000 km de linhas de "
+                    "transmissão e 109 subestações em 18 estados. O modelo é simples e poderoso: "
+                    "vence um leilão da ANEEL, constrói a linha e passa a receber a RAP (Receita Anual Permitida) "
+                    "por 30 anos. A RAP não depende de quanto energia flui pela linha — só de a linha estar disponível "
+                    "dentro dos parâmetros técnicos (parâmetros de indisponibilidade geram desconto na RAP, "
+                    "chamado de Parcela Variável). Com receita indexada à inflação (60% IGPM + 40% IPCA), "
+                    "payout de 100% e sem risco climático, a Taesa é comparada a uma NTN-B de longo prazo. "
+                    "O que diferencia dos títulos públicos: risco de renovação de concessões antigas "
+                    "com metodologia menos favorável, e alavancagem de 4,7x que limita novos investimentos."
+                ),
+                "receita": [
+                    ("RAP de transmissão", "~95%", "receita contratada por 30 anos, reajustada por IGPM/IPCA"),
+                    ("Reforços e melhorias autorizados", "~5%", "RAP adicional por obras autorizadas na concessão"),
+                ],
+                "vantagens": [
+                    "Zero risco climático: transmissão não gera energia — chuva, seca, vento não importam",
+                    "RAP indexada à inflação: receita do próximo ano é basicamente conhecida hoje",
+                    "Payout de ~100% do lucro regulatório: quem compra recebe praticamente todo o lucro",
+                    "Portfólio de categoria II/III (mais transparente): menor risco de surpresa regulatória nas concessões novas",
+                    "Quando o IGPM supera o IPCA: receita cresce mais que os custos — assimetria positiva",
+                ],
+                "riscos": [
+                    "Alavancagem de 4,7x dívida líquida/EBITDA — a maior entre as transmissoras da B3",
+                    "Concessões antigas têm metodologia diferente: revisão pode reduzir 15-20% da RAP dessas linhas",
+                    "Capex pendente de R$2,2 bi em projetos — a empresa precisa captar e construir",
+                    "IGPM negativo (já aconteceu em 2017) reduz a receita das concessões indexadas a esse índice",
+                    "Selic alta eleva o custo da dívida e comprime o valuation (duration muito longa)",
+                ],
+                "barreira": (
+                    "Uma vez vencido o leilão, a concessão é exclusiva por 30 anos. "
+                    "Ninguém constrói uma linha de transmissão paralela — o regulador não autoriza. "
+                    "O custo de construção da infraestrutura e a exclusividade regulatória criam "
+                    "um monopólio natural de altíssima barreira. "
+                    "O desafio não é a concorrência — é vencer o próximo leilão a uma RAP que ainda dê retorno."
+                ),
+            },
+            "ISAE4": {
+                "nome": "ISA Energia Brasil (ex-Transmissão Paulista)",
+                "fundacao": "1999 (Transmissão Paulista) / controladora ISA Colombia fundada 1967",
+                "sede": "São Paulo, SP",
+                "tagline": "A transmissora com o melhor portfólio de novas concessões. Mais previsível que a Taesa, menor alavancagem, controlador colombiano.",
+                "modelo": (
+                    "A ISA Energia é a segunda maior transmissora privada do Brasil, com foco no Sudeste. "
+                    "Controlada pela ISA Interconexión Eléctrica S.A. (Colombia), uma das maiores empresas "
+                    "de transmissão da América Latina. O diferencial da ISA vs Taesa está na qualidade "
+                    "do portfólio: as concessões são predominantemente de categoria II e III, "
+                    "com metodologia regulatória mais moderna e transparente — menos risco de surpresas "
+                    "na revisão de RAP. Menor alavancagem que a Taesa, TIR real implícita de ~7,7%, "
+                    "o que a coloca em posição mais defensiva no setor. Também tem participação minoritária "
+                    "da Axia Energia (ex-Eletrobras) em algumas concessões, o que cria uma relação "
+                    "estratégica com a maior geradora do país."
+                ),
+                "receita": [
+                    ("RAP de transmissão", "~98%", "receita contratada por 30 anos, predominantemente indexada ao IPCA"),
+                    ("Outros serviços", "~2%", "operação e manutenção de terceiros"),
+                ],
+                "vantagens": [
+                    "Portfólio de concessões modernas (cat. II/III): menor risco regulatório vs Taesa",
+                    "Menor alavancagem: mais espaço para novos leilões sem pressionar o balanço",
+                    "TIR real implícita de ~7,7% — bem acima da NTN-B de prazo semelhante",
+                    "Controlador com track record: ISA Colombia opera transmissão em 6 países com excelência",
+                    "Zero risco climático — mesmo modelo de receita da Taesa",
+                ],
+                "riscos": [
+                    "Controlador colombiano: decisões vêm de fora do Brasil — alinhamento com minoritários nem sempre é total",
+                    "Selic alta comprime valuation como em qualquer transmissora de duration longa",
+                    "Menor liquidez que Taesa na B3 — spread bid/ask maior para investidores institucionais",
+                    "Depende de novos leilões para crescer — mercado de transmissão é competitivo",
+                ],
+                "barreira": (
+                    "Idem à Taesa: exclusividade regulatória de 30 anos e custo proibitivo de infraestrutura. "
+                    "Adicionalmente, o relacionamento com a Axia e a presença no Sudeste (onde está a maior "
+                    "demanda do país) são vantagens geográficas e de relacionamento difíceis de replicar."
+                ),
+            },
+            "EGIE3": {
+                "nome": "Engie Brasil Energia",
+                "fundacao": "1994 (como Nacional Energética; marca Engie desde 2016)",
+                "sede": "Florianópolis, SC",
+                "tagline": "A maior geradora privada do Brasil. 100% renovável, controlada pela Engie francesa. O desafio é o curtailment crescente e o capex pesado.",
+                "modelo": (
+                    "A Engie Brasil é a maior empresa privada de geração de energia do país, com ~12,9 GW "
+                    "de capacidade instalada em 145 usinas. O portfólio é 100% renovável: hidrelétricas (~70%), "
+                    "eólicas, solares e biomassa. Além disso, é sócia da TAG — a maior malha de transporte "
+                    "de gás natural do Brasil, com 4.500 km em 10 estados. "
+                    "O modelo de receita combina PPAs (contratos de longo prazo, indexados ao IPCA) "
+                    "com exposição ao mercado livre (PLD spot). "
+                    "O desafio atual: curtailment crescente (26% projetado em 2026, 32% em 2027) "
+                    "— o ONS corta a geração renovável em momentos de sobreoferta. "
+                    "A estratégia de resposta é migrar parte do portfólio para transmissão, "
+                    "que gera RAP previsível e não sofre curtailment. Em 2025, venceu lotes "
+                    "de transmissão nos leilões da ANEEL — a diversificação está em andamento."
+                ),
+                "receita": [
+                    ("PPAs de longo prazo (geração hídrica + eólica)", "~60%", "contratos indexados ao IPCA com distribuidoras e grandes consumidores"),
+                    ("TAG (transporte de gás, participação ~32%)", "~20%", "RAP regulada — receita previsível, sem exposição a preço de gás"),
+                    ("Mercado livre de energia (ACL)", "~15%", "preço spot variável — mais volátil"),
+                    ("Transmissão nascente + outros", "~5%", "RAP de novos projetos em construção (Asa Branca, Graúna)"),
+                ],
+                "vantagens": [
+                    "Controladora Engie (França): acesso a tecnologia, capital barato e modelo global de energia renovável",
+                    "TAG: ativo de transmissão de gás com receita regulada — reduz a volatilidade da geração",
+                    "100% renovável: posicionamento ESG premium para contratos com multinacionais exigentes",
+                    "Maior geradora privada: escala garante acesso aos melhores PPAs e aos maiores leilões",
+                    "Expansão em transmissão: diversifica para ativos de menor volatilidade",
+                ],
+                "riscos": [
+                    "Curtailment: 26-32% projetado para 2026-2027 — energia produzida mas não vendida",
+                    "Dependência hídrica (~70%): secas ou GSF negativo afetam diretamente a geração",
+                    "Ciclo de capex pesado: Jirau, Asa Branca, Graúna — R$6 bi investidos em 2025 pressionam o FCF",
+                    "Payout reduzido para mínimo de 55% no ciclo de capex — DY caiu vs histórico",
+                    "Selic alta + alavancagem acima de 2,5x: pressão financeira em ciclo de investimento",
+                ],
+                "barreira": (
+                    "Concessões hidrelétricas são praticamente inreplicáveis — os melhores rios já têm dono. "
+                    "Quem tem Itá, Machadinho, Estreito e Jaguara tem ativos que não se licenciam mais hoje. "
+                    "A TAG é a única malha de transporte de gás em 10 estados — monopólio natural regulado. "
+                    "E a marca Engie com 30 anos no Brasil abre portas que novos entrantes levariam décadas para abrir."
+                ),
+            },
+            "AXIA3": {
+                "nome": "Axia Energia (ex-Eletrobras)",
+                "fundacao": "1961 (como Eletrobras); privatizada em 2022; renomeada Axia Energia em 2025",
+                "sede": "Rio de Janeiro, RJ",
+                "tagline": "A maior empresa do setor elétrico brasileiro. Privatizada em 2022, ainda digerindo a transição. TIR implícita de 10% real.",
+                "modelo": (
+                    "A Axia é a antiga Eletrobras — a maior empresa do setor elétrico brasileiro, "
+                    "com cerca de 30 GW de capacidade instalada e participação em dezenas de "
+                    "concessões de geração e transmissão. A privatização de 2022 foi o maior evento "
+                    "do setor em décadas, mas a transição ainda está sendo digerida. "
+                    "O portfólio tem uma peculiaridade: parte significativa das usinas opera em 'regime de cotas' "
+                    "— um modelo regulatório onde a energia é dividida entre distribuidoras a preço fixo, "
+                    "tirando a geração do mercado livre. O processo de 'descotização' (sair das cotas) "
+                    "está em andamento mas é lento, o que significa que o portfólio ainda é menos "
+                    "lucrativo do que poderia ser. "
+                    "Em 2025 concluiu a migração para o Novo Mercado da B3, simplificou a estrutura "
+                    "acionária e iniciou a venda de ativos não-estratégicos — são os primeiros sinais "
+                    "de que a gestão privada está gerando valor."
+                ),
+                "receita": [
+                    ("Geração hídrica em cotas", "~50%", "preço regulado; menos lucrativo que o mercado livre"),
+                    ("Geração hídrica em ACL (mercado livre)", "~30%", "preço de mercado — potencial de crescimento com descotização"),
+                    ("Transmissão (RAP)", "~15%", "concessões de transmissão em diversas regiões"),
+                    ("Outros (comercialização, participações)", "~5%", ""),
+                ],
+                "vantagens": [
+                    "Maior empresa do setor — presença em praticamente todos os grandes projetos hídricos do Brasil",
+                    "TIR real implícita de ~10%: bem acima de pares de transmissão (~7-8%)",
+                    "Descotização: cada usina que sai das cotas entra no mercado livre a preço melhor — upside de longo prazo",
+                    "Novo Mercado: governança melhorando, estrutura acionária simplificada",
+                    "Custo de geração entre os mais baixos do mundo (hídrica velha = sem depreciação relevante)",
+                ],
+                "riscos": [
+                    "Risco político: governo ainda questiona aspectos do acordo de privatização; risco de revisão de termos",
+                    "Portfólio mais descontratado: menos energia comprometida em contratos de longo prazo vs pares",
+                    "Descotização é lenta: upside real ainda depende de decisões regulatórias e políticas",
+                    "Complexidade: dezenas de subsidiárias, concessões e participações — difícil de analisar",
+                    "GSF: maior exposição hídrica do setor = mais vulnerável à seca",
+                ],
+                "barreira": (
+                    "São décadas de concessões hídrica em rios que já foram inventariados — "
+                    "Tucuruí, Balbina, Itaipu (participação), Angra (nuclear): ativos que jamais serão "
+                    "licenciados de novo. A escala de 30 GW e o papel sistêmico no SIN "
+                    "(o ONS não opera sem a Axia) criam uma barreira que é, na prática, o próprio Brasil."
+                ),
+            },
+            "CPFE3": {
+                "nome": "CPFL Energia",
+                "fundacao": "1912",
+                "sede": "Campinas, SP",
+                "tagline": "A distribuidora integrada com a maior capilaridade do Sudeste. DY consistente de 8-9% e controlador chinês que quer estabilidade.",
+                "modelo": (
+                    "A CPFL é uma das maiores empresas do setor elétrico brasileiro, com presença "
+                    "em distribuição (14% do mercado nacional, 10,3 mi de clientes em 687 municípios), "
+                    "geração (4.411 MW, entre as maiores privadas) e transmissão. "
+                    "Controlada desde 2017 pela State Grid Corporation of China — a maior empresa "
+                    "de energia do mundo, atendendo 1,1 bilhão de pessoas. "
+                    "O controlador quer estabilidade e dividendos, não aventura: o plano de R$29,8 bi "
+                    "para 2025-2029 foca em modernizar a distribuição existente (R$24,7 bi em distribuição), "
+                    "não em crescer por aquisições agressivas. "
+                    "Em maio de 2026, renovou as concessões das três distribuidoras principais "
+                    "(CPFL Paulista, Piratininga, RGE) por mais 30 anos — uma redução relevante de "
+                    "risco de prazo que o mercado subestimou."
+                ),
+                "receita": [
+                    ("Distribuição de energia (CPFL Paulista, Piratininga, RGE, Santa Cruz)", "~65%", "2ª maior distribuidora do Brasil em volume"),
+                    ("Geração (hídrica + eólica + solar + biomassa)", "~25%", "4.411 MW de capacidade instalada"),
+                    ("Transmissão (CPFL Transmissão)", "~8%", "RAP de linhas de transmissão"),
+                    ("Comercialização e serviços", "~2%", ""),
+                ],
+                "vantagens": [
+                    "Concessões renovadas por 30 anos em 2026: risco de prazo eliminado para as principais distribuidoras",
+                    "State Grid como controlador: acesso a capital barato (empréstimo em RMB do NDB), tecnologia chinesa e planejamento de longo prazo",
+                    "2ª maior distribuidora em volume: escala que poucos concorrentes têm no Sudeste",
+                    "DY consistente de 8-9%: controlador quer dividendo; payout de 78% é sustentável",
+                    "Gestão operacional eficiente: CPFL tem histórico de índices de qualidade acima da média do setor",
+                ],
+                "riscos": [
+                    "Controlador chinês: geopolítica pode criar ruído regulatório ou político no futuro",
+                    "Revisão tarifária: WACC regulatório da ANEEL define a rentabilidade da distribuição — risco periódico",
+                    "Alavancagem moderada e capex de R$29,8 bi: FCF comprometido para crescimento, não para DY extra",
+                    "Exposição ao Sudeste: crescimento da GD (painéis solares) pode reduzir consumo faturado das distribuidoras",
+                    "Mercado Livre: migração de grandes clientes para ACL reduz base de consumidores cativos",
+                ],
+                "barreira": (
+                    "687 municípios com concessão exclusiva de distribuição no Sudeste e Sul. "
+                    "Nenhum concorrente entra nesse território — a concessão é de 30 anos, renovada. "
+                    "A combinação de escala, capilaridade e o apoio da maior empresa de energia do "
+                    "mundo como controlador cria uma posição que é inatingível por qualquer novo entrante."
+                ),
+            },
+            "EQTL3": {
+                "nome": "Equatorial Energia",
+                "fundacao": "2004",
+                "sede": "São Luís, MA",
+                "tagline": "A melhor alocadora de capital do setor elétrico. Compra distribuidoras caóticas, enxuga, recupera e gera retorno acima de qualquer par.",
+                "modelo": (
+                    "A Equatorial não é uma distribuidora comum — é uma operadora especializada em "
+                    "turnaround de distribuidoras. O modelo é simples de explicar e difícil de executar: "
+                    "compra distribuidoras com altíssima inadimplência, furto e ineficiência "
+                    "(pagando barato por isso), reduz as perdas, melhora a cobrança, normativa "
+                    "os índices de qualidade e passa a extrair margem de uma operação que "
+                    "estava destruindo valor. Fez isso com a Eletrobras/CEMAR (Maranhão), "
+                    "com a CELPA (Pará), com a COELCE (Ceará), com a CELG-D (Goiás), com a CEA (Amapá) "
+                    "e com a CEPISA (Piauí). Cada aquisição foi uma aposta que o mercado duvidou "
+                    "e a Equatorial executou. Em 2025, entrou no saneamento (15% da Sabesp) "
+                    "e já tem posições em saneamento em outros estados. "
+                    "DY baixo porque reinveste quase tudo — mas valorização histórica "
+                    "é a melhor do setor por décadas."
+                ),
+                "receita": [
+                    ("Distribuição de energia (6 estados)", "~75%", "MA, PA, CE, GO, AP, PI — foco em Norte/Nordeste onde havia mais potencial"),
+                    ("Saneamento (Sabesp 15% + outros)", "~15%", "novo vetor de crescimento — mesma lógica de turnaround"),
+                    ("Geração, transmissão e telecom", "~10%", "ativos complementares vendidos quando maduros"),
+                ],
+                "vantagens": [
+                    "Track record de turnaround: cada aquisição que o mercado duvidou, a Equatorial executou",
+                    "Gestão de perdas superior: reduz inadimplência e furto nos níveis que distribuidoras estatais nunca conseguiram",
+                    "Regiões de maior potencial: Norte e Nordeste têm mais espaço para redução de perdas que Sudeste já maduro",
+                    "Expansão em saneamento: a mesma lógica de turnaround aplicada a um setor ainda mais ineficiente",
+                    "TIR real de 11,1% implícita: premium justificado pelo histórico e pelo pipeline de crescimento",
+                ],
+                "riscos": [
+                    "Alavancagem de 3,5x em fase de expansão — cada nova aquisição pressiona mais o balanço",
+                    "Sabesp (15%): primeira entrada no saneamento de grande escala — execução ainda não provada",
+                    "Não é banco de renda: DY de 2-4% decepciona investidores que buscam renda mensal",
+                    "Regulação adversa: WACC regulatório menor ou opex regulatório mais restritivo comprimir margens",
+                    "Integração de múltiplos ativos simultâneos: complexidade operacional cresce com o portfólio",
+                ],
+                "barreira": (
+                    "A capacidade de executar turnaround é a barreira — e ela não se compra, se constrói em décadas. "
+                    "A Equatorial tem um playbook testado, uma equipe que já fez isso 6 vezes e "
+                    "relacionamentos com reguladores e comunidades locais que constroem confiança. "
+                    "Nenhum concorrente combina o histórico de execução com o acesso a capital "
+                    "e a disposição de atuar em regiões que outros evitam. "
+                    "É o modelo mais difícil de imitar no setor."
+                ),
+            },
+            "CMIG4": {
+                "nome": "Cemig",
+                "fundacao": "1952 (por Juscelino Kubitschek)",
+                "sede": "Belo Horizonte, MG",
+                "tagline": "A estatal integrada de Minas Gerais. Maior distribuidora do Brasil, com risco político que o mercado desconta no preço.",
+                "modelo": (
+                    "A Cemig é uma holding integrada — opera distribuição (Cemig D), "
+                    "geração e transmissão (Cemig GT) e tem participações em outras empresas do setor. "
+                    "É a maior distribuidora do Brasil em número de municípios atendidos e a quarta "
+                    "em transmissão. Controlada pelo Estado de Minas Gerais (50,97% das ONs), "
+                    "sofre com o conflito clássico do estatal: o governo quer dividendos para fechar "
+                    "as contas do estado, mas também quer tarifas baixas para os eleitores. "
+                    "Em 2025, gerou discussão sobre possível federalização como parte do acordo "
+                    "da dívida de MG com o governo federal — um risco que assusta o mercado "
+                    "mas ainda não se concretizou."
+                ),
+                "receita": [
+                    ("Distribuição Minas Gerais (Cemig D)", "~55%", "maior distribuidora do Brasil em cobertura geográfica"),
+                    ("Geração hídrica e eólica (Cemig GT)", "~30%", "portfólio diversificado, mas com exposição hídrica"),
+                    ("Transmissão", "~10%", "4ª maior do Brasil"),
+                    ("Participações e comercialização", "~5%", ""),
+                ],
+                "vantagens": [
+                    "Escala: maior distribuidora em municípios atendidos — MG tem 853 municípios",
+                    "DY alto (8-12%): governo precisa de dividendo para fechar as contas do estado",
+                    "Valuation descontado pelo risco político: quem acredita no desconto pode se beneficiar",
+                    "Portfólio diversificado: geração + transmissão + distribuição reduz concentração em um segmento",
+                ],
+                "riscos": [
+                    "Risco político: governo MG intervém em gestão, tarifa e alocação de capital",
+                    "Debate de federalização: dívida de MG com a União pode levar à transferência do controle",
+                    "Posição vendida em energia: Cemig ficou descoberta em contratos de energia, gerando prejuízo",
+                    "Alavancagem ~2,3-2,5x: não é crítico mas limita flexibilidade",
+                    "Eficiência abaixo de privados: custo de servir mais alto por natureza estatal",
+                ],
+                "barreira": (
+                    "A concessão de distribuição em Minas Gerais — o estado mais rico em recursos naturais "
+                    "e o terceiro maior estado em PIB do Brasil. "
+                    "O portfólio de usinas hidrelétricas em rios mineiros é inreplicável. "
+                    "O problema: a barreira é do Estado de MG, não da empresa — "
+                    "e o controlador pode usá-la para objetivos políticos em vez de econômicos."
+                ),
+            },
+            "CPLE3": {
+                "nome": "Copel",
+                "fundacao": "1954",
+                "sede": "Curitiba, PR",
+                "tagline": "A ex-estatal do Paraná. Privatizada em 2023, agora sob gestão privada buscando eficiência que o Estado nunca priorizou.",
+                "modelo": (
+                    "A Copel é a empresa integrada de energia do Paraná — geração (hídrica no rio Iguaçu "
+                    "e afluentes), transmissão e distribuição. Em 2023, foi privatizada pelo governo do Paraná, "
+                    "encerrando 70 anos como estatal. A privatização abriu espaço para buscar eficiência "
+                    "operacional, reduzir custos e orientar a gestão para retorno ao acionista "
+                    "em vez de objetivos políticos. "
+                    "Diferente da Cemig (que ainda é estatal), a Copel já não tem o risco "
+                    "de interferência política do governo. Mas ainda está no processo de ajuste "
+                    "pós-privatização: normalização do resultado financeiro, revisão de contratos "
+                    "e alinhamento da cultura organizacional ao modelo privado leva tempo."
+                ),
+                "receita": [
+                    ("Distribuição Paraná (Copel DIS)", "~55%", "distribuição regulada em todo o estado do Paraná"),
+                    ("Geração hídrica + eólica (Copel GeT)", "~30%", "Iguaçu, Jordão e complexos eólicos"),
+                    ("Transmissão (Copel Transmissão)", "~12%", "RAP de linhas em todo o Brasil"),
+                    ("Telecomunicações (Copel Telecom)", "~3%", "fibra óptica no Paraná — diferencial único"),
+                ],
+                "vantagens": [
+                    "Privatização recente: gestão privada ainda capturando eficiência que o estado não priorizou",
+                    "Única utility listada com braço de telecom próprio: Copel Telecom é diferencial raro no setor",
+                    "Paraná: estado com melhor qualidade de crédito e menor inadimplência do Brasil — base de consumidores sólida",
+                    "Geração hídrica no Iguaçu: hidrologia de boa qualidade no Sul (diferente do Sudeste/Nordeste)",
+                ],
+                "riscos": [
+                    "Resultado pós-privatização ainda normalizando: curva de aprendizado da gestão privada",
+                    "Alavancagem: ciclo de investimentos pós-privatização pressiona o balanço",
+                    "Hidrologia Sul: enchentes no RS/SC em 2024 mostraram que o Sul também tem risco climático",
+                    "Copel Telecom: negócio diferente do core elétrico, exige expertise e capex específicos",
+                ],
+                "barreira": (
+                    "Concessão exclusiva de distribuição em todo o Paraná — um estado de 11 mi de habitantes "
+                    "e PIB relevante. As usinas do rio Iguaçu são um dos maiores sistemas hídricos do Sul "
+                    "e são inreplicáveis. A rede de transmissão de fibra óptica da Copel Telecom "
+                    "seria levada décadas para ser construída por qualquer entrante. "
+                    "Pós-privatização, o risco de interferência política foi eliminado — "
+                    "a barreira ficou mais limpa."
+                ),
+            },
+        },
+    },
     "🏗️ Incorporadoras": {"tickers": [], "em_construcao": True},
     "💧 Saneamento": {"tickers": [], "em_construcao": True},
     "⛏️ Mineração": {"tickers": [], "em_construcao": True},
