@@ -1008,16 +1008,11 @@ SETORES = {
                     "é basicamente o 'preço' que o investidor paga pela incerteza de renovação."
                 ),
                 "receita": [
-                    ("BB Corretora", "R$875 mi (1T26, +3,1% a/a)", "40% do lucro — distribuição e corretagem sobre todos os produtos"),
-                    ("BrasilPrev (previdência)", "R$538 mi (1T26, +51,1% a/a)", "24% do lucro — turbinado pelo resultado financeiro (Selic alta)"),
-                    ("Brasilseg (seguros)", "R$700+ mi (est.)", "~32% do lucro — seguros rural, prestamista, vida e outros"),
-                    ("Brasilcap (capitalização)", "R$81 mi (1T26, +50,6% a/a)", "~4% do lucro — melhora do resultado financeiro"),
-                ],
-                "composicao": [
-                    ("Seguro rural", "~35% dos prêmios da Brasilseg", "maior linha; exposto a El Niño e inadimplência do agro"),
-                    ("Seguro prestamista", "em queda (-16% em 2024)", "ligado ao crédito consignado — sofre com juro alto"),
-                    ("Seguro vida", "base estável", "produto de distribuição em massa via rede BB"),
-                    ("Resultado financeiro", "23% do lucro total (1T26)", "Selic alta turbinou +58,5% a/a — risco na queda dos juros"),
+                    ("Corretagem e distribuição (BB Corretora)", "~40%", "comissão sobre todos os produtos vendidos pela rede BB"),
+                    ("Previdência (BrasilPrev)", "~25%", "taxa de gestão + resultado financeiro das reservas PGBL/VGBL — turbinado pela Selic"),
+                    ("Seguros rurais (Brasilseg)", "~14%", "maior linha individual; sensível ao agro, El Niño e inadimplência rural"),
+                    ("Seguros vida e prestamista (Brasilseg)", "~17%", "prestamista ligado ao consignado — sofre com juro alto; vida é base estável"),
+                    ("Capitalização (Brasilcap)", "~4%", "títulos de capitalização — beneficiado pela Selic alta"),
                 ],
                 "vantagens": [
                     "Modelo capital-light: não assume risco de sinistro → payout de 85% → DY de 11-12%",
@@ -1101,17 +1096,11 @@ SETORES = {
                     "na prática, operado pela Porto."
                 ),
                 "receita": [
-                    ("Auto (Porto Seguro + Itaú + Azul Seguros)", "~39% (era 90% em 2010)", "líder de mercado mas deliberadamente diluído — margens comprimidas por sinistralidade e competição"),
-                    ("Porto Saúde (planos de saúde e odonto)", "~25% e crescendo", "vertical mais rentável — margem operacional superior ao auto; plano de saúde cresce 2 dígitos a/a"),
-                    ("Residencial e empresarial", "~15%", "cross-sell com auto e parceria Itaú — sinistralidade mais baixa que auto"),
-                    ("Porto Bank (cartão, consórcio, financiamento)", "~12% e crescendo", "vertical financeira — receita de juros e tarifas; cresce via base de 18 mi de clientes"),
-                    ("Porto Serviços (assistências)", "~9%", "assistência 24h, serviços domésticos — fidelização e receita recorrente"),
-                ],
-                "composicao": [
-                    ("A virada do auto", "de 90% → 39% em 15 anos", "decisão estratégica deliberada — auto tem sinistralidade alta e margem baixa"),
-                    ("Porto Saúde", "maior motor de crescimento 2024-2026", "custo do plano cresce acima da inflação, mas receita também — margem se sustenta"),
-                    ("Porto Bank", "crescendo via base de clientes existentes", "cross-sell sem custo de aquisição — cliente de auto também usa cartão"),
-                    ("Combined Ratio auto", "~85-88%", "bom vs. mercado (>90%), mas pior que saúde e residencial"),
+                    ("Auto (Porto Seguro + Itaú + Azul Seguros)", "~39%", "era 90% em 2010 — deliberadamente diluído; sinistralidade alta e margens comprimidas"),
+                    ("Porto Saúde (planos de saúde e odonto)", "~25%", "vertical mais rentável e em crescimento — margens superiores ao auto"),
+                    ("Residencial e empresarial", "~15%", "cross-sell com auto e parceria Itaú — sinistralidade mais baixa"),
+                    ("Porto Bank (cartão, consórcio, financiamento)", "~12%", "crescendo via base de 18 mi de clientes — sem custo de aquisição"),
+                    ("Porto Serviços (assistências)", "~9%", "assistências 24h e serviços domésticos — fidelização e receita recorrente"),
                 ],
                 "vantagens": [
                     "Diversificação real: auto 39% da receita — se o mercado de carros parar, a Porto não para",
