@@ -997,34 +997,41 @@ SETORES = {
                 "modelo": (
                     "A BB Seguridade não assume risco de seguro. Ela distribui seguros, previdência e capitalização "
                     "pela rede do Banco do Brasil — 70 milhões de clientes, mais de 3.500 pontos de atendimento — "
-                    "e cobra comissão sobre os prêmios vendidos. O risco de sinistro fica com as seguradoras parceiras: "
-                    "a Mapfre (joint venture em seguros, 74,9% BB + 25,1% Mapfre) e a Principal Financial Group "
-                    "(previdência, via Brasilprev). A estrutura é enxuta e capital-light: payout de ~95% porque "
-                    "não precisa reter capital para cobrir sinistros. "
-                    "O resultado tem dois motores: o operacional (crescimento de prêmios, receita de corretagem, sinistralidade "
-                    "das parceiras) e o financeiro (reservas técnicas da Brasilprev e Brasilcap investidas na Selic). "
-                    "Em juro alto, o segundo motor turbina o lucro — no 1T26 foi +59% a/a e representou 23% do lucro. "
-                    "O ponto de atenção é que esse boost some quando a Selic cair."
+                    "e cobra comissão. O risco de sinistro fica com os parceiros: Mapfre (seguros, JV 74,9% BB + 25,1% Mapfre) "
+                    "e Principal Financial Group (previdência, via Brasilprev). "
+                    "Estrutura capital-light com payout de ~85% — não precisa reter capital para cobrir sinistros. "
+                    "O resultado tem dois motores: operacional (prêmios, corretagem, sinistralidade das parceiras) "
+                    "e financeiro (reservas técnicas da Brasilprev e Brasilcap investidas na Selic). "
+                    "Em juro alto o segundo motor turbina o lucro: no 1T26 foi +58,5% a/a e representou 23% do total. "
+                    "O detalhe que muda tudo: o contrato de distribuição com o BB vai até 2033. "
+                    "O mercado desconta esse risco no valuation — e o P/L de 8x vs. 13-14x histórico do mercado "
+                    "é basicamente o 'preço' que o investidor paga pela incerteza de renovação."
                 ),
                 "receita": [
-                    ("BB Corretora (distribuição/comissão)", "~40%", "receita de corretagem sobre todos os produtos distribuídos"),
-                    ("Brasilprev (previdência)", "~35%", "taxa de gestão + resultado financeiro das reservas (PGBL/VGBL)"),
-                    ("Brasilseg (seguros)", "~20%", "participação nos resultados da JV com a Mapfre"),
-                    ("Brasilcap (capitalização)", "~5%", "títulos de capitalização — distribuídos pelo BB"),
+                    ("BB Corretora", "R$875 mi (1T26, +3,1% a/a)", "40% do lucro — distribuição e corretagem sobre todos os produtos"),
+                    ("BrasilPrev (previdência)", "R$538 mi (1T26, +51,1% a/a)", "24% do lucro — turbinado pelo resultado financeiro (Selic alta)"),
+                    ("Brasilseg (seguros)", "R$700+ mi (est.)", "~32% do lucro — seguros rural, prestamista, vida e outros"),
+                    ("Brasilcap (capitalização)", "R$81 mi (1T26, +50,6% a/a)", "~4% do lucro — melhora do resultado financeiro"),
+                ],
+                "composicao": [
+                    ("Seguro rural", "~35% dos prêmios da Brasilseg", "maior linha; exposto a El Niño e inadimplência do agro"),
+                    ("Seguro prestamista", "em queda (-16% em 2024)", "ligado ao crédito consignado — sofre com juro alto"),
+                    ("Seguro vida", "base estável", "produto de distribuição em massa via rede BB"),
+                    ("Resultado financeiro", "23% do lucro total (1T26)", "Selic alta turbinou +58,5% a/a — risco na queda dos juros"),
                 ],
                 "vantagens": [
-                    "Modelo capital-light: não assume risco de sinistro → payout de 95% → DY de 11-12%",
+                    "Modelo capital-light: não assume risco de sinistro → payout de 85% → DY de 11-12%",
                     "Canal exclusivo com 70 milhões de clientes do BB — custo de aquisição praticamente zero",
                     "Brasilprev: líder em previdência privada no Brasil; reservas crescendo 10% a/a",
                     "Resultado financeiro expressivo: Selic alta turbina o float das reservas de previdência e capitalização",
-                    "P/L de apenas 7-8x — desconto histórico vs. média do mercado (13-14x)",
+                    "P/L de 8x — desconto histórico vs. média do mercado (13-14x)",
                 ],
                 "riscos": [
-                    "Contrato de distribuição com o BB vence em 2033 — mercado desconta pela incerteza de renovação",
-                    "Queda da Selic reduz o resultado financeiro que turbinou o lucro recente",
-                    "Agro pressionando: sinistros rurais da Brasilseg aumentaram com El Niño e inadimplência rural",
-                    "Dependência total do Banco do Brasil como canal — qualquer mudança estratégica do controlador afeta direto",
-                    "Prêmios da Brasilseg em queda de 2,3% em 2026 — desaceleração operacional",
+                    "Contrato 2033: o acordo de distribuição com o BB vence daqui a ~7 anos — renovação, condições e custo são incertos; é o maior risco estrutural",
+                    "Selic caindo: resultado financeiro (23% do lucro em 1T26) cai imediatamente; recuperação operacional leva trimestres",
+                    "Seguro rural (~35% dos prêmios): El Niño, seca e inadimplência rural pressionaram a Brasilseg em 2024-2026",
+                    "Prestamista em queda: ligado ao crédito consignado — juro alto reduz tomada de crédito e, com ela, o seguro",
+                    "Guidance 2026 conservador: própria empresa projeta resultado operacional de -7% a -3% vs. 2025",
                 ],
                 "barreira": (
                     "O contrato de exclusividade com o BB e o tamanho da base de clientes são inreplicáveis. "
@@ -1094,11 +1101,17 @@ SETORES = {
                     "na prática, operado pela Porto."
                 ),
                 "receita": [
-                    ("Auto (Porto Seguro + Itaú + Azul Seguros)", "~39%", "líder de mercado em auto — mas já foi 90%"),
-                    ("Porto Saúde (planos de saúde e odonto)", "~25%", "crescendo forte — maior margem que auto"),
-                    ("Residencial e empresarial", "~15%", "cross-sell com auto e parceria Itaú"),
-                    ("Porto Bank (cartão, consórcio, financiamento)", "~12%", "vertical financeira em expansão"),
-                    ("Porto Serviços (assistências)", "~9%", "B2C e B2B2C — reforça retenção e loyalty"),
+                    ("Auto (Porto Seguro + Itaú + Azul Seguros)", "~39% (era 90% em 2010)", "líder de mercado mas deliberadamente diluído — margens comprimidas por sinistralidade e competição"),
+                    ("Porto Saúde (planos de saúde e odonto)", "~25% e crescendo", "vertical mais rentável — margem operacional superior ao auto; plano de saúde cresce 2 dígitos a/a"),
+                    ("Residencial e empresarial", "~15%", "cross-sell com auto e parceria Itaú — sinistralidade mais baixa que auto"),
+                    ("Porto Bank (cartão, consórcio, financiamento)", "~12% e crescendo", "vertical financeira — receita de juros e tarifas; cresce via base de 18 mi de clientes"),
+                    ("Porto Serviços (assistências)", "~9%", "assistência 24h, serviços domésticos — fidelização e receita recorrente"),
+                ],
+                "composicao": [
+                    ("A virada do auto", "de 90% → 39% em 15 anos", "decisão estratégica deliberada — auto tem sinistralidade alta e margem baixa"),
+                    ("Porto Saúde", "maior motor de crescimento 2024-2026", "custo do plano cresce acima da inflação, mas receita também — margem se sustenta"),
+                    ("Porto Bank", "crescendo via base de clientes existentes", "cross-sell sem custo de aquisição — cliente de auto também usa cartão"),
+                    ("Combined Ratio auto", "~85-88%", "bom vs. mercado (>90%), mas pior que saúde e residencial"),
                 ],
                 "vantagens": [
                     "Diversificação real: auto 39% da receita — se o mercado de carros parar, a Porto não para",
@@ -2241,7 +2254,8 @@ with tab3:
                         margin-bottom: 6px; font-family: Playfair Display, serif;'>
                 {p["nome"]}
             </div>
-            <div style='font-size: 0.90rem; color: {_cor_empresa}; font-style: italic;'>
+            <div style='font-size: 0.90rem; color: {_cor_empresa}; font-style: italic;
+                        font-weight: 700; filter: brightness(0.72);'>
                 {p.get("tagline","")}
             </div>
         </div>
@@ -2276,6 +2290,26 @@ with tab3:
                 </div>
             </div>
             """, unsafe_allow_html=True)
+
+        # Composição por segmento (aparece só quando o dado existe)
+        if p.get("composicao"):
+            st.markdown(
+                "<div class='section-label' style='margin-top:20px;'>Composição por segmento</div>",
+                unsafe_allow_html=True,
+            )
+            for _seg, _num, _obs in p["composicao"]:
+                st.markdown(f"""
+                <div style='display:flex;align-items:flex-start;gap:14px;
+                            padding:10px 0;border-bottom:1px solid #E5E2DC;'>
+                    <div style='min-width:160px;text-align:right;font-size:0.78rem;
+                                font-weight:700;color:#8B6914;padding-top:2px;'>{_num}</div>
+                    <div>
+                        <div style='font-size:0.85rem;font-weight:600;color:#111;
+                                    margin-bottom:1px;'>{_seg}</div>
+                        <div style='font-size:0.78rem;color:#374151;'>{_obs}</div>
+                    </div>
+                </div>
+                """, unsafe_allow_html=True)
 
         c1, c2 = st.columns(2)
 
