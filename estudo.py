@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 # ─────────────────────────────────────────────────────────────────────────────
-# ESTILOS
+# ESTILOS — tema claro, tipografia de leitura
 # ─────────────────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
@@ -21,14 +21,25 @@ st.markdown("""
 
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
-    background-color: #0D1117;
-    color: #E6E1D6;
+    background-color: #F7F6F2;
+    color: #1A1A1A;
+}
+
+/* Fundo das áreas principais */
+[data-testid="stAppViewContainer"] {
+    background-color: #F7F6F2;
+}
+[data-testid="stMain"] {
+    background-color: #F7F6F2;
+}
+.main .block-container {
+    background-color: #F7F6F2;
 }
 
 /* Sidebar */
 [data-testid="stSidebar"] {
-    background: #161B22;
-    border-right: 1px solid rgba(255,255,255,0.06);
+    background: #EEECEA;
+    border-right: 1px solid #DDDBD6;
 }
 [data-testid="stSidebar"] .stButton > button {
     width: 100%;
@@ -44,25 +55,25 @@ html, body, [class*="css"] {
     transition: all 0.15s;
 }
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: rgba(212,175,55,0.10);
-    color: #D4AF37;
+    background: rgba(180,140,20,0.10);
+    color: #8B6914;
 }
 
 /* Títulos */
-h1 { font-family: 'Playfair Display', serif !important; }
-h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !important; }
+h1 { font-family: 'Playfair Display', serif !important; color: #111 !important; }
+h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !important; color: #111 !important; }
 
 /* Cards base */
 .dossie-card {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.07);
+    background: #FFFFFF;
+    border: 1px solid #E5E2DC;
     border-radius: 12px;
     padding: 20px 24px;
     margin-bottom: 14px;
 }
 .dossie-card-gold {
-    background: rgba(212,175,55,0.05);
-    border: 1px solid rgba(212,175,55,0.20);
+    background: #FFFBEF;
+    border: 1px solid #D4AF37;
     border-radius: 12px;
     padding: 20px 24px;
     margin-bottom: 14px;
@@ -74,7 +85,7 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
     font-weight: 700;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    color: #D4AF37;
+    color: #8B6914;
     margin-bottom: 10px;
 }
 
@@ -91,7 +102,7 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
 .battle-row-label {
     font-size: 0.72rem;
     font-weight: 600;
-    color: #6B7280;
+    color: #9CA3AF;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin-bottom: 4px;
@@ -99,7 +110,7 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
 .battle-row-value {
     font-size: 0.92rem;
     font-weight: 500;
-    color: #E6E1D6;
+    color: #1A1A1A;
     line-height: 1.5;
     margin-bottom: 14px;
 }
@@ -112,17 +123,17 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
     letter-spacing: 0.5px;
     text-transform: uppercase;
 }
-.badge-green  { background: rgba(34,197,94,0.15);  color: #22C55E; }
-.badge-yellow { background: rgba(212,175,55,0.15); color: #D4AF37; }
-.badge-red    { background: rgba(239,68,68,0.15);  color: #EF4444; }
-.badge-blue   { background: rgba(99,179,237,0.15); color: #63B3ED; }
+.badge-green  { background: rgba(34,197,94,0.12);  color: #166534; }
+.badge-yellow { background: rgba(180,140,20,0.12); color: #8B6914; }
+.badge-red    { background: rgba(239,68,68,0.10);  color: #991B1B; }
+.badge-blue   { background: rgba(37,99,235,0.10);  color: #1D4ED8; }
 
 /* Ticker tag */
 .ticker-tag {
     display: inline-block;
-    background: rgba(212,175,55,0.12);
-    border: 1px solid rgba(212,175,55,0.30);
-    color: #D4AF37;
+    background: #FFFBEF;
+    border: 1px solid #D4AF37;
+    color: #8B6914;
     font-size: 0.75rem;
     font-weight: 700;
     padding: 3px 10px;
@@ -135,39 +146,39 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
 /* Divider */
 .thin-divider {
     border: none;
-    border-top: 1px solid rgba(255,255,255,0.06);
+    border-top: 1px solid #E5E2DC;
     margin: 20px 0;
 }
 
 /* Risco / vantagem pills */
 .pill-vantagem {
-    background: rgba(34,197,94,0.08);
+    background: #F0FDF4;
     border-left: 3px solid #22C55E;
     border-radius: 0 8px 8px 0;
     padding: 10px 14px;
     margin-bottom: 8px;
     font-size: 0.875rem;
-    color: #D1FAE5;
+    color: #166534;
     line-height: 1.5;
 }
 .pill-risco {
-    background: rgba(239,68,68,0.08);
+    background: #FEF2F2;
     border-left: 3px solid #EF4444;
     border-radius: 0 8px 8px 0;
     padding: 10px 14px;
     margin-bottom: 8px;
     font-size: 0.875rem;
-    color: #FEE2E2;
+    color: #991B1B;
     line-height: 1.5;
 }
 .pill-neutro {
-    background: rgba(212,175,55,0.08);
+    background: #FFFBEF;
     border-left: 3px solid #D4AF37;
     border-radius: 0 8px 8px 0;
     padding: 10px 14px;
     margin-bottom: 8px;
     font-size: 0.875rem;
-    color: #FEF3C7;
+    color: #8B6914;
     line-height: 1.5;
 }
 
@@ -175,17 +186,20 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
 [data-testid="stTabs"] button {
     font-size: 0.82rem !important;
     font-weight: 600 !important;
-    color: #6B7280 !important;
+    color: #9CA3AF !important;
 }
 [data-testid="stTabs"] button[aria-selected="true"] {
-    color: #D4AF37 !important;
+    color: #8B6914 !important;
     border-bottom-color: #D4AF37 !important;
 }
 
+/* Selectbox */
+[data-testid="stSelectbox"] { color: #1A1A1A; }
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #0D1117; }
-::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #F7F6F2; }
+::-webkit-scrollbar-thumb { background: #DDDBD6; border-radius: 3px; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -387,16 +401,16 @@ with st.sidebar:
     st.markdown("""
     <div style='padding: 24px 16px 8px 16px;'>
         <div style='font-family: Playfair Display, serif; font-size: 1.3rem; font-weight: 800;
-                    color: #E6E1D6; line-height: 1.2; margin-bottom: 4px;'>
+                    color: #1A1A1A; line-height: 1.2; margin-bottom: 4px;'>
             Dossiê de Setores
         </div>
-        <div style='font-size: 0.72rem; color: #6B7280; letter-spacing: 0.5px;'>
+        <div style='font-size: 0.72rem; color: #9CA3AF; letter-spacing: 0.5px;'>
             Estudo fundamentalista comparado
         </div>
     </div>
     <hr style='border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 12px 0;'>
     <div style='font-size: 0.65rem; font-weight: 700; letter-spacing: 1px;
-                text-transform: uppercase; color: #4B5563; padding: 0 16px 8px 16px;'>
+                text-transform: uppercase; color: #9CA3AF; padding: 0 16px 8px 16px;'>
         Setores
     </div>
     """, unsafe_allow_html=True)
@@ -414,7 +428,7 @@ with st.sidebar:
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
-    <div style='padding: 0 16px; font-size: 0.68rem; color: #374151; line-height: 1.6;'>
+    <div style='padding: 0 16px; font-size: 0.68rem; color: #9CA3AF; line-height: 1.6;'>
         Nenhuma empresa é igual à outra.<br>
         Aqui você estuda o negócio, não o preço.
     </div>
@@ -431,13 +445,13 @@ dados_setor = SETORES[setor]
 st.markdown(f"""
 <div style='padding: 32px 0 20px 0; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 28px;'>
     <div style='font-size: 0.70rem; font-weight: 700; letter-spacing: 1.5px;
-                text-transform: uppercase; color: #D4AF37; margin-bottom: 8px;'>
+                text-transform: uppercase; color: #8B6914; margin-bottom: 8px;'>
         Dossiê · {setor}
     </div>
-    <h1 style='font-size: 2.0rem; color: #E6E1D6; margin: 0 0 10px 0; line-height: 1.2;'>
+    <h1 style='font-size: 2.0rem; color: #1A1A1A; margin: 0 0 10px 0; line-height: 1.2;'>
         {setor}
     </h1>
-    <div style='font-size: 0.95rem; color: #9CA3AF; max-width: 680px; line-height: 1.6;'>
+    <div style='font-size: 0.95rem; color: #4B5563; max-width: 680px; line-height: 1.6;'>
         {dados_setor.get("tagline", "")}
     </div>
     <div style='margin-top: 14px;'>
@@ -457,7 +471,7 @@ with tab1:
     st.markdown(f"""
     <div class='section-label'>O que você precisa entender antes de qualquer número</div>
     <div class='dossie-card-gold'>
-        <div style='font-size: 1.0rem; color: #E6E1D6; line-height: 1.7;'>
+        <div style='font-size: 1.0rem; color: #1A1A1A; line-height: 1.7;'>
             {logica.get("texto", "")}
         </div>
     </div>
@@ -470,7 +484,7 @@ with tab1:
     for driver, descricao in logica.get("drivers", []):
         st.markdown(f"""
         <div class='dossie-card' style='padding: 16px 20px;'>
-            <div style='font-size: 0.80rem; font-weight: 700; color: #D4AF37;
+            <div style='font-size: 0.80rem; font-weight: 700; color: #8B6914;
                         margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;'>
                 {driver}
             </div>
@@ -500,7 +514,7 @@ with tab2:
             col.markdown(f"""
             <div class='battle-header' style='border-color: {emp["cor"]}; color: {emp["cor"]};'>
                 {tk}<br>
-                <span style='font-size: 0.62rem; font-weight: 500; color: #6B7280; letter-spacing: 0;
+                <span style='font-size: 0.62rem; font-weight: 500; color: #9CA3AF; letter-spacing: 0;
                             text-transform: none;'>
                     {emp["nome"]}
                 </span>
@@ -521,14 +535,14 @@ with tab2:
                     col.markdown(f"""
                     <div class='battle-row-value'>
                         <span class='badge {badge_class}'>{val[0]}</span><br>
-                        <span style='font-size: 0.80rem; color: #6B7280;'>{val[1]}</span>
+                        <span style='font-size: 0.80rem; color: #9CA3AF;'>{val[1]}</span>
                     </div>
                     """, unsafe_allow_html=True)
                 elif isinstance(val, tuple) and len(val) == 2:
                     col.markdown(f"""
                     <div class='battle-row-value'>
                         <strong style='font-size: 0.88rem;'>{val[0]}</strong><br>
-                        <span style='font-size: 0.80rem; color: #6B7280;'>{val[1]}</span>
+                        <span style='font-size: 0.80rem; color: #9CA3AF;'>{val[1]}</span>
                     </div>
                     """, unsafe_allow_html=True)
                 else:
@@ -553,17 +567,17 @@ with tab3:
 
         # Cabeçalho do perfil
         st.markdown(f"""
-        <div style='margin: 16px 0 24px 0; padding: 24px; background: rgba(255,255,255,0.02);
-                    border: 1px solid rgba(255,255,255,0.06); border-radius: 12px;'>
-            <div style='font-size: 0.65rem; font-weight: 700; color: #6B7280;
+        <div style='margin: 16px 0 24px 0; padding: 24px; background: #FFFFFF;
+                    border: 1px solid #E5E2DC; border-radius: 12px;'>
+            <div style='font-size: 0.65rem; font-weight: 700; color: #9CA3AF;
                         letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;'>
                 {ticker_sel} · Fundada em {p.get("fundacao","?")} · {p.get("sede","")}
             </div>
-            <div style='font-size: 1.4rem; font-weight: 800; color: #E6E1D6;
+            <div style='font-size: 1.4rem; font-weight: 800; color: #1A1A1A;
                         margin-bottom: 6px; font-family: Playfair Display, serif;'>
                 {p["nome"]}
             </div>
-            <div style='font-size: 0.90rem; color: #D4AF37; font-style: italic;'>
+            <div style='font-size: 0.90rem; color: #8B6914; font-style: italic;'>
                 {p.get("tagline","")}
             </div>
         </div>
@@ -574,7 +588,7 @@ with tab3:
                     unsafe_allow_html=True)
         st.markdown(f"""
         <div class='dossie-card'>
-            <div style='font-size: 0.90rem; color: #D1D5DB; line-height: 1.75;'>
+            <div style='font-size: 0.90rem; color: #374151; line-height: 1.75;'>
                 {p.get("modelo","")}
             </div>
         </div>
@@ -588,13 +602,13 @@ with tab3:
             <div style='display: flex; align-items: flex-start; gap: 16px;
                         padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);'>
                 <div style='min-width: 52px; text-align: right; font-size: 1.1rem;
-                            font-weight: 800; color: #D4AF37; padding-top: 1px;'>
+                            font-weight: 800; color: #8B6914; padding-top: 1px;'>
                     {pct}
                 </div>
                 <div>
-                    <div style='font-size: 0.88rem; font-weight: 600; color: #E6E1D6;
+                    <div style='font-size: 0.88rem; font-weight: 600; color: #1A1A1A;
                                 margin-bottom: 2px;'>{segmento}</div>
-                    <div style='font-size: 0.80rem; color: #6B7280;'>{detalhe}</div>
+                    <div style='font-size: 0.80rem; color: #9CA3AF;'>{detalhe}</div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
