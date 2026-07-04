@@ -1171,9 +1171,9 @@ SETORES = {
         },
     },
     "⚡ Utilities Elétricas": {
-        "tickers": ["TAEE11", "ISAE4", "EGIE3", "EQTL3", "CPFE3", "AXIA3"],
-        "tickers_sub": ["CMIG4", "CPLE3"],
-        "label_sub": "Estatais integradas",
+        "tickers": ["TAEE11", "ISAE4", "ALUP11", "EGIE3", "AXIA3", "CPFE3", "EQTL3", "CPLE3"],
+        "tickers_sub": ["CMIG4"],
+        "label_sub": "Estatal integrada",
         "tagline": "Transmissão, distribuição e geração são três negócios com riscos, receitas e métricas completamente diferentes. Colocar todas no mesmo balde é o erro mais comum do investidor de renda.",
         "logica": {
             "titulo": "A lógica do setor elétrico — três negócios dentro de um rótulo",
@@ -1227,8 +1227,9 @@ SETORES = {
                 "Risco principal",
             ],
             "grupos": [
-                {"label": "Transmissoras puras", "tickers": ["TAEE11", "ISAE4"]},
-                {"label": "Geradora + integradas privadas", "tickers": ["EGIE3", "AXIA3", "CPFE3", "EQTL3"]},
+                {"label": "Transmissoras", "tickers": ["TAEE11", "ISAE4", "ALUP11"]},
+                {"label": "Integradas privadas + geração", "tickers": ["EGIE3", "AXIA3", "CPFE3", "EQTL3", "CPLE3"]},
+                {"label": "Estatal integrada", "tickers": ["CMIG4"]},
             ],
             "empresas": {
                 "TAEE11": {
@@ -1302,6 +1303,18 @@ SETORES = {
                     "Sensibilidade à Selic": ("Alta negativa", "empresa growth com duration longa; Selic alta comprime valuation do crescimento futuro", "badge-red"),
                     "Perfil de dividendo": ("Payout ~25%", "DY 2-4%; reinveste quase tudo para crescer — não é banco de renda"),
                     "Risco principal": ("Alavancagem em fase de expansão (3,5x) + integração de Sabesp (15%) + execução em saneamento ainda não provada", ""),
+                },
+                "ALUP11": {
+                    "nome": "Alupar",
+                    "cor": "#34D399",
+                    "Segmento principal": ("Transmissão + geração + América Latina", "9.576 km de linhas; Brasil, Peru, Colômbia, Chile"),
+                    "Como ganha dinheiro": ("RAP (transmissão ~75%) + geração (eólica, hídrica, PCH) + comercialização", "TIR real implícita ~8,1%"),
+                    "Indexação da receita": ("IPCA + IGPM (mix) + USD (17% das receitas pós-expansão Peru)", "diversificação geográfica e cambial é o diferencial"),
+                    "Risco hidrológico/climático": ("Moderado", "tem geração hídrica e eólica, mas transmissão é ~75% do EBITDA", "badge-yellow"),
+                    "Risco regulatório": ("Baixo/Moderado", "portfólio de concessões novas; América Latina adiciona risco regulatório externo", "badge-yellow"),
+                    "Sensibilidade à Selic": ("Alta negativa", "duration longa; valuation comprimido em juro alto", "badge-red"),
+                    "Perfil de dividendo": ("Payout crescente", "DY ~3% hoje; ciclo de capex pesado (R$9 bi); dividendo cresce com entradas em operação"),
+                    "Risco principal": ("Alavancagem ~4x em pico de capex + risco regulatório em Peru/Colômbia/Chile + curtailment na geração", ""),
                 },
                 "CMIG4": {
                     "nome": "Cemig",
@@ -1594,6 +1607,53 @@ SETORES = {
                     "É o modelo mais difícil de imitar no setor."
                 ),
             },
+            "ALUP11": {
+                "nome": "Alupar Investimento",
+                "fundacao": "2000 (holding formalizada em 2007)",
+                "sede": "São Paulo, SP",
+                "tagline": "A transmissora com ambição latino-americana. Controle 100% nacional, expansão no Peru e Colômbia, e a única com concessão vitalícia no exterior.",
+                "modelo": (
+                    "A Alupar é uma holding privada de controle nacional que opera transmissão e geração "
+                    "no Brasil e na América Latina. No Brasil, detém 9.576 km de linhas de transmissão "
+                    "em 42 sistemas — a terceira maior transmissora privada do país em RAP. "
+                    "No exterior, opera no Peru (6 projetos de transmissão + 1 PCH), na Colômbia "
+                    "(PCH Morro Azul + 2 transmissoras, incluindo concessão VITALÍCIA) e no Chile. "
+                    "O modelo é transmissão como core (~75% do EBITDA, RAP previsível) "
+                    "complementado por geração (4 UHEs, 4 PCHs, 7 eólicos, 1 solar — 798 MW). "
+                    "A geração serve para complementar, não como motor principal. "
+                    "O grande diferencial: com 17% das receitas em USD após os projetos do Peru, "
+                    "a Alupar reduz a exposição à regulação brasileira. "
+                    "Está em ciclo pesado de capex (R$9 bi no ciclo atual), o que comprime o DY "
+                    "hoje mas cria o pipeline de crescimento para os próximos 5-7 anos."
+                ),
+                "receita": [
+                    ("RAP de transmissão Brasil", "~65%", "42 sistemas; IPCA e IGPM; projetos entrando até 2029"),
+                    ("Geração renovável Brasil", "~20%", "hídrica, eólica, PCH, solar — 798 MW; PPAs de longo prazo"),
+                    ("Transmissão e geração América Latina", "~15%", "Peru, Colômbia, Chile — crescente; parte em USD"),
+                ],
+                "vantagens": [
+                    "Controle 100% nacional: fundadores operam e são donos — alinhamento total de interesses",
+                    "Concessão vitalícia na Colômbia: ativo único no setor — RAP sem prazo de vencimento",
+                    "Expansão em USD (Peru): hedge natural contra depreciação do real",
+                    "Pipeline de entrada operacional: projetos entram até 2029 gerando RAP incremental",
+                    "TIR real implícita de ~8,1%: superior à Taesa (~4,7%) e próxima da ISA (~7,7%)",
+                ],
+                "riscos": [
+                    "Alavancagem em pico de ~4x: capex de R$9 bi nos próximos anos pressiona o balanço",
+                    "Risco regulatório externo: Peru, Colômbia e Chile têm marcos menos previsíveis que o Brasil",
+                    "DY atual baixo (~3%): ciclo de capex comprime dividendo; investidor de renda pode se frustrar",
+                    "Curtailment na geração eólica: afeta receita do segmento de geração",
+                    "Execução simultânea: 12 projetos em andamento, 9 fora do Brasil — gestão complexa",
+                ],
+                "barreira": (
+                    "Concessões de 30 anos — e na Colômbia, vitalícia. "
+                    "A capacidade de executar transmissão em países com regulação distinta é expertise "
+                    "que poucos têm e que anos de presença no exterior constroem. "
+                    "A escala de 9.576 km de linhas abre portas em leilões onde operadores menores "
+                    "não conseguem participar. E o controle familiar alinhado "
+                    "garante que o retorno ao acionista é o objetivo, não objetivos políticos."
+                ),
+            },
             "CMIG4": {
                 "nome": "Cemig",
                 "fundacao": "1952 (por Juscelino Kubitschek)",
@@ -1809,14 +1869,18 @@ with tab2:
                 unsafe_allow_html=True,
             )
         col_label, *cols_emp = st.columns([1.1] + [1] * len(tickers_grupo))
-        col_label.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)
+        col_label.markdown("<div style='height: 58px;'></div>", unsafe_allow_html=True)
         for col, tk in zip(cols_emp, tickers_grupo):
             emp = empresas[tk]
+            cor = emp['cor']
             col.markdown(
-                f"<div class='battle-header' style='border-color:{emp['cor']};color:{emp['cor']};'>"
-                f"{tk}<br>"
-                f"<span style='font-size:0.62rem;font-weight:500;color:#374151;"
-                f"letter-spacing:0;text-transform:none;'>{emp['nome']}</span></div>",
+                f"<div style='background:{cor};border-radius:8px;padding:10px 12px 9px 12px;"
+                f"margin-bottom:14px;'>"
+                f"<div style='font-size:0.78rem;font-weight:800;letter-spacing:0.5px;"
+                f"text-transform:uppercase;color:#fff;line-height:1.2;'>{tk}</div>"
+                f"<div style='font-size:0.62rem;font-weight:500;color:rgba(255,255,255,0.82);"
+                f"letter-spacing:0;text-transform:none;margin-top:2px;'>{emp['nome']}</div>"
+                f"</div>",
                 unsafe_allow_html=True,
             )
         for dim in dimensoes:
@@ -1885,20 +1949,76 @@ with tab3:
         )
         p = perfis[ticker_sel]
 
-        # Cabeçalho do perfil
+        # Cor da empresa (vem do comparativo se existir)
+        _emp_data = dados_setor.get("comparativo", {}).get("empresas", {}).get(ticker_sel, {})
+        _cor_empresa = _emp_data.get("cor", "#6B4F10")
+
+        # Logos por ticker (Clearbit CDN — funciona para empresas com domínio mapeado)
+        _LOGOS = {
+            # Papel & Celulose
+            "KLBN4": "https://logo.clearbit.com/klabin.com.br",
+            "SUZB3": "https://logo.clearbit.com/suzano.com.br",
+            "RANI3": "https://logo.clearbit.com/irani.com.br",
+            # Bancos
+            "ITUB4": "https://logo.clearbit.com/itau.com.br",
+            "BBAS3": "https://logo.clearbit.com/bb.com.br",
+            "BBDC3": "https://logo.clearbit.com/bradesco.com.br",
+            "BPAC11": "https://logo.clearbit.com/btgpactual.com",
+            "SANB3": "https://logo.clearbit.com/santander.com.br",
+            "ABCB4": "https://logo.clearbit.com/abcbrasil.com.br",
+            "BRSR6": "https://logo.clearbit.com/banrisul.com.br",
+            "BMGB4": "https://logo.clearbit.com/bancobmg.com.br",
+            # Seguradoras
+            "BBSE3": "https://logo.clearbit.com/bbseguros.com.br",
+            "CXSE3": "https://logo.clearbit.com/caixaseguridade.com.br",
+            "PSSA3": "https://logo.clearbit.com/portoseguro.com.br",
+            "IRBR3": "https://logo.clearbit.com/irbre.com.br",
+            # Utilities
+            "TAEE11": "https://logo.clearbit.com/taesa.com.br",
+            "ISAE4": "https://logo.clearbit.com/isaenergia.com.br",
+            "ALUP11": "https://logo.clearbit.com/alupar.com.br",
+            "EGIE3": "https://logo.clearbit.com/engie.com.br",
+            "AXIA3": "https://logo.clearbit.com/axia.com.br",
+            "CPFE3": "https://logo.clearbit.com/cpfl.com.br",
+            "EQTL3": "https://logo.clearbit.com/equatorialenergia.com.br",
+            "CMIG4": "https://logo.clearbit.com/cemig.com.br",
+            "CPLE3": "https://logo.clearbit.com/copel.com",
+        }
+        _logo_url = _LOGOS.get(ticker_sel, "")
+
+        # Header do perfil com banner colorido
+        _logo_html = (
+            f"<img src='{_logo_url}' style='width:44px;height:44px;border-radius:8px;"
+            f"object-fit:contain;background:#fff;padding:4px;margin-right:14px;"
+            f"flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,0.15);' "
+            f"onerror=\"this.style.display='none'\">"
+        ) if _logo_url else ""
+
         st.markdown(f"""
-        <div style='margin: 16px 0 24px 0; padding: 24px; background: #FFFFFF;
-                    border: 1px solid #E5E2DC; border-radius: 12px;'>
-            <div style='font-size: 0.65rem; font-weight: 700; color: #374151;
-                        letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;'>
-                {ticker_sel} · Fundada em {p.get("fundacao","?")} · {p.get("sede","")}
+        <div style='margin:16px 0 24px 0;border-radius:12px;overflow:hidden;
+                    box-shadow:0 2px 8px rgba(0,0,0,0.08);'>
+            <!-- Banner colorido com logo + ticker -->
+            <div style='background:{_cor_empresa};padding:20px 24px;
+                        display:flex;align-items:center;gap:0;'>
+                {_logo_html}
+                <div>
+                    <div style='font-size:0.65rem;font-weight:700;color:rgba(255,255,255,0.75);
+                                letter-spacing:1.2px;text-transform:uppercase;margin-bottom:3px;'>
+                        {ticker_sel} · Fundada em {p.get("fundacao","?")} · {p.get("sede","")}
+                    </div>
+                    <div style='font-size:1.45rem;font-weight:800;color:#ffffff;
+                                font-family:Playfair Display,serif;line-height:1.2;'>
+                        {p["nome"]}
+                    </div>
+                </div>
             </div>
-            <div style='font-size: 1.4rem; font-weight: 800; color: #1A1A1A;
-                        margin-bottom: 6px; font-family: Playfair Display, serif;'>
-                {p["nome"]}
-            </div>
-            <div style='font-size: 0.90rem; color: #8B6914; font-style: italic;'>
-                {p.get("tagline","")}
+            <!-- Tagline abaixo do banner -->
+            <div style='background:#FFFFFF;padding:14px 24px;border:1px solid #E5E2DC;
+                        border-top:none;border-radius:0 0 12px 12px;'>
+                <div style='font-size:0.90rem;color:{_cor_empresa};font-style:italic;
+                            font-weight:500;'>
+                    {p.get("tagline","")}
+                </div>
             </div>
         </div>
         """, unsafe_allow_html=True)
