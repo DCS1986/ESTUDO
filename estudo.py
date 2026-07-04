@@ -1745,7 +1745,283 @@ SETORES = {
     "🏗️ Incorporadoras": {"tickers": [], "em_construcao": True},
     "💧 Saneamento": {"tickers": [], "em_construcao": True},
     "⛏️ Mineração": {"tickers": [], "em_construcao": True},
-    "🛢️ Petróleo & Gás": {"tickers": [], "em_construcao": True},
+    "🛢️ Petróleo & Gás": {
+        "tickers": ["PETR4", "PRIO3"],
+        "tickers_sub": ["BRAV3"],
+        "label_sub": "Fora do RADAR — no dossiê",
+        "tagline": "A mesma commodity, três estratégias opostas: gigante integrada estatal, independente de crescimento e junior oil em consolidação. O Brent comanda os três.",
+        "logica": {
+            "titulo": "O que move o petróleo — e o que diferencia cada empresa",
+            "texto": (
+                "O setor de petróleo tem um driver que domina tudo: o preço do Brent. "
+                "Mas a forma como cada empresa é afetada é completamente diferente. "
+                "A Petrobras é uma gigante integrada estatal — o governo usa ela para política "
+                "de preços de combustíveis. A PRIO é uma independente pura — recebe o Brent "
+                "e paga custo de extração; tudo o que sobra é margem. A Brava está em consolidação "
+                "pós-fusão — comprando ativos maduros que outros venderam. "
+                "O que você precisa entender antes de qualquer número: "
+                "custo de extração, nível de dívida, grau de integração e exposição ao risco político."
+            ),
+            "drivers": [
+                ("O Brent — o driver que manda em tudo", (
+                    "O petróleo Brent é a referência global. Em torno de US$77/bbl (2026), "
+                    "está em nível que deixa a Petrobras confortável (breakeven ~US$30-35) "
+                    "mas aperta margens de produtores com custo mais alto. "
+                    "Cada US$1 de queda no Brent reduz o EBITDA da Petrobras em ~US$500 mi/ano. "
+                    "Para a PRIO, com custo de ~US$9/bbl, há muita gordura. "
+                    "Abaixo de US$50, todas sofrem. Acima de US$70, todas lucram bem."
+                )),
+                ("OPEP+ e geopolítica — quem define a oferta", (
+                    "A OPEP+ controla ~40% da oferta global e usa cortes para sustentar o preço. "
+                    "Em 2025-2026, o cartel manteve disciplina, mas o crescimento do shale americano "
+                    "e a capacidade ociosa pressionam para baixo. "
+                    "Tensões no Oriente Médio (Irã, estreito de Ormuz) são risco de alta súbita. "
+                    "O Brasil é produtor crescente e não é membro da OPEP — "
+                    "pode vender o quanto produzir sem cotas."
+                )),
+                ("Custo de extração (lifting cost) — o que separa os bons dos ruins", (
+                    "É o custo operacional de produzir cada barril. "
+                    "Petrobras pré-sal: <US$6/bbl — um dos mais baixos do mundo. "
+                    "PRIO pós-Wahoo: ~US$8-9/bbl. Shale americano: US$30-50/bbl. "
+                    "Quanto menor o lifting cost, maior a margem em qualquer cenário de Brent "
+                    "e maior a sobrevivência em crise. "
+                    "O pré-sal brasileiro é vantagem competitiva de escala global."
+                )),
+                ("Risco político — especialmente na Petrobras", (
+                    "A Petrobras é estatal e o governo usa sua política de preços de combustíveis "
+                    "como instrumento político. "
+                    "Em 2022-2024, pressão para gasolina barata comprimiu margens do refino. "
+                    "O governo define o CEO e o conselho — risco permanente de gestão não ótima. "
+                    "PRIO e Brava não têm esse risco."
+                )),
+                ("Curva de declínio e depleção dos campos", (
+                    "Todo campo de petróleo declina com o tempo. "
+                    "A empresa precisa investir continuamente em novos poços ou aquisições "
+                    "para manter ou crescer a produção. "
+                    "Petrobras compensa com novos FPSOs no pré-sal (8 até 2030). "
+                    "PRIO compra campos maduros que outros abandonaram e revitaliza. "
+                    "Brava herdou campos em estágio maduro da fusão 3R+Enauta."
+                )),
+                ("Dívida e alavancagem — especialmente nas juniors", (
+                    "Aquisições de campos são caras. "
+                    "A PRIO se alavancou para comprar Peregrino (US$3 bi). "
+                    "A Brava herdou dívida da fusão e comprou Tartaruga Verde por US$450 mi. "
+                    "Em Brent alto, a dívida é gerenciável. Em Brent baixo, pode ser catastrófica. "
+                    "Sempre checar: qual é o Brent de break-even da dívida, não só da extração."
+                )),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "Perfil da empresa",
+                "Modelo de negócio",
+                "Custo de extração (lifting cost)",
+                "Exposição ao Brent",
+                "Risco político",
+                "Dívida/alavancagem",
+                "Dividendo",
+                "Catalisador principal 2026",
+                "Risco principal",
+            ],
+            "grupos": [
+                {"label": "Empresas do setor", "tickers": ["PETR4", "PRIO3", "BRAV3"]},
+            ],
+            "empresas": {
+                "PETR4": {
+                    "nome": "Petrobras",
+                    "cor": "#22C55E",
+                    "Perfil da empresa": ("Gigante integrada estatal", "maior empresa do Brasil; meta 3,4 mi boed em 2028"),
+                    "Modelo de negócio": ("E&P + refino + gás + distribuição", "integrada: extrai, refina e vende o produto final"),
+                    "Custo de extração (lifting cost)": ("<US$6/barril", "pré-sal entre os mais baratos do mundo", "badge-green"),
+                    "Exposição ao Brent": ("Alta — amortecida pelo refino", "refino ganha quando Brent cai; E&P perde — proteção natural", "badge-yellow"),
+                    "Risco político": ("Muito alto", "governo define CEO, preços de combustíveis e política de dividendos", "badge-red"),
+                    "Dívida/alavancagem": ("Baixa", "empresa superavitária; caixa sólido; dividendo mínimo garantido", "badge-green"),
+                    "Dividendo": ("DY 8-12%", "política: 45% do FCF; governo precisa do dividendo para fechar contas"),
+                    "Catalisador principal 2026": ("Novos FPSOs pré-sal (P-78, P-79, P-80, P-82, P-83)", "expansão da produção até 3,4 mi boed"),
+                    "Risco principal": ("Preço de combustíveis + interferência política no board + Brent abaixo de US$50", ""),
+                },
+                "PRIO3": {
+                    "nome": "PRIO",
+                    "cor": "#3B82F6",
+                    "Perfil da empresa": ("Maior independente do Brasil", "de 5 kboed em 2015 para +190 kboed em 2026"),
+                    "Modelo de negócio": ("E&P puro — sem refino", "compra campos maduros de grandes petroleiras, revitaliza e reduz custo"),
+                    "Custo de extração (lifting cost)": ("~US$9/bbl (1T26)", "meta <US$7 com Wahoo pleno; dos mais baixos entre independentes", "badge-green"),
+                    "Exposição ao Brent": ("Máxima", "sem refino para amortecer — cada US$1 de Brent vai direto ao EBITDA", "badge-red"),
+                    "Risco político": ("Baixo", "empresa privada — sem governo, sem política de preços, sem CEO indicado", "badge-green"),
+                    "Dívida/alavancagem": ("Moderada pós-Peregrino", "meta de 1x dívida/EBITDA até 2027 a US$60; recompra ativa", "badge-yellow"),
+                    "Dividendo": ("DY crescente a partir de 2026", "política sendo definida; yield prospectivo 10-15% a US$60 Brent"),
+                    "Catalisador principal 2026": ("Wahoo a 40 kboed + Peregrino com custo reduzido a US$7/bbl", ""),
+                    "Risco principal": ("Brent abaixo de US$50 + alavancagem em descompressão + ramp-up de Wahoo", ""),
+                },
+                "BRAV3": {
+                    "nome": "Brava Energia",
+                    "cor": "#F97316",
+                    "Perfil da empresa": ("2ª maior independente do Brasil", "fusão 3R Petroleum + Enauta (set/2024); em consolidação"),
+                    "Modelo de negócio": ("E&P com mix onshore/offshore", "Atlanta (óleo leve) + Papa-Terra + gás + campos 3R"),
+                    "Custo de extração (lifting cost)": ("Variável (~US$15-25)", "mix de campos; Atlanta mais eficiente; Papa-Terra mais caro", "badge-yellow"),
+                    "Exposição ao Brent": ("Máxima", "sem refino; desconto adicional em Papa-Terra (óleo pesado)", "badge-red"),
+                    "Risco político": ("Baixo/Moderado", "empresa privada; OPA Ecopetrol pode trazer controle por estatal colombiana", "badge-yellow"),
+                    "Dívida/alavancagem": ("Alta — em redução", "dívida da fusão + US$450 mi de Tartaruga Verde; FCF neutro em 2026", "badge-red"),
+                    "Dividendo": ("Sem dividendo relevante 2026", "foco em desalavancagem e integração; OPA a R$23 é o 'dividendo' do mercado"),
+                    "Catalisador principal 2026": ("Papa-Terra em escala + OPA Ecopetrol (prêmio 28% vs mercado)", ""),
+                    "Risco principal": ("Alavancagem elevada + integração pós-fusão + OPA Ecopetrol pendente de CADE/ANP", ""),
+                },
+            },
+        },
+        "perfis": {
+            "PETR4": {
+                "nome": "Petrobras",
+                "fundacao": "1953 (fundada por Getúlio Vargas)",
+                "sede": "Rio de Janeiro, RJ",
+                "tagline": "A empresa mais lucrativa do Brasil. O pré-sal é o ativo; a política é o risco permanente.",
+                "modelo": (
+                    "A Petrobras é uma empresa integrada de petróleo e gás — extrai no pré-sal, "
+                    "refina nas suas refinarias e vende combustível e derivados para o mercado "
+                    "brasileiro e para exportação. Com meta de 3,4 milhões de boed até 2028 e "
+                    "custo de extração abaixo de US$6/barril, é uma das operações de mais baixo custo "
+                    "do planeta. O pré-sal brasileiro — especialmente Búzios, com reservas gigantescas "
+                    "na Bacia de Santos — é o coração do negócio: óleo leve de alta qualidade, "
+                    "em águas profundas, com FPSOs que chegam a produzir 200 mil barris/dia cada. "
+                    "O plano 2026-2030 prevê US$109 bi de investimento, 62% no pré-sal, "
+                    "com 8 novos sistemas de produção até 2030, sendo 7 já contratados. "
+                    "A integração com o refino funciona como amortecedor: quando o Brent cai, "
+                    "o refino compra petróleo barato e sustenta margens. "
+                    "O custo total médio de produção (incluindo royalties e participações governamentais) "
+                    "é de US$30,4/boe no quinquênio — muito abaixo do preço de equilíbrio do mercado."
+                ),
+                "receita": [
+                    ("E&P (exploração e produção)", "~60%", "pré-sal é o motor; <US$6/bbl de lifting cost; 8 novos FPSOs até 2030"),
+                    ("Refino, Transporte e Comercialização", "~30%", "1,8 mi bpd de capacidade; expansão para 2,1 mi até 2030"),
+                    ("Gás natural e energia", "~7%", "TAG, transporte de gás, termelétricas"),
+                    ("Outros (fertilizantes, biocombustíveis)", "~3%", "biorrefino em expansão; US$1,2 bi aprovado em 2026"),
+                ],
+                "vantagens": [
+                    "Pré-sal: custo <US$6/bbl — um dos mais baixos do mundo; óleo leve de alta qualidade",
+                    "Búzios: maior reservatório offshore fora do Oriente Médio — reservas imensas, produção crescente por décadas",
+                    "Integração E&P + refino: proteção natural quando o Brent cai (refino compra barato)",
+                    "Dividendo garantido: política de 45% do FCF; governo precisa do dividendo — alinhamento forçado",
+                    "Escala operacional: única operadora de FPSOs em águas ultra-profundas no Brasil; know-how inreplicável",
+                ],
+                "riscos": [
+                    "Risco político: CEO indicado pelo governo; preços de combustíveis como instrumento político",
+                    "Refino pressionado: governo quer gasolina barata — comprime margens do segmento",
+                    "Margem Equatorial: nova fronteira exploratória com licenciamento ambiental incerto (IBAMA)",
+                    "Brent estruturalmente mais baixo: plano assume US$63/bbl em 2026; abaixo disso, capex é revisto",
+                    "Transição energética: portfólio de longo prazo concentrado em hidrocarbonetos",
+                ],
+                "barreira": (
+                    "O pré-sal é a barreira mais alta do setor de petróleo no mundo. "
+                    "Operar FPSOs em águas de 2.000-3.000 metros, perfurar poços de 6.000-7.000 metros "
+                    "passando pela camada de sal, é um desafio de engenharia que só meia dúzia de "
+                    "empresas no planeta domina — e a Petrobras é operadora de praticamente todos. "
+                    "Ninguém entra no pré-sal sem ela, e ela tem mais de 70 anos de know-how local."
+                ),
+            },
+            "PRIO3": {
+                "nome": "PRIO (PetroRio)",
+                "fundacao": "2010 (como HRT Petroleum; virou PetroRio em 2014; PRIO em 2021)",
+                "sede": "Rio de Janeiro, RJ",
+                "tagline": "A maior independente do Brasil. Compra o que a Chevron, Equinor e Petrobras descartaram — e extrai mais petróleo com menos custo.",
+                "modelo": (
+                    "A PRIO tem um modelo único e comprovado: compra campos de petróleo maduros "
+                    "que grandes petroleiras decidiram abandonar, assume a operação, corta custos "
+                    "e aumenta a recuperação dos reservatórios. "
+                    "Fez isso com Frade (da Chevron), Albacora Leste (da Petrobras), "
+                    "cluster Polvo+Tubarão Martelo (da Dommo) e, mais recentemente, "
+                    "Peregrino (da Equinor) — o maior campo da empresa, 100% adquirido em 2025. "
+                    "O resultado: de 5 mil barris/dia e custo de US$35/bbl em 2015 "
+                    "para +190 mil barris/dia e custo de US$9/bbl em 2026. "
+                    "Wahoo é o próximo capítulo: primeiro campo desenvolvido do zero pela PRIO, "
+                    "conectado ao FPSO Valente via tieback de Frade, com custo marginal de "
+                    "apenas US$1/bbl (usa infraestrutura existente) e capacidade de 40 kboed. "
+                    "Peregrino, que a Equinor operava a US$500 mi/ano de custo, "
+                    "já está sendo operado pela PRIO a US$370 mi e deve chegar a US$250 mi "
+                    "quando o gasoduto de gás for reativado em 2026 — US$250 mi de ganho anual."
+                ),
+                "receita": [
+                    ("Peregrino", "~40%", "campo pesado da Equinor; PRIO cortou custo de US$500 mi para meta US$250 mi/ano"),
+                    ("Frade + Wahoo", "~30%", "Wahoo a 40 kboed com custo marginal de US$1/bbl — maior catalisador de 2026"),
+                    ("Albacora Leste", "~15%", "campo da Petrobras revendido; PRIO aumentou produção e eficiência"),
+                    ("Polvo + Tubarão Martelo + outros", "~15%", "cluster offshore menor na Bacia de Campos"),
+                ],
+                "vantagens": [
+                    "Modelo de revitalização comprovado: compra barato, corta custo, aumenta produção — 100% de execução",
+                    "Lifting cost ~US$9/bbl (meta US$7): margem expressiva mesmo com Brent a US$50",
+                    "Zero risco político: privada, independente, sem governo determinando preços ou CEO",
+                    "Wahoo: custo marginal de US$1/bbl por usar infraestrutura do Frade — puro upside",
+                    "Peregrino: sinergias de US$250 mi/ano vs Equinor — maior captura de valor de campo único",
+                ],
+                "riscos": [
+                    "Brent é tudo: sem refino para amortecer — cada US$1 de queda vai direto no EBITDA",
+                    "Alavancagem pós-Peregrino: US$3 bi de aquisição; meta 1x dívida/EBITDA até 2027 a US$60",
+                    "Declínio natural: campos maduros declinam — precisa de perfurações contínuas (Albacora Leste+30 kboed)",
+                    "Ramp-up de Wahoo: GOR (razão gás-óleo) alto; cada poço precisa de 10 dias de estabilização",
+                    "Concentração na Bacia de Campos: todos os ativos offshore no RJ — risco operacional concentrado",
+                ],
+                "barreira": (
+                    "O know-how de revitalização de campos maduros é a barreira. "
+                    "A PRIO desenvolveu metodologias próprias para extrair mais petróleo "
+                    "de reservatórios dados como esgotados. "
+                    "Isso se combina com uma cultura de custo obsessiva — "
+                    "cortou o OpEx de Peregrino pela metade em menos de um ano. "
+                    "E a reputação junto às grandes petroleiras que querem desinvestir "
+                    "é a maior vantagem competitiva: quando a Chevron, Equinor ou Petrobras "
+                    "quer vender um campo, a PRIO está na lista curta dos compradores."
+                ),
+            },
+            "BRAV3": {
+                "nome": "Brava Energia",
+                "fundacao": "2024 (fusão 3R Petroleum + Enauta)",
+                "sede": "Rio de Janeiro, RJ",
+                "tagline": "A junior oil em consolidação. Nasceu da fusão de dois modelos distintos — ainda provando que o todo vale mais que as partes. OPA da Ecopetrol coloca o horizonte em suspenso.",
+                "modelo": (
+                    "A Brava Energia nasceu em setembro de 2024 da fusão entre a 3R Petroleum "
+                    "(campos maduros onshore e offshore) e a Enauta (campo de Atlanta). "
+                    "Atlanta é o ativo premium da empresa: óleo leve de altíssima qualidade, "
+                    "offshore no Espírito Santo, com menor desconto no Brent. "
+                    "Os campos de Papa-Terra (óleo pesado, Bacia de Campos) e de gás "
+                    "(Peroá e Manati, offshore) completam o portfólio. "
+                    "Em janeiro de 2026, comprou 50% de Tartaruga Verde e Espadarte por US$450 mi "
+                    "— campos operados pela Petrobras com 14 poços produtores e produção "
+                    "de ~55 kboed a 100%. "
+                    "Em maio de 2026, a Ecopetrol (estatal colombiana) lançou OPA "
+                    "para assumir 51% da empresa a R$23/ação (prêmio de até 28%). "
+                    "A operação aguarda aprovação do CADE e da ANP — e muda completamente "
+                    "o perfil de risco da empresa se concluída."
+                ),
+                "receita": [
+                    ("Atlanta (óleo leve offshore)", "~35%", "óleo premium; menor desconto vs Brent; principal ativo da Enauta"),
+                    ("Papa-Terra (óleo pesado offshore)", "~25%", "FPSO P-63; óleo viscoso com maior desconto no Brent"),
+                    ("Tartaruga Verde + Espadarte (novo)", "~15%", "50% adquiridos em 2026; operado pela Petrobras; 14 poços"),
+                    ("Gás natural (Peroá, Manati)", "~15%", "offshore ES/BA; escoamento via gasodutos"),
+                    ("Campos onshore 3R", "~10%", "herdados da 3R; menor prioridade estratégica"),
+                ],
+                "vantagens": [
+                    "Atlanta: óleo leve de alta qualidade — menor desconto vs Brent, maior preço realizado",
+                    "2ª maior independente em reservas: escala que abre portas em desinvestimentos de grandes petroleiras",
+                    "OPA Ecopetrol a R$23: piso de preço no curto prazo com prêmio de 28%",
+                    "Tartaruga Verde: 14 poços produtores, operado pela Petrobras — produção previsível e já funcionando",
+                    "Diversificação de portfólio: onshore + offshore + gás + óleo leve + óleo pesado",
+                ],
+                "riscos": [
+                    "Integração pós-fusão não provada: 3R e Enauta tinham culturas e sistemas operacionais distintos",
+                    "Alavancagem alta: dívida da fusão + US$450 mi de Tartaruga Verde = balanço apertado",
+                    "OPA Ecopetrol incerta: aprovação de CADE e ANP pode demorar ou não acontecer",
+                    "Papa-Terra: óleo pesado = maior desconto no Brent e campo operacionalmente mais complexo",
+                    "FCF neutro em 2026: alta produção, mas capex pesado e dívida consomem o caixa",
+                ],
+                "barreira": (
+                    "Atlanta é o principal ativo de barreira — campo de óleo leve offshore "
+                    "que a Enauta levou anos para desenvolver e que poucos independentes "
+                    "conseguiriam financiar. "
+                    "O know-how da Enauta em desenvolvimento greenfield offshore "
+                    "é raro no Brasil fora da Petrobras. "
+                    "Mas a Brava ainda está construindo sua identidade pós-fusão — "
+                    "a barreira real ainda está sendo testada na execução."
+                ),
+            },
+        },
+    },
     "🔩 Autopeças & Industrial": {"tickers": [], "em_construcao": True},
 }
 
@@ -1869,18 +2145,17 @@ with tab2:
                 unsafe_allow_html=True,
             )
         col_label, *cols_emp = st.columns([1.1] + [1] * len(tickers_grupo))
-        col_label.markdown("<div style='height: 58px;'></div>", unsafe_allow_html=True)
+        col_label.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)
         for col, tk in zip(cols_emp, tickers_grupo):
             emp = empresas[tk]
             cor = emp['cor']
             col.markdown(
-                f"<div style='background:{cor};border-radius:8px;padding:10px 12px 9px 12px;"
-                f"margin-bottom:14px;'>"
                 f"<div style='font-size:0.78rem;font-weight:800;letter-spacing:0.5px;"
-                f"text-transform:uppercase;color:#fff;line-height:1.2;'>{tk}</div>"
-                f"<div style='font-size:0.62rem;font-weight:500;color:rgba(255,255,255,0.82);"
-                f"letter-spacing:0;text-transform:none;margin-top:2px;'>{emp['nome']}</div>"
-                f"</div>",
+                f"text-transform:uppercase;padding:8px 0 6px 0;"
+                f"border-bottom:2px solid {cor};margin-bottom:14px;color:{cor};'>"
+                f"{tk}<br>"
+                f"<span style='font-size:0.62rem;font-weight:500;color:#374151;"
+                f"letter-spacing:0;text-transform:none;'>{emp['nome']}</span></div>",
                 unsafe_allow_html=True,
             )
         for dim in dimensoes:
@@ -1951,74 +2226,23 @@ with tab3:
 
         # Cor da empresa (vem do comparativo se existir)
         _emp_data = dados_setor.get("comparativo", {}).get("empresas", {}).get(ticker_sel, {})
-        _cor_empresa = _emp_data.get("cor", "#6B4F10")
+        _cor_empresa = _emp_data.get("cor", "#8B6914")
 
-        # Logos por ticker (Clearbit CDN — funciona para empresas com domínio mapeado)
-        _LOGOS = {
-            # Papel & Celulose
-            "KLBN4": "https://logo.clearbit.com/klabin.com.br",
-            "SUZB3": "https://logo.clearbit.com/suzano.com.br",
-            "RANI3": "https://logo.clearbit.com/irani.com.br",
-            # Bancos
-            "ITUB4": "https://logo.clearbit.com/itau.com.br",
-            "BBAS3": "https://logo.clearbit.com/bb.com.br",
-            "BBDC3": "https://logo.clearbit.com/bradesco.com.br",
-            "BPAC11": "https://logo.clearbit.com/btgpactual.com",
-            "SANB3": "https://logo.clearbit.com/santander.com.br",
-            "ABCB4": "https://logo.clearbit.com/abcbrasil.com.br",
-            "BRSR6": "https://logo.clearbit.com/banrisul.com.br",
-            "BMGB4": "https://logo.clearbit.com/bancobmg.com.br",
-            # Seguradoras
-            "BBSE3": "https://logo.clearbit.com/bbseguros.com.br",
-            "CXSE3": "https://logo.clearbit.com/caixaseguridade.com.br",
-            "PSSA3": "https://logo.clearbit.com/portoseguro.com.br",
-            "IRBR3": "https://logo.clearbit.com/irbre.com.br",
-            # Utilities
-            "TAEE11": "https://logo.clearbit.com/taesa.com.br",
-            "ISAE4": "https://logo.clearbit.com/isaenergia.com.br",
-            "ALUP11": "https://logo.clearbit.com/alupar.com.br",
-            "EGIE3": "https://logo.clearbit.com/engie.com.br",
-            "AXIA3": "https://logo.clearbit.com/axia.com.br",
-            "CPFE3": "https://logo.clearbit.com/cpfl.com.br",
-            "EQTL3": "https://logo.clearbit.com/equatorialenergia.com.br",
-            "CMIG4": "https://logo.clearbit.com/cemig.com.br",
-            "CPLE3": "https://logo.clearbit.com/copel.com",
-        }
-        _logo_url = _LOGOS.get(ticker_sel, "")
-
-        # Header do perfil com banner colorido
-        _logo_html = (
-            f"<img src='{_logo_url}' style='width:44px;height:44px;border-radius:8px;"
-            f"object-fit:contain;background:#fff;padding:4px;margin-right:14px;"
-            f"flex-shrink:0;box-shadow:0 1px 4px rgba(0,0,0,0.15);' "
-            f"onerror=\"this.style.display='none'\">"
-        ) if _logo_url else ""
-
+        # Cabeçalho do perfil
         st.markdown(f"""
-        <div style='margin:16px 0 24px 0;border-radius:12px;overflow:hidden;
-                    box-shadow:0 2px 8px rgba(0,0,0,0.08);'>
-            <!-- Banner colorido com logo + ticker -->
-            <div style='background:{_cor_empresa};padding:20px 24px;
-                        display:flex;align-items:center;gap:0;'>
-                {_logo_html}
-                <div>
-                    <div style='font-size:0.65rem;font-weight:700;color:rgba(255,255,255,0.75);
-                                letter-spacing:1.2px;text-transform:uppercase;margin-bottom:3px;'>
-                        {ticker_sel} · Fundada em {p.get("fundacao","?")} · {p.get("sede","")}
-                    </div>
-                    <div style='font-size:1.45rem;font-weight:800;color:#ffffff;
-                                font-family:Playfair Display,serif;line-height:1.2;'>
-                        {p["nome"]}
-                    </div>
-                </div>
+        <div style='margin: 16px 0 24px 0; padding: 24px; background: #FFFFFF;
+                    border: 1px solid #E5E2DC; border-radius: 12px;
+                    border-left: 4px solid {_cor_empresa};'>
+            <div style='font-size: 0.65rem; font-weight: 700; color: #374151;
+                        letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;'>
+                {ticker_sel} · Fundada em {p.get("fundacao","?")} · {p.get("sede","")}
             </div>
-            <!-- Tagline abaixo do banner -->
-            <div style='background:#FFFFFF;padding:14px 24px;border:1px solid #E5E2DC;
-                        border-top:none;border-radius:0 0 12px 12px;'>
-                <div style='font-size:0.90rem;color:{_cor_empresa};font-style:italic;
-                            font-weight:500;'>
-                    {p.get("tagline","")}
-                </div>
+            <div style='font-size: 1.4rem; font-weight: 800; color: #1A1A1A;
+                        margin-bottom: 6px; font-family: Playfair Display, serif;'>
+                {p["nome"]}
+            </div>
+            <div style='font-size: 0.90rem; color: {_cor_empresa}; font-style: italic;'>
+                {p.get("tagline","")}
             </div>
         </div>
         """, unsafe_allow_html=True)
