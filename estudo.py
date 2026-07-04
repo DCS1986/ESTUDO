@@ -1744,7 +1744,338 @@ SETORES = {
             },
         },
     },
-    "🏗️ Incorporadoras": {"tickers": [], "em_construcao": True},
+    "🏗️ Incorporadoras": {
+        "tickers": ["CURY3", "DIRR3", "CYRE3", "MDNE3"],
+        "tagline": "O setor onde mais importa saber o que a empresa NÃO é. MCMV e alto padrão são negócios tão diferentes que deveriam ter nomes distintos — mas o mercado os mistura no mesmo índice.",
+        "logica": {
+            "titulo": "O que move o setor — e por que MCMV e alto padrão são mundos diferentes",
+            "texto": (
+                "A primeira coisa que o investidor de incorporadora precisa internalizar: "
+                "MCMV (baixa renda) e alto padrão são dois negócios com ciclos opostos. "
+                "Quando a Selic sobe e o crédito encarece, o alto padrão desacelera — "
+                "o comprador de R$2 mi sente o juro. O MCMV continua, porque o crédito é subsidiado "
+                "pelo FGTS a taxas de 4-10,5% ao ano, independente da Selic. "
+                "Em 2025-2026, 75% dos lançamentos em São Paulo foram MCMV — enquanto o alto padrão "
+                "perdeu velocidade de vendas. Entender em qual faixa cada empresa opera é mais importante "
+                "do que qualquer múltiplo."
+            ),
+            "drivers": [
+                ("FGTS e o subsídio do MCMV — o motor que não para", (
+                    "O FGTS financia o MCMV a taxas de 4% a 10,5% ao ano, bem abaixo do mercado (9-11%). "
+                    "Em 2026, R$205 bilhões disponíveis para financiamentos — crescimento de 17% sobre 2025. "
+                    "O FGTS tem R$214 bi de reservas. Enquanto o FGTS existir, o MCMV não para. "
+                    "Isso cria uma proteção estrutural que as incorporadoras de baixa renda não têm no alto padrão."
+                )),
+                ("Selic e crédito habitacional — o inimigo do médio/alto padrão", (
+                    "Crédito fora do MCMV (SBPE) é financiado a 9-11% ao ano. "
+                    "Com Selic em 14,5% e inflação pressionando, o comprador de médio/alto padrão "
+                    "perde poder de compra ou posterga a decisão. "
+                    "Por isso a Cyrela (CYRE3) viu lançamentos de alto padrão caírem 71% no 1T26, "
+                    "enquanto a Cury (CURY3) cresceu 33% no mesmo período."
+                )),
+                ("VGV e VSO — as métricas que substituem o P/L", (
+                    "VGV (Valor Geral de Vendas): o volume total a ser lançado. "
+                    "VSO (Velocidade de Vendas sobre Oferta): % do estoque vendido no trimestre. "
+                    "VSO acima de 25% é saudável — indica demanda forte. Abaixo de 15%, acumula estoque. "
+                    "O P/L de incorporadora é distorcido pelo PoC (reconhecimento de receita ao longo da obra) — "
+                    "o que foi vendido hoje só entra no resultado em 18-36 meses. Sempre olhe VGV e VSO primeiro."
+                )),
+                ("Landbank — a matéria-prima mais escassa", (
+                    "Landbank é o banco de terrenos disponíveis para lançar. "
+                    "Quanto mais anos de visibilidade, mais estável o crescimento. "
+                    "Cury: R$24,9 bi (3+ anos). Direcional: R$51,3 bi (8+ anos). "
+                    "A forma de adquirir o terreno muda tudo: permuta (o terreno entra como pagamento "
+                    "por unidades futuras) não consome caixa. "
+                    "Direcional compra 86% via permuta — por isso tem caixa mesmo com landbank gigante."
+                )),
+                ("INCC e custo de construção — o risco que vem de fora", (
+                    "O INCC (custo da construção) subiu acima da inflação em 2025-2026 — "
+                    "escassez de mão de obra afeta 82% das empresas. "
+                    "Incorporadoras repassam o INCC no preço de venda — mas com defasagem. "
+                    "Quem tem contrato de fornecimento de longo prazo ou método construtivo industrializado "
+                    "(formas de alumínio da Direcional, alvenaria estrutural da Cury) tem mais controle de custo."
+                )),
+                ("PoC — por que o lucro não reflete o presente", (
+                    "PoC (Percentual de Obra Concluída): a receita é reconhecida conforme a obra avança. "
+                    "Uma unidade vendida hoje por R$500 mil só gera receita ao longo dos 24-36 meses de construção. "
+                    "Por isso o resultado atual reflete vendas de 1-3 anos atrás, não o presente. "
+                    "O 'resultado a apropriar' (backlog) é o dado que mostra o futuro — "
+                    "incorporadoras com alto backlog têm receita previsível por anos."
+                )),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "Posicionamento de produto",
+                "Motor de demanda",
+                "Geografia",
+                "Método construtivo",
+                "Landbank (visibilidade)",
+                "ROE (referência)",
+                "Sensibilidade à Selic",
+                "Dividendo (DY)",
+                "Risco principal",
+            ],
+            "grupos": [
+                {"label": "MCMV e baixa renda — protegidos pelo FGTS", "tickers": ["CURY3", "DIRR3"]},
+                {"label": "Multi-segmento — exposição ao ciclo de juros", "tickers": ["CYRE3", "MDNE3"]},
+            ],
+            "empresas": {
+                "CURY3": {
+                    "nome": "Cury Construtora",
+                    "cor": "#F97316",
+                    "Posicionamento de produto": ("MCMV puro", "todas as faixas do programa; nenhuma exposição ao médio/alto padrão"),
+                    "Motor de demanda": ("FGTS + subsídio", "imune à Selic — crédito a 4-10,5% independe do mercado", "badge-green"),
+                    "Geografia": ("SP + RJ metropolitano", "empreendimentos em áreas centrais com transporte — diferencial de localização"),
+                    "Método construtivo": ("Alvenaria estrutural", "blocos de concreto — flexibilidade e eficiência; custo controlado"),
+                    "Landbank (visibilidade)": ("R$24,9 bi — 3+ anos", "82.119 unidades em 88 empreendimentos"),
+                    "ROE (referência)": ("79,5% (1T26)", "maior ROE do setor; caixa líquido positivo", "badge-green"),
+                    "Sensibilidade à Selic": ("Muito baixa", "MCMV não depende de crédito de mercado", "badge-green"),
+                    "Dividendo (DY)": ("DY ~13%", "payout alto — sem necessidade de reter capital"),
+                    "Risco principal": ("Mudança nas regras do MCMV/FGTS + concentração em SP/RJ + escassez de mão de obra", ""),
+                },
+                "DIRR3": {
+                    "nome": "Direcional",
+                    "cor": "#3B82F6",
+                    "Posicionamento de produto": ("MCMV (faixas 2 e 3) + médio-baixo (Riva)", "duas marcas; Riva para renda até R$13 mil (também enquadrada no MCMV em 2026)"),
+                    "Motor de demanda": ("FGTS + SBPE médio-baixo", "MCMV protegido; Riva beneficiada pela nova faixa 4", "badge-green"),
+                    "Geografia": ("8 estados + DF", "maior construtora em área do Brasil; diversificação regional reduz risco"),
+                    "Método construtivo": ("Formas de alumínio industrializadas", "ciclo de construção mais curto e custo previsível; escala nacional"),
+                    "Landbank (visibilidade)": ("R$51,3 bi — 8+ anos", "86% via permuta — não consome caixa; o maior landbank do setor"),
+                    "ROE (referência)": ("44% (2025)", "menor que Cury mas elevado para o setor; cresce 25% ao ano", "badge-yellow"),
+                    "Sensibilidade à Selic": ("Baixa (MCMV) / Moderada (Riva)", "Riva pode ser afetada se Selic não cair; MCMV é protegido", "badge-yellow"),
+                    "Dividendo (DY)": ("DY ~17%", "payout generoso + R$804 mi pagos em 2025; alavancagem baixa"),
+                    "Risco principal": ("Concentração no MCMV + desaceleração da Riva em juros altos + INCC pressionando custos", ""),
+                },
+                "CYRE3": {
+                    "nome": "Cyrela",
+                    "cor": "#EF4444",
+                    "Posicionamento de produto": ("Alto padrão + médio + MCMV", "Cyrela (luxo) + Living (médio) + Vivaz (MCMV) — São Paulo como principal mercado"),
+                    "Motor de demanda": ("Renda alta + crédito SBPE", "comprador de luxo não financia — paga à vista; médio padrão sensível à Selic", "badge-red"),
+                    "Geografia": ("SP + 16 estados e 66 cidades", "forte no Sudeste; alto padrão concentrado em SP"),
+                    "Método construtivo": ("Múltiplos métodos + JVs", "opera via parcerias (Cury, Lavvi, Plano&Plano) — escala sem necessidade de construção própria"),
+                    "Landbank (visibilidade)": ("Não divulga consolidado", "portfólio concentrado em projetos de alto VGV unitário"),
+                    "ROE (referência)": ("11% (1T26)", "pressionado pela desaceleração do alto padrão; muito abaixo dos pares MCMV", "badge-red"),
+                    "Sensibilidade à Selic": ("Alta", "alto padrão sofre quando crédito encarece; lançamentos -48% no 1T26", "badge-red"),
+                    "Dividendo (DY)": ("DY ~12%", "payout alto historicamente; mas resultado pressionado reduz base"),
+                    "Risco principal": ("Desaceleração do alto padrão em SP + ROE baixo vs pares + concorrência de luxo importado", ""),
+                },
+                "MDNE3": {
+                    "nome": "Moura Dubeux",
+                    "cor": "#8B5CF6",
+                    "Posicionamento de produto": ("Alto padrão + médio + MCMV (Nordeste)", "Moura Dubeux (luxo) + Mood (médio) + Ún1ca (MCMV) — holding MDNE fundada em 2026"),
+                    "Motor de demanda": ("Renda alta nordestina + crescimento regional", "Nordeste tem demanda reprimida maior que SP; menos concorrência no luxo", "badge-green"),
+                    "Geografia": ("7 estados do Nordeste", "liderança absoluta no mercado imobiliário do Nordeste — barreiras regionais elevadas"),
+                    "Método construtivo": ("Verticalizado + modelo de condomínio", "construtora verticalizada; modelo único de 'condomínio' onde clientes compram terreno coletivamente"),
+                    "Landbank (visibilidade)": ("R$5,5 bi VGV guidance 2026", "landbank crescendo com Ún1ca (MCMV) para diversificar risco"),
+                    "ROE (referência)": ("ROAE 27% (1T26)", "forte para o padrão do segmento; P/L de 5,79x", "badge-yellow"),
+                    "Sensibilidade à Selic": ("Moderada", "alto padrão sensível, mas Nordeste tem menos especulação que SP; nova marca MCMV protege", "badge-yellow"),
+                    "Dividendo (DY)": ("DY ~17%", "alta distribuição; pagou R$351 mi em 2025"),
+                    "Risco principal": ("Concentração geográfica no Nordeste + integração das 3 marcas ainda recente + Ún1ca (MCMV) em fase inicial", ""),
+                },
+            },
+        },
+        "perfis": {
+            "CURY3": {
+                "nome": "Cury Construtora e Incorporadora",
+                "fundacao": "1963 (por Elias Cury em São Paulo)",
+                "sede": "São Paulo, SP",
+                "tagline": "A incorporadora de MCMV com o maior ROE do Brasil. Em 63 anos, nunca vendeu um imóvel fora do programa habitacional — e é exatamente isso que a torna tão rentável.",
+                "modelo": (
+                    "A Cury é uma das mais puras histórias de foco do mercado imobiliário brasileiro. "
+                    "Em 63 anos de história, atua quase exclusivamente no MCMV — "
+                    "em São Paulo e Rio de Janeiro metropolitano, nas faixas mais altas do programa. "
+                    "O modelo tem três vantagens estruturais que se reforçam mutuamente. "
+                    "Primeiro, o crédito: FGTS a 4-10,5% ao ano não muda com a Selic — "
+                    "quando o mercado de médio padrão desacelera, a Cury continua vendendo. "
+                    "Segundo, a localização: empreendimentos em áreas centrais próximas a metrô e "
+                    "serviços, diferente de concorrentes que vão para a periferia mais barata. "
+                    "Terceiro, o método construtivo: alvenaria estrutural (blocos de concreto) "
+                    "permite flexibilidade de planta, custo controlado e velocidade de entrega. "
+                    "O resultado: ROE de 79,5% no 1T26 — o mais alto do setor — mesmo com caixa líquido "
+                    "positivo, o que demonstra que a geração de caixa é real, não alavancada. "
+                    "Entre 2020 e 2025, multiplicou receita em 5x, VGV em 5,5x e lucro em 5,7x."
+                ),
+                "receita": [
+                    ("MCMV faixas 2, 3 e 4 — São Paulo", "~65%", "principal mercado; áreas centrais com transporte; ticket médio crescente"),
+                    ("MCMV faixas 2, 3 e 4 — Rio de Janeiro", "~35%", "segundo mercado; expansão acelerada nos últimos 3 anos"),
+                ],
+                "vantagens": [
+                    "ROE de 79,5% (1T26) — o mais alto do setor, mesmo sendo caixa líquido positivo",
+                    "MCMV imune à Selic: crédito a 4-10,5% via FGTS não muda com a taxa de mercado",
+                    "Localização diferenciada: empreendimentos próximos ao metrô em SP/RJ — demanda captiva",
+                    "Landbank de R$24,9 bi com 3+ anos de visibilidade — crescimento previsível",
+                    "Velocidade de vendas (VSO) de 46% no 1T26 — a mais alta do setor",
+                ],
+                "riscos": [
+                    "Zero diversificação: qualquer mudança nas regras do MCMV ou FGTS impacta 100% da receita",
+                    "Concentração em SP e RJ: dois mercados, sem diversificação geográfica",
+                    "Escassez de mão de obra: causou atrasos em obras em 2025; produtividade em recuperação em 2026",
+                    "Sucessão executiva: modelo de Co-CEO anunciado em 2026 — transição de gestão é risco de curto prazo",
+                    "Valuation esticado: P/L de 7-8x para uma empresa de MCMV é acima da média histórica do setor",
+                ],
+                "barreira": (
+                    "63 anos construindo para o mesmo público no mesmo mercado. "
+                    "A Cury conhece cada zona de uso de São Paulo e Rio de Janeiro como ninguém. "
+                    "Sabe onde tem metro previsto, onde vai ter densificação, onde o terreno ainda está barato. "
+                    "Esse banco de dados de décadas de relacionamento com prefeituras, "
+                    "vendedores de terreno e a Caixa Econômica Federal é inreplicável. "
+                    "Qualquer entrante levaria anos para construir a rede de relacionamentos "
+                    "que permite a Cury comprar terreno antes do concorrente saber que está à venda."
+                ),
+            },
+            "DIRR3": {
+                "nome": "Direcional Engenharia",
+                "fundacao": "1981 (por Ricardo Valadares Gontijo em Belo Horizonte)",
+                "sede": "Belo Horizonte, MG",
+                "tagline": "A maior construtora do Brasil em área. Dois segmentos, dois clientes, oito estados — e um modelo de permuta que deixa o caixa livre enquanto o landbank cresce.",
+                "modelo": (
+                    "A Direcional tem um modelo operacional de eficiência industrial. "
+                    "Opera em dois segmentos: a marca Direcional (MCMV faixas 2 e 3 — baixa renda) "
+                    "e a marca Riva (médio-baixo padrão, apartamentos até R$500 mil — "
+                    "que passou a ser enquadrada no MCMV faixa 4 em 2026). "
+                    "Presente em 8 estados e no DF, é a maior construtora em área do Brasil. "
+                    "O que diferencia a Direcional dos concorrentes é a combinação de três fatores. "
+                    "Primeiro, o método construtivo industrializado com formas de alumínio — "
+                    "encurta o ciclo de obra, reduz desperdício e viabiliza escala nacional. "
+                    "Segundo, o modelo de permuta: 86% do landbank é adquirido via permuta — "
+                    "o terreno entra como pagamento de unidades futuras, sem desembolso de caixa. "
+                    "Terceiro, o crédito associativo: no MCMV, o risco de inadimplência transfere "
+                    "para o banco financiador na assinatura do contrato — a Direcional recebe "
+                    "sem risco de o comprador não pagar. "
+                    "No 1T26: receita de R$1,2 bi (+30% a/a), lucro de R$200 mi (+27%), "
+                    "margem bruta ajustada de 42,9% — a maior do setor."
+                ),
+                "receita": [
+                    ("Direcional (MCMV faixas 2 e 3)", "~55%", "8 estados e DF; método industrializado; alta escala"),
+                    ("Riva (médio-baixo, até R$500 mi)", "~45%", "enquadrada no MCMV faixa 4 em 2026; VGV +20% no 1T26"),
+                ],
+                "vantagens": [
+                    "Landbank de R$51,3 bi com 8+ anos de visibilidade — o maior do setor",
+                    "86% do landbank via permuta: o maior banco de terrenos sem desembolso de caixa",
+                    "Formas de alumínio: método industrializado que reduz prazo de entrega e custo",
+                    "Riva na faixa 4 do MCMV: a subsidiária de médio padrão passou a ter acesso ao crédito subsidiado",
+                    "Maior construtora em área do Brasil — escala que gera poder de negociação com fornecedores",
+                ],
+                "riscos": [
+                    "Concentração no MCMV: dependência do FGTS e do orçamento público habitacional",
+                    "Riva sensível à Selic: crédito SBPE mais caro afeta clientes de médio padrão fora do MCMV",
+                    "INCC pressionando: custo de construção acima da inflação desde 2025",
+                    "Dois segmentos, dois riscos: gestão de marcas com públicos diferentes exige execução cuidadosa",
+                    "Alavancagem subindo: geração de caixa sólida mas pagamento de R$804 mi em dividendos em 2025 elevou endividamento",
+                ],
+                "barreira": (
+                    "40 anos de MCMV e o maior landbank do setor formam a barreira. "
+                    "Nenhum novo entrante consegue replicar R$51 bi de terrenos já aprovados e identificados "
+                    "em 8 estados sem anos de trabalho. "
+                    "As formas de alumínio (método construtivo industrializado) vieram de décadas "
+                    "de aprendizado operacional — não se compra só o equipamento, "
+                    "compra-se o know-how de como usá-lo com escala. "
+                    "E o relacionamento de 40 anos com prefeituras do interior do Brasil "
+                    "para aprovação de empreendimentos é impossível de acelerar."
+                ),
+            },
+            "CYRE3": {
+                "nome": "Cyrela Brazil Realty",
+                "fundacao": "1962 (por Elie Horn em São Paulo)",
+                "sede": "São Paulo, SP",
+                "tagline": "A maior incorporadora de alto padrão de São Paulo. Três marcas, três segmentos, uma cidade que concentra 60% do mercado de luxo do Brasil.",
+                "modelo": (
+                    "A Cyrela é a empresa mais complexa do setor listado. "
+                    "Opera com três marcas próprias (Cyrela para alto padrão, Living para médio, "
+                    "Vivaz para MCMV) e tem participação em cinco JVs listadas na B3 "
+                    "(Lavvi, Plano&Plano, Cury, entre outras). "
+                    "O core é o alto padrão em São Paulo — onde projetos de R$2+ bi de VGV "
+                    "como o Epic by Pininfarina (210 metros, maior residencial de SP) "
+                    "definem a marca. A estratégia funciona em ciclos de juros baixos: "
+                    "o comprador de luxo financia parte do imóvel, e com crédito barato "
+                    "aumenta o poder de compra. Em juros altos, o efeito inverte. "
+                    "Em 2026, os lançamentos de alto padrão caíram 71% — o mercado esperou. "
+                    "A Vivaz (MCMV) compensa parcialmente, mas com margem e ROE muito menores. "
+                    "As JVs listadas (especialmente Cury) criam valor que não aparece no P/L da Cyrela."
+                ),
+                "receita": [
+                    ("Alto padrão — marca Cyrela", "~51%", "São Paulo; projetos icônicos de R$500 mil a R$5 mi por unidade"),
+                    ("Médio padrão — marca Living", "~23%", "classe média SP e outras praças; mais sensível à Selic"),
+                    ("MCMV — marca Vivaz", "~26%", "parceria com Caixa; crescendo para compensar o alto padrão"),
+                ],
+                "vantagens": [
+                    "Marca premium de 60 anos: 'Cyrela' é sinônimo de qualidade na cabeça do comprador de alto padrão em SP",
+                    "Projetos icônicos: Epic by Pininfarina (VGV R$2 bi) — não é construção, é obra de arte vendável",
+                    "JVs listadas (Cury, Lavvi): participação em empresas de alto crescimento que criam valor não precificado",
+                    "Diversificação de segmento: quando o alto padrão desacelera, Vivaz sustenta a operação",
+                    "Geração de caixa sólida: mesmo com ROE baixo, converte bem lucro em caixa",
+                ],
+                "riscos": [
+                    "ROE de 11% no 1T26 — muito abaixo dos pares MCMV (Cury 79%, Direcional 44%)",
+                    "Alto padrão sensível à Selic: lançamentos caíram 71% no 1T26 com juros altos",
+                    "Concorrência crescente no luxo: JHSF, Lavvi e incorporadoras internacionais disputam o mesmo público",
+                    "Vivaz com margem menor: o crescimento que compensa o alto padrão vem com ROE inferior",
+                    "Mercado concentrado em SP: 60%+ do resultado vem de uma única praça",
+                ],
+                "barreira": (
+                    "A marca Cyrela é a barreira — e é uma barreira cultural, não financeira. "
+                    "Um comprador que paga R$3 mi por um apartamento compra o endereço, "
+                    "o nome do arquiteto e o status da construtora. "
+                    "60 anos construindo em São Paulo com qualidade consistente "
+                    "criam um ativo intangível que nenhum novo entrante replica em menos de duas décadas. "
+                    "E a carteira de JVs com incorporadoras de crescimento "
+                    "(Cury, Lavvi) cria um portfólio diversificado que o mercado ainda não precifica corretamente."
+                ),
+            },
+            "MDNE3": {
+                "nome": "MDNE (Moura Dubeux Engenharia)",
+                "fundacao": "1983 (em Recife, PE — por Jorge Moura e Dubeux)",
+                "sede": "Recife, PE",
+                "tagline": "O maior grupo imobiliário do Nordeste. 42 anos, 260 empreendimentos, três marcas e um modelo de condomínio que não existe em São Paulo.",
+                "modelo": (
+                    "A Moura Dubeux tem um modelo diferente de todas as outras incorporadoras listadas. "
+                    "Além da incorporação tradicional, opera o chamado 'modelo de condomínio': "
+                    "os clientes compram cotas do terreno coletivamente, formam um condomínio, "
+                    "e a MD constrói por conta do condomínio cobrando taxa de administração mensal. "
+                    "Isso gera receita recorrente durante a obra e reduz o risco de crédito "
+                    "(o cliente paga mensalmente conforme a obra avança). "
+                    "Em 2026, reorganizou-se como holding MDNE com três marcas: "
+                    "Moura Dubeux (alto padrão e luxo + segunda residência), "
+                    "Mood (médio padrão, lançada em 2023) e "
+                    "Ún1ca (MCMV no Nordeste, em parceria com a Direcional — "
+                    "joint venture chamada Ún1ca para o segmento econômico nordestino). "
+                    "Opera em 7 estados nordestinos, com liderança de mercado absoluta na região — "
+                    "260 empreendimentos entregues em 42 anos e VGV lançado de R$5,5 bi projetados para 2026."
+                ),
+                "receita": [
+                    ("Alto padrão e luxo — marca Moura Dubeux", "~55%", "Recife, Fortaleza, Natal, João Pessoa; segunda residência na costa nordestina"),
+                    ("Médio padrão — marca Mood", "~30%", "lançada em 2023; crescendo rápido; primeira residência classe média"),
+                    ("MCMV — marca Ún1ca (JV com Direcional)", "~15%", "iniciada em 2025; em crescimento acelerado; acesso ao FGTS"),
+                ],
+                "vantagens": [
+                    "Monopólio regional: 42 anos de liderança no Nordeste — nenhum concorrente nacional tem a mesma escala regional",
+                    "Modelo de condomínio: receita recorrente durante a obra + risco de crédito menor",
+                    "DY de 17%: alta distribuição de lucros; P/L de 5,79x — um dos mais baratos do setor",
+                    "Nordeste com demanda reprimida: menos saturado que SP; cliente de alto padrão regional tem menos opções",
+                    "Ún1ca (MCMV): diversificação que protege em ciclo de juro alto; JV com Direcional traz expertise",
+                ],
+                "riscos": [
+                    "Concentração no Nordeste: PIB regional mais fraco — recessão nacional impacta mais",
+                    "Três marcas recentes: Mood (2023) e Ún1ca (2025) ainda em maturação — execução simultânea é risco",
+                    "Alto padrão sensível à Selic: o core do negócio sofre quando crédito encarece",
+                    "Small cap: liquidez menor (R$8 mi/dia) — spread bid/ask maior, menos cobertura de analistas",
+                    "Dependência familiar: empresa fundada pela família Dubeux — risco de governança em eventual transição",
+                ],
+                "barreira": (
+                    "42 anos de presença dominante no Nordeste. "
+                    "O comprador de alto padrão em Recife não compra da Cyrela — compra da Moura Dubeux. "
+                    "Essa confiança de marca regional, construída empreendimento a empreendimento "
+                    "em uma região onde poucos nacionais apostaram, é inreplicável no curto prazo. "
+                    "O modelo de condomínio é outro diferencial que os concorrentes não dominam — "
+                    "o cliente nordestino está habituado a esse modelo e o prefere. "
+                    "E o banco de terrenos de décadas na costa nordestina, "
+                    "em regiões que valorizaram com o turismo interno pós-pandemia, "
+                    "é uma posição que nenhum novo entrante vai encontrar disponível."
+                ),
+            },
+        },
+    },
     "💧 Saneamento": {"tickers": [], "em_construcao": True},
     "⛏️ Mineração": {"tickers": [], "em_construcao": True},
     "🛢️ Petróleo & Gás": {
