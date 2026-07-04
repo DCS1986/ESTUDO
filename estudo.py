@@ -384,7 +384,9 @@ SETORES = {
     },
     # Placeholder — próximos setores aqui
     "🏦 Bancos": {
-        "tickers": ["ITUB4", "BBAS3", "BBDC3", "BPAC11", "SANB3", "ABCB4", "BRSR6", "BMGB4"],
+        "tickers": ["ITUB4", "BBAS3", "BBDC3", "BPAC11", "SANB3"],
+        "tickers_sub": ["ABCB4", "BRSR6", "BMGB4"],
+        "label_sub": "Bancos regionais e especializados",
         "tagline": "Mesma licença bancária, oito modelos de negócio completamente distintos. Quem entende a diferença lê o balanço em 10 minutos.",
         "logica": {
             "titulo": "O que move o setor bancário",
@@ -427,6 +429,10 @@ SETORES = {
                 "ROE atual (ref.)",
                 "Risco principal",
                 "Perfil do investidor",
+            ],
+            "grupos": [
+                {"label": "Grandes bancos", "tickers": ["ITUB4", "BBAS3", "BBDC3", "BPAC11", "SANB3"]},
+                {"label": "Bancos regionais e especializados", "tickers": ["ABCB4", "BRSR6", "BMGB4"]},
             ],
             "empresas": {
                 "ITUB4": {
@@ -1235,6 +1241,7 @@ st.markdown(f"""
     </div>
     <div style='margin-top: 14px;'>
         {"".join(f"<span class='ticker-tag'>{t}</span>" for t in dados_setor.get("tickers", []))}
+        {("<br><span style='font-size:0.65rem;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.8px;margin-right:6px;'>" + dados_setor.get("label_sub","") + ":</span>" + "".join(f"<span class='ticker-tag' style='opacity:0.65;'>{t}</span>" for t in dados_setor.get("tickers_sub",[]))) if dados_setor.get("tickers_sub") else ""}
     </div>
 </div>
 """, unsafe_allow_html=True)
@@ -1279,56 +1286,68 @@ with tab2:
     comp = dados_setor.get("comparativo", {})
     empresas = comp.get("empresas", {})
     dimensoes = comp.get("dimensoes", [])
+    grupos = comp.get("grupos")   # opcional — se existir, divide em grupos
+
+    def _render_battle_group(tickers_grupo, empresas, dimensoes, label=None):
+        """Renderiza um grupo de colunas do battle card."""
+        if label:
+            st.markdown(
+                f"<div style='font-size:0.75rem;font-weight:700;color:#6B4F10;"
+                f"text-transform:uppercase;letter-spacing:1px;margin:18px 0 10px 0;'>"
+                f"{label}</div>",
+                unsafe_allow_html=True,
+            )
+        col_label, *cols_emp = st.columns([1.1] + [1] * len(tickers_grupo))
+        col_label.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)
+        for col, tk in zip(cols_emp, tickers_grupo):
+            emp = empresas[tk]
+            col.markdown(
+                f"<div class='battle-header' style='border-color:{emp['cor']};color:{emp['cor']};'>"
+                f"{tk}<br>"
+                f"<span style='font-size:0.62rem;font-weight:500;color:#374151;"
+                f"letter-spacing:0;text-transform:none;'>{emp['nome']}</span></div>",
+                unsafe_allow_html=True,
+            )
+        for dim in dimensoes:
+            col_label, *cols_emp = st.columns([1.1] + [1] * len(tickers_grupo))
+            col_label.markdown(
+                f"<div class='battle-row-label' style='padding-top:4px;'>{dim}</div>",
+                unsafe_allow_html=True,
+            )
+            for col, tk in zip(cols_emp, tickers_grupo):
+                val = empresas[tk].get(dim, ("—", ""))
+                if isinstance(val, tuple) and len(val) == 3:
+                    col.markdown(
+                        f"<div class='battle-row-value'>"
+                        f"<span class='badge {val[2]}'>{val[0]}</span><br>"
+                        f"<span style='font-size:0.80rem;color:#374151;'>{val[1]}</span></div>",
+                        unsafe_allow_html=True,
+                    )
+                elif isinstance(val, tuple) and len(val) == 2:
+                    col.markdown(
+                        f"<div class='battle-row-value'>"
+                        f"<strong style='font-size:0.88rem;'>{val[0]}</strong><br>"
+                        f"<span style='font-size:0.80rem;color:#374151;'>{val[1]}</span></div>",
+                        unsafe_allow_html=True,
+                    )
+                else:
+                    col.markdown(
+                        f"<div class='battle-row-value'>{val}</div>",
+                        unsafe_allow_html=True,
+                    )
+            st.markdown("<hr class='thin-divider'>", unsafe_allow_html=True)
 
     if not empresas:
         st.info("Comparativo ainda não disponível para este setor.")
+    elif grupos:
+        # Setor com subgrupos (ex.: Bancos grandes vs regionais)
+        for g in grupos:
+            tks = [tk for tk in g["tickers"] if tk in empresas]
+            if tks:
+                _render_battle_group(tks, empresas, dimensoes, label=g.get("label"))
     else:
-        tickers_comp = list(empresas.keys())
-        # Header das colunas
-        col_label, *cols_emp = st.columns([1.1] + [1] * len(tickers_comp))
-
-        col_label.markdown("<div style='height: 50px;'></div>", unsafe_allow_html=True)
-        for col, tk in zip(cols_emp, tickers_comp):
-            emp = empresas[tk]
-            col.markdown(f"""
-            <div class='battle-header' style='border-color: {emp["cor"]}; color: {emp["cor"]};'>
-                {tk}<br>
-                <span style='font-size: 0.62rem; font-weight: 500; color: #374151; letter-spacing: 0;
-                            text-transform: none;'>
-                    {emp["nome"]}
-                </span>
-            </div>
-            """, unsafe_allow_html=True)
-
-        # Linhas de comparação
-        for dim in dimensoes:
-            col_label, *cols_emp = st.columns([1.1] + [1] * len(tickers_comp))
-            col_label.markdown(f"""
-            <div class='battle-row-label' style='padding-top: 4px;'>{dim}</div>
-            """, unsafe_allow_html=True)
-            for col, tk in zip(cols_emp, tickers_comp):
-                val = empresas[tk].get(dim, ("—", ""))
-                if isinstance(val, tuple) and len(val) == 3:
-                    # Com badge
-                    badge_class = val[2]
-                    col.markdown(f"""
-                    <div class='battle-row-value'>
-                        <span class='badge {badge_class}'>{val[0]}</span><br>
-                        <span style='font-size: 0.80rem; color: #374151;'>{val[1]}</span>
-                    </div>
-                    """, unsafe_allow_html=True)
-                elif isinstance(val, tuple) and len(val) == 2:
-                    col.markdown(f"""
-                    <div class='battle-row-value'>
-                        <strong style='font-size: 0.88rem;'>{val[0]}</strong><br>
-                        <span style='font-size: 0.80rem; color: #374151;'>{val[1]}</span>
-                    </div>
-                    """, unsafe_allow_html=True)
-                else:
-                    col.markdown(f"<div class='battle-row-value'>{val}</div>",
-                                 unsafe_allow_html=True)
-
-            st.markdown("<hr class='thin-divider'>", unsafe_allow_html=True)
+        # Setor sem subgrupos — comportamento original
+        _render_battle_group(list(empresas.keys()), empresas, dimensoes)
 
 
 # ─── ABA 3: PERFIL INDIVIDUAL ─────────────────────────────────────────────
@@ -1337,9 +1356,20 @@ with tab3:
     if not perfis:
         st.info("Perfis individuais ainda não disponíveis para este setor.")
     else:
+        grupos_perfil = dados_setor.get("comparativo", {}).get("grupos")
+        if grupos_perfil:
+            # Monta lista ordenada: grandes primeiro, depois subgrupo
+            ordem = []
+            for g in grupos_perfil:
+                ordem += [tk for tk in g["tickers"] if tk in perfis]
+            # Qualquer ticker não listado vai no fim
+            ordem += [tk for tk in perfis if tk not in ordem]
+        else:
+            ordem = list(perfis.keys())
+
         ticker_sel = st.selectbox(
             "Empresa:",
-            list(perfis.keys()),
+            ordem,
             format_func=lambda t: f"{t} — {perfis[t]['nome']}",
         )
         p = perfis[ticker_sel]
