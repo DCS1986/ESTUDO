@@ -45,7 +45,7 @@ html, body, [class*="css"] {
     width: 100%;
     background: transparent;
     border: none;
-    color: #9CA3AF;
+    color: #374151;
     text-align: left;
     padding: 10px 16px;
     border-radius: 8px;
@@ -85,7 +85,7 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
     font-weight: 700;
     letter-spacing: 1.2px;
     text-transform: uppercase;
-    color: #8B6914;
+    color: #6B4F10;
     margin-bottom: 10px;
 }
 
@@ -102,7 +102,7 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
 .battle-row-label {
     font-size: 0.72rem;
     font-weight: 600;
-    color: #9CA3AF;
+    color: #4B5563;
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin-bottom: 4px;
@@ -186,7 +186,7 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
 [data-testid="stTabs"] button {
     font-size: 0.82rem !important;
     font-weight: 600 !important;
-    color: #9CA3AF !important;
+    color: #6B7280 !important;
 }
 [data-testid="stTabs"] button[aria-selected="true"] {
     color: #8B6914 !important;
@@ -404,13 +404,13 @@ with st.sidebar:
                     color: #1A1A1A; line-height: 1.2; margin-bottom: 4px;'>
             Dossiê de Setores
         </div>
-        <div style='font-size: 0.72rem; color: #9CA3AF; letter-spacing: 0.5px;'>
+        <div style='font-size: 0.72rem; color: #4B5563; letter-spacing: 0.5px;'>
             Estudo fundamentalista comparado
         </div>
     </div>
     <hr style='border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 12px 0;'>
     <div style='font-size: 0.65rem; font-weight: 700; letter-spacing: 1px;
-                text-transform: uppercase; color: #9CA3AF; padding: 0 16px 8px 16px;'>
+                text-transform: uppercase; color: #374151; padding: 0 16px 8px 16px;'>
         Setores
     </div>
     """, unsafe_allow_html=True)
@@ -428,7 +428,7 @@ with st.sidebar:
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
-    <div style='padding: 0 16px; font-size: 0.68rem; color: #9CA3AF; line-height: 1.6;'>
+    <div style='padding: 0 16px; font-size: 0.68rem; color: #374151; line-height: 1.6;'>
         Nenhuma empresa é igual à outra.<br>
         Aqui você estuda o negócio, não o preço.
     </div>
@@ -451,7 +451,7 @@ st.markdown(f"""
     <h1 style='font-size: 2.0rem; color: #1A1A1A; margin: 0 0 10px 0; line-height: 1.2;'>
         {setor}
     </h1>
-    <div style='font-size: 0.95rem; color: #4B5563; max-width: 680px; line-height: 1.6;'>
+    <div style='font-size: 0.95rem; color: #374151; max-width: 680px; line-height: 1.6;'>
         {dados_setor.get("tagline", "")}
     </div>
     <div style='margin-top: 14px;'>
@@ -484,11 +484,11 @@ with tab1:
     for driver, descricao in logica.get("drivers", []):
         st.markdown(f"""
         <div class='dossie-card' style='padding: 16px 20px;'>
-            <div style='font-size: 0.80rem; font-weight: 700; color: #8B6914;
+            <div style='font-size: 0.80rem; font-weight: 700; color: #6B4F10;
                         margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;'>
                 {driver}
             </div>
-            <div style='font-size: 0.88rem; color: #9CA3AF; line-height: 1.6;'>
+            <div style='font-size: 0.88rem; color: #374151; line-height: 1.6;'>
                 {descricao}
             </div>
         </div>
@@ -514,7 +514,7 @@ with tab2:
             col.markdown(f"""
             <div class='battle-header' style='border-color: {emp["cor"]}; color: {emp["cor"]};'>
                 {tk}<br>
-                <span style='font-size: 0.62rem; font-weight: 500; color: #9CA3AF; letter-spacing: 0;
+                <span style='font-size: 0.62rem; font-weight: 500; color: #374151; letter-spacing: 0;
                             text-transform: none;'>
                     {emp["nome"]}
                 </span>
@@ -535,14 +535,14 @@ with tab2:
                     col.markdown(f"""
                     <div class='battle-row-value'>
                         <span class='badge {badge_class}'>{val[0]}</span><br>
-                        <span style='font-size: 0.80rem; color: #9CA3AF;'>{val[1]}</span>
+                        <span style='font-size: 0.80rem; color: #374151;'>{val[1]}</span>
                     </div>
                     """, unsafe_allow_html=True)
                 elif isinstance(val, tuple) and len(val) == 2:
                     col.markdown(f"""
                     <div class='battle-row-value'>
                         <strong style='font-size: 0.88rem;'>{val[0]}</strong><br>
-                        <span style='font-size: 0.80rem; color: #9CA3AF;'>{val[1]}</span>
+                        <span style='font-size: 0.80rem; color: #374151;'>{val[1]}</span>
                     </div>
                     """, unsafe_allow_html=True)
                 else:
@@ -569,7 +569,7 @@ with tab3:
         st.markdown(f"""
         <div style='margin: 16px 0 24px 0; padding: 24px; background: #FFFFFF;
                     border: 1px solid #E5E2DC; border-radius: 12px;'>
-            <div style='font-size: 0.65rem; font-weight: 700; color: #9CA3AF;
+            <div style='font-size: 0.65rem; font-weight: 700; color: #374151;
                         letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;'>
                 {ticker_sel} · Fundada em {p.get("fundacao","?")} · {p.get("sede","")}
             </div>
@@ -588,7 +588,7 @@ with tab3:
                     unsafe_allow_html=True)
         st.markdown(f"""
         <div class='dossie-card'>
-            <div style='font-size: 0.90rem; color: #374151; line-height: 1.75;'>
+            <div style='font-size: 0.90rem; color: #111827; line-height: 1.75;'>
                 {p.get("modelo","")}
             </div>
         </div>
@@ -608,7 +608,7 @@ with tab3:
                 <div>
                     <div style='font-size: 0.88rem; font-weight: 600; color: #1A1A1A;
                                 margin-bottom: 2px;'>{segmento}</div>
-                    <div style='font-size: 0.80rem; color: #9CA3AF;'>{detalhe}</div>
+                    <div style='font-size: 0.80rem; color: #374151;'>{detalhe}</div>
                 </div>
             </div>
             """, unsafe_allow_html=True)
