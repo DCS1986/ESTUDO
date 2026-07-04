@@ -383,7 +383,503 @@ SETORES = {
         },
     },
     # Placeholder — próximos setores aqui
-    "🏦 Bancos": {"tickers": [], "em_construcao": True},
+    "🏦 Bancos": {
+        "tickers": ["ITUB4", "BBAS3", "BBDC3", "BPAC11", "SANB3", "ABCB4", "BRSR6", "BMGB4"],
+        "tagline": "Mesma licença bancária, oito modelos de negócio completamente distintos. Quem entende a diferença lê o balanço em 10 minutos.",
+        "logica": {
+            "titulo": "O que move o setor bancário",
+            "texto": (
+                "Todo banco capta dinheiro a um custo e empresta a um preço maior — a diferença é o spread. "
+                "Mas a forma como cada banco capta, para quem empresta e com qual risco é onde os modelos "
+                "divergem radicalmente. ITUB e Bradesco são bancões de varejo. BBAS domina o agro e o "
+                "funcionalismo. BTG é banco de investimento e wealth. ABC serve exclusivamente empresas. "
+                "Banrisul é o banco do RS. BMG só faz consignado para aposentados do INSS. Entender o nicho "
+                "de cada um é entender por que um vai bem quando o outro vai mal."
+            ),
+            "drivers": [
+                ("Spread (NIM — Margem Financeira Líquida)", "A diferença entre o juro cobrado do cliente e o juro pago na captação. "
+                 "Selic alta aumenta o custo de captação, mas nem sempre aumenta o spread — depende do perfil da carteira. "
+                 "Consignado tem spread baixo mas risco também baixo. Crédito pessoal tem spread alto e inadimplência alta."),
+                ("Inadimplência (NPL)", "O grande vilão do resultado bancário. Varia por segmento: consignado INSS tem inadimplência "
+                 "< 3%, crédito pessoal pode chegar a 10-15%. Banco com carteira concentrada em baixa renda sofre mais em recessão."),
+                ("Selic e ciclo de juros", "Juro alto comprime a demanda por crédito mas remunera melhor o PL e a tesouraria. "
+                 "Cada banco reage diferente: BTG ama juro alto (tesouraria e renda fixa); varejo de baixa renda sofre "
+                 "(inadimplência sobe, demanda cai)."),
+                ("Eficiência operacional", "Custo de servir o cliente. Banco digital tem custo por transação próximo de zero. "
+                 "Bancão com 4.000 agências tem custo fixo pesado. O índice de eficiência (despesas/receitas) é o termômetro — "
+                 "abaixo de 40% é excelente; acima de 60% é ineficiente."),
+                ("Qualidade e crescimento da carteira de crédito", "Carteira crescendo é bom sinal, mas só se a qualidade "
+                 "se mantiver. O BB errou ao crescer no agro sem critérios — a conta chegou no 1T26 com inadimplência "
+                 "saltando de 1% para 6%. Crescimento sem qualidade é receita de provisão futura."),
+                ("ROE (Retorno sobre Patrimônio)", "A métrica-rei do setor. Acima de 20% é excepcional (BTG, Itaú). "
+                 "Entre 15-20% é sólido. Abaixo de 12% o banco não cobre o custo de capital e destrói valor. "
+                 "Bradesco ficou abaixo do custo de capital por dois anos — foi a crise de 2023-2024."),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "Modelo de negócio",
+                "Cliente principal",
+                "Principal produto de crédito",
+                "Exposição ao ciclo econômico",
+                "Exposição à política/regulação",
+                "Sensibilidade à Selic",
+                "ROE atual (ref.)",
+                "Risco principal",
+                "Perfil do investidor",
+            ],
+            "empresas": {
+                "ITUB4": {
+                    "nome": "Itaú Unibanco",
+                    "cor": "#F97316",
+                    "Modelo de negócio": ("Varejo premium + atacado + seguros", "maior banco privado da AL"),
+                    "Cliente principal": ("Alta e média renda", "6 de cada 10 brasileiros de alta renda são clientes"),
+                    "Principal produto de crédito": ("Cartão + crédito imobiliário + consignado privado", "mix diversificado"),
+                    "Exposição ao ciclo econômico": ("Moderada", "foco em alta renda protege da inadimplência", "badge-yellow"),
+                    "Exposição à política/regulação": ("Baixa", "banco privado, sem interferência estatal", "badge-green"),
+                    "Sensibilidade à Selic": ("Alta positiva", "tesouraria + PL remunera bem; spread se mantém", "badge-green"),
+                    "ROE atual (ref.)": ("~24-26%", "o maior entre os incumbentes"),
+                    "Risco principal": ("Competição com fintechs e digitalização do varejo massificado", ""),
+                    "Perfil do investidor": ("Qualidade e crescimento previsível", "paga prêmio, mas entrega consistência"),
+                },
+                "BBAS3": {
+                    "nome": "Banco do Brasil",
+                    "cor": "#EAB308",
+                    "Modelo de negócio": ("Banco estatal universal", "líder em agro, funcionalismo e gestão de ativos"),
+                    "Cliente principal": ("Agricultor, servidor público, governo", "processa metade das folhas do setor público"),
+                    "Principal produto de crédito": ("Crédito rural + consignado público + crédito governo", "53% do crédito rural do Brasil"),
+                    "Exposição ao ciclo econômico": ("Alta", "agro é cíclico — inadimplência rural saltou de 1% para 6% em 2026", "badge-red"),
+                    "Exposição à política/regulação": ("Muito alta", "estatal — governo pode intervir na política de crédito", "badge-red"),
+                    "Sensibilidade à Selic": ("Alta", "PL e tesouraria remuneram bem; agro sensível a custo de captação", "badge-yellow"),
+                    "ROE atual (ref.)": ("~7-8% (1T26)", "pressionado pela crise do agro — era 16% em 2025"),
+                    "Risco principal": ("Interferência política + concentração no agro", "inadimplência rural 2025-2026"),
+                    "Perfil do investidor": ("Dividendos + tese contrarian", "compra desconto e upside de normalização"),
+                },
+                "BBDC3": {
+                    "nome": "Bradesco",
+                    "cor": "#EF4444",
+                    "Modelo de negócio": ("Varejo universal", "terceiro maior banco privado, em reestruturação"),
+                    "Cliente principal": ("Massa + média renda + PME", "historicamente forte no interior do Brasil"),
+                    "Principal produto de crédito": ("Crédito pessoal + PME + consignado", "diversificado mas com foco no varejo"),
+                    "Exposição ao ciclo econômico": ("Alta", "massa e PME sofrem mais em recessão e juro alto", "badge-red"),
+                    "Exposição à política/regulação": ("Baixa", "banco privado", "badge-green"),
+                    "Sensibilidade à Selic": ("Negativa parcial", "custo de captação sobe; cliente de menor renda inadimple mais", "badge-red"),
+                    "ROE atual (ref.)": ("~14-15%", "recuperando — era abaixo do custo de capital em 2023-2024"),
+                    "Risco principal": ("Execução da reestruturação e concorrência de fintechs no varejo massificado", ""),
+                    "Perfil do investidor": ("Tese de turnaround", "aposta na recuperação do ROE; maior upside se entregar"),
+                },
+                "BPAC11": {
+                    "nome": "BTG Pactual",
+                    "cor": "#3B82F6",
+                    "Modelo de negócio": ("Banco de investimento + wealth + crédito corporativo", "único modelo de atacado puro entre os grandes"),
+                    "Cliente principal": ("Grandes empresas + ultra-high net worth", "wealth: R$1,28 tri sob gestão"),
+                    "Principal produto de crédito": ("Corporate lending + M&A + mercado de capitais", "crescimento de 22% a/a na carteira"),
+                    "Exposição ao ciclo econômico": ("Moderada", "mercado de capitais oscila, mas recorrência do wealth protege", "badge-yellow"),
+                    "Exposição à política/regulação": ("Baixa", "banco privado, foco em atacado", "badge-green"),
+                    "Sensibilidade à Selic": ("Positiva", "juro alto favorece renda fixa, tesouraria e gestão de ativos", "badge-green"),
+                    "ROE atual (ref.)": ("~26-27%", "o mais alto do setor — modelo asset-light e alta alavancagem operacional"),
+                    "Risco principal": ("Volatilidade de mercado comprime investment banking; já negocia a P/VP elevado", ""),
+                    "Perfil do investidor": ("Crescimento + qualidade", "paga prêmio alto; dividend yield baixo mas crescimento forte"),
+                },
+                "SANB3": {
+                    "nome": "Santander Brasil",
+                    "cor": "#EF4444",
+                    "Modelo de negócio": ("Varejo universal com matriz global", "único banco internacional com escala no Brasil"),
+                    "Cliente principal": ("Varejo PF + PME + atacado", "foco crescente em alta renda"),
+                    "Principal produto de crédito": ("Crédito imobiliário + cartão + PME", "diversificado"),
+                    "Exposição ao ciclo econômico": ("Alta", "PME e varejo sofrem em recessão e juro elevado", "badge-red"),
+                    "Exposição à política/regulação": ("Baixa/Moderada", "banco privado, mas depende da matriz espanhola", "badge-yellow"),
+                    "Sensibilidade à Selic": ("Negativa parcial", "custo de captação sobe mais rápido que o spread no varejo", "badge-yellow"),
+                    "ROE atual (ref.)": ("~13-15%", "abaixo dos pares — ROE mais fraco do grupo dos grandes privados"),
+                    "Risco principal": ("ROE estruturalmente mais baixo; dependência de decisões da matriz espanhola", ""),
+                    "Perfil do investidor": ("Dividendos + recuperação", "valuation descontado, mas exige provas de melhora"),
+                },
+                "ABCB4": {
+                    "nome": "ABC Brasil",
+                    "cor": "#22C55E",
+                    "Modelo de negócio": ("Banco de atacado puro", "sem varejo — 100% crédito para médias e grandes empresas"),
+                    "Cliente principal": ("Médias e grandes empresas (middle + corporate)", "sem pessoa física"),
+                    "Principal produto de crédito": ("Crédito corporativo + trade finance + derivativos", "inadimplência histórica < 1%"),
+                    "Exposição ao ciclo econômico": ("Moderada", "atacado é mais resiliente que varejo; cliente corporativo é mais solvente", "badge-yellow"),
+                    "Exposição à política/regulação": ("Baixa", "banco privado, controlado pelo Arab Banking Corporation", "badge-green"),
+                    "Sensibilidade à Selic": ("Positiva", "juro alto aumenta spread do crédito corporativo; PL remunera bem", "badge-green"),
+                    "ROE atual (ref.)": ("~14-16%", "consistente e previsível — modelo de negócio não muda com o ciclo"),
+                    "Risco principal": ("Concentração no atacado — grandes perdas pontuais impactam mais que a inadimplência pulverizada do varejo", ""),
+                    "Perfil do investidor": ("Qualidade e estabilidade", "dividend yield consistente; cresce sem surpresas"),
+                },
+                "BRSR6": {
+                    "nome": "Banrisul",
+                    "cor": "#A78BFA",
+                    "Modelo de negócio": ("Banco regional estatal gaúcho", "vive de funcionalismo público do RS"),
+                    "Cliente principal": ("Servidor público e varejo do RS", "294 mil servidores estaduais na folha"),
+                    "Principal produto de crédito": ("Consignado público + varejo PF + PME regional", "folha do Estado é o coração do negócio"),
+                    "Exposição ao ciclo econômico": ("Moderada", "consignado público é defensivo; PME regional é mais sensível", "badge-yellow"),
+                    "Exposição à política/regulação": ("Muito alta", "estatal — governo do RS controla e renova (ou não) o contrato da folha", "badge-red"),
+                    "Sensibilidade à Selic": ("Positiva moderada", "juro alto aumenta spread; mas custo de captação também sobe", "badge-yellow"),
+                    "ROE atual (ref.)": ("~7-9%", "pressionado — ROE mais baixo do grupo; abaixo do custo de capital"),
+                    "Risco principal": ("Dependência total do governo gaúcho; contrato de folha renovado a custo crescente (R$1,26 bi por 5 anos)", ""),
+                    "Perfil do investidor": ("Dividendos regionais", "dividend yield atrativo mas com risco político e de execução"),
+                },
+                "BMGB4": {
+                    "nome": "Banco BMG",
+                    "cor": "#F97316",
+                    "Modelo de negócio": ("Banco mono-produto de consignado INSS", "88% da carteira é aposentado/pensionista"),
+                    "Cliente principal": ("Aposentados e pensionistas do INSS", "segmento com menor inadimplência do Brasil"),
+                    "Principal produto de crédito": ("Consignado INSS + cartão consignado", "desconto direto no benefício"),
+                    "Exposição ao ciclo econômico": ("Muito baixa", "benefício do INSS não cai em recessão — renda garantida", "badge-green"),
+                    "Exposição à política/regulação": ("Alta", "governo regula a taxa máxima do consignado INSS (hoje 1,85%/mês)", "badge-red"),
+                    "Sensibilidade à Selic": ("Negativa", "teto de taxa regulado não sobe com a Selic — spread comprime", "badge-red"),
+                    "ROE atual (ref.)": ("~10-12%", "limitado pelo teto regulatório da taxa"),
+                    "Risco principal": ("Teto regulatório de juros + CPI do INSS investigando fraudes no consignado (biometria obrigatória)", ""),
+                    "Perfil do investidor": ("Dividendos defensivos", "carteira resiliente, mas crescimento limitado pelo regulador"),
+                },
+            },
+        },
+        "perfis": {
+            "ITUB4": {
+                "nome": "Itaú Unibanco",
+                "fundacao": "1945 (fusão Itaú+Unibanco em 2008)",
+                "sede": "São Paulo, SP",
+                "tagline": "O maior banco privado da América Latina. Disciplina de capital, foco em alta renda e o melhor ROE entre os incumbentes.",
+                "modelo": (
+                    "O Itaú opera em quatro frentes: varejo (conta corrente, cartão, crédito e seguros para pessoas físicas), "
+                    "atacado (crédito para grandes empresas, mercado de capitais, tesouraria), gestão de ativos (fundos, previdência) "
+                    "e atividades internacionais (América Latina). O diferencial não é o tamanho — é a seletividade. O Itaú "
+                    "deliberadamente abandonou segmentos de menor renda e maior inadimplência, concentrando a carteira em alta e "
+                    "média renda. 6 de cada 10 brasileiros de alta renda têm relacionamento com o banco. Isso gera spreads "
+                    "melhores, inadimplência menor e fee de serviços mais alto (asset management, corretagem, seguros). "
+                    "No 1T26 entregou lucro recorrente de R$ 12,3 bi e ROE de 24,8% — o mais alto entre os incumbentes."
+                ),
+                "receita": [
+                    ("Margem financeira (NII)", "~50%", "spread de crédito e resultado de tesouraria"),
+                    ("Receitas de serviços e tarifas", "~25%", "cartão, asset management, advisory, corretagem"),
+                    ("Seguros", "~12%", "Itaú Seguros — vida, prestamista, imobiliário"),
+                    ("Outros", "~13%", "câmbio, derivativos, international"),
+                ],
+                "vantagens": [
+                    "Melhor ROE entre os bancões incumbentes (~24-26%) — sustentado por décadas, não é pico de ciclo",
+                    "Foco na alta renda cria um flywheel: menor inadimplência → menor provisão → mais capital disponível para crescer",
+                    "Escala de distribuição: rede própria + parcerias + digital permitem cross-sell sem aumentar custo proporcional",
+                    "Transformação digital avançada — 75% das transações já são digitais, com meta de 75% dos clientes em modelo digital-first até 2027",
+                    "Seguros e asset management são negócios capital-light dentro do banco, com margens muito mais altas que o crédito",
+                ],
+                "riscos": [
+                    "Valuation premium (P/L ~8x, P/VP ~2x) não tolera decepções — qualquer deterioração é punida",
+                    "Competição crescente de BTG no wealth management e de fintechs no varejo digital",
+                    "Regulação bancária pode aumentar requisitos de capital, pressionando distribuição de dividendos",
+                    "Expansão na América Latina (Chile, Argentina, Colômbia) adiciona risco cambial e político",
+                ],
+                "barreira": (
+                    "A combinação de marca, rede de distribuição, base de dados de clientes e capital regulatório "
+                    "cria uma barreira de entrada que nenhuma fintech conseguiu transpor em décadas. "
+                    "Nubank chegou a 100 milhões de clientes — mas em rentabilidade por cliente ainda está longe do Itaú."
+                ),
+            },
+            "BBAS3": {
+                "nome": "Banco do Brasil",
+                "fundacao": "1808 (fundado por Dom João VI)",
+                "sede": "Brasília, DF",
+                "tagline": "O banco do agro e do funcionalismo. Líder incontestável no crédito rural, mas pagando o preço de uma carteira concentrada.",
+                "modelo": (
+                    "O BB tem três pilares que nenhum banco privado consegue replicar: o crédito rural (53% do crédito "
+                    "agro brasileiro passa pelo BB, com funding subsidiado via FCO e PRONAF), o funcionalismo público "
+                    "(processa metade das folhas do setor público federal e estadual — base de consignado captiva), e o "
+                    "Tesouro Nacional (agente financeiro do governo federal). Fora isso, é um banco universal com "
+                    "seguros (BB Seguridade, controlada listada separadamente) e gestão de ativos. O problema de 2025-2026 "
+                    "é exatamente essa concentração: o agro sofreu com El Niño, preços baixos de grãos e endividamento "
+                    "acumulado. A inadimplência rural saltou de 1% para 6%, o lucro caiu 54% no 1T26 e o ROE colapsou "
+                    "para 7,3%. A BB Seguridade, contudo, continua entregando — o banco dentro do banco que o mercado "
+                    "frequentemente esquece."
+                ),
+                "receita": [
+                    ("Margem financeira (NII)", "~45%", "crédito rural + consignado + corporate"),
+                    ("BB Seguridade (resultado de equivalência patrimonial)", "~20%", "seguros, previdência e capitalização"),
+                    ("Receitas de serviços e tarifas", "~20%", "folha de pagamento, asset management, tarifas"),
+                    ("Tesouraria e mercado", "~15%", "títulos públicos e operações com o governo"),
+                ],
+                "vantagens": [
+                    "Monopólio prático no crédito agro — nenhum banco privado tem a rede, o funding subsidiado e a expertise",
+                    "Folha do setor público: base captiva de consignado com inadimplência próxima de zero",
+                    "BB Seguridade: motor de resultado capital-light e recorrente dentro do conglomerado",
+                    "Valuation de desconto (P/L ~4x, P/VP ~0,6x) embute a percepção de risco estatal",
+                    "Gestão de ativos: 24,9% de market share — o maior gestor de recursos do Brasil",
+                ],
+                "riscos": [
+                    "Interferência política: governo pode forçar crédito subsidiado, reduzir spread e comprometer rentabilidade",
+                    "Concentração no agro: ciclos negativos (clima, preço de commodities) impactam desproporcionalmente",
+                    "Inadimplência rural 2025-2026: ainda longe do pico — pode demorar 2-3 anos para normalizar",
+                    "Menor eficiência operacional que bancos privados — custo de servir é mais alto",
+                ],
+                "barreira": (
+                    "O acesso ao funding subsidiado (FCO, PRONAF, recursos do Tesouro) é uma barreira que nenhum banco "
+                    "privado pode replicar. Quem financia agricultura a taxa de 7-8% a.a. quando o custo de mercado é 14%+ "
+                    "está usando um subsídio que só o banco estatal acessa. Isso cria uma vantagem competitiva no agro "
+                    "que é, literalmente, impossível de replicar sem ser banco público."
+                ),
+            },
+            "BBDC3": {
+                "nome": "Bradesco",
+                "fundacao": "1943",
+                "sede": "Osasco, SP",
+                "tagline": "O gigante em reestruturação. Construído no interior do Brasil, foi o maior banco privado por décadas — agora recupera a rentabilidade.",
+                "modelo": (
+                    "O Bradesco é o único entre os grandes privados que foi construído de dentro para fora do Brasil — "
+                    "nasceu em Marília (SP) e cresceu pelo interior antes de chegar às capitais. Essa origem explica "
+                    "sua exposição à massa e às PMEs do interior, que são mais vulneráveis a ciclos de juros altos. "
+                    "Em 2022-2024, o banco pagou o preço: inadimplência subindo, provisões estourando, ROE colapsando "
+                    "para abaixo do custo de capital. A reestruturação de Marcelo Noronha (CEO desde 2023) levou o banco "
+                    "a ser mais seletivo no crédito, a fechar agências, digitalizar e focar em alta renda e crédito "
+                    "com garantia. O resultado começou a aparecer em 2025: lucro crescendo, ROE recuperando, ação "
+                    "subindo 60% no ano. Em 2026, a tese é de quanto esse ROE ainda pode subir — e se chegará ao "
+                    "nível de Itaú, ou ficará estacionado nos 15-17%."
+                ),
+                "receita": [
+                    ("Margem financeira (NII)", "~50%", "spread de crédito PF + PME + corporativo"),
+                    ("Seguros (Bradesco Seguros)", "~20%", "vida, saúde, automóvel — joint venture com Munich Re"),
+                    ("Receitas de serviços e tarifas", "~18%", "cartão, previdência, corretagem"),
+                    ("Outros", "~12%", "mercado de capitais, câmbio, gestão de ativos"),
+                ],
+                "vantagens": [
+                    "Bradesco Seguros: uma das maiores seguradoras do Brasil — negócio capital-light com margens altas",
+                    "Rede capilar no interior: presença onde grandes bancos e fintechs chegam com mais dificuldade",
+                    "Reestruturação em curso: se o ROE normalizar para 18-20%, o valuation atual (P/L ~6x) está barato",
+                    "Cielo integrada: adquirência + produtos bancários criam potencial de cross-sell",
+                ],
+                "riscos": [
+                    "Execução: a reestruturação pode demorar mais ou entregar menos que o prometido",
+                    "Concorrência de fintechs no varejo massificado — o segmento que o Bradesco depende mais",
+                    "Exposição residual à massa de baixa renda, mais sensível a inadimplência em juro alto",
+                    "Valuation não é mais óbvio — após alta de 60% em 2025, o desconto já fechou parcialmente",
+                ],
+                "barreira": (
+                    "A rede de distribuição no interior do Brasil é o ativo mais difícil de replicar. "
+                    "Cidades de 30.000 habitantes onde o Bradesco é o único banco presente — e onde "
+                    "a fintech não chega sem agência ou correspondente. Mais a Bradesco Seguros, que tem "
+                    "escala e relacionamento de décadas com corretores."
+                ),
+            },
+            "BPAC11": {
+                "nome": "BTG Pactual",
+                "fundacao": "1983",
+                "sede": "São Paulo, SP",
+                "tagline": "O maior banco de investimento da América Latina. Não é um banco de varejo — é uma máquina de alocar capital.",
+                "modelo": (
+                    "O BTG é estruturalmente diferente dos outros: não tem agência, não quer o cliente de massa, "
+                    "não cresce emprestando para pessoa física no cartão. Ele ganha dinheiro sendo o intermediário "
+                    "entre quem tem capital (grandes fortunas, fundos) e quem precisa de capital (grandes empresas, governos). "
+                    "A receita tem seis pilares: corporate lending (crédito para grandes empresas, ~R$2,3 bi/tri), "
+                    "sales & trading (mesa proprietária e corretagem institucional), investment banking (IPOs, M&As, emissões), "
+                    "asset management (R$2,5 tri sob gestão/administração), wealth management (R$1,28 tri — clientes private) "
+                    "e consumer finance (Banco PAN + Too Seguros, consignado privado). "
+                    "No 1T26 entregou lucro de R$4,8 bi (+42% a/a) e ROAE de 26,6%. "
+                    "O modelo de partnership (sócios compram ações — alinhamento total) é um diferencial cultural único."
+                ),
+                "receita": [
+                    ("Corporate Lending", "~23%", "crédito corporativo de alta qualidade — crescimento de 22% a/a"),
+                    ("Wealth Management", "~15%", "R$ 1,28 tri sob gestão — crescimento recorde"),
+                    ("Sales & Trading", "~19%", "mesa proprietária + corretagem institucional — volátil"),
+                    ("Asset Management", "~12%", "R$ 2,5 tri total — taxas de gestão e performance"),
+                    ("Consumer Finance & Banking", "~11%", "Banco PAN + Too Seguros — consignado privado"),
+                    ("Investment Banking", "~10%", "IPOs, M&As, emissões de dívida — cíclico"),
+                    ("Outros (juros e outros)", "~10%", ""),
+                ],
+                "vantagens": [
+                    "Modelo de partnership: sócios são donos — incentivos alinhados, execução consistente há 40 anos",
+                    "Wealth Management: R$1,28 tri em assets com crescimento de 44,6% a/a — receita recorrente e crescente",
+                    "Corporate Lending: inadimplência próxima de zero em crédito para grandes empresas com garantias robustas",
+                    "Marca BTG no mercado de capitais: quando uma empresa quer captar R$1 bi+, o BTG está na lista curta",
+                    "Único entre os grandes a ter ROE acima de 26% de forma sustentada",
+                ],
+                "riscos": [
+                    "Valuation elevado (P/VP ~9x) não tolera desaceleração — crescimento tem que ser entregue",
+                    "Investment banking é cíclico — em mercados fechados (sem IPOs, sem M&A), essa linha murcha",
+                    "Dividend yield baixo (~2%) — não é banco de renda; é banco de crescimento e reinvestimento",
+                    "Risco-chave concentrado em poucos sócios-chave — risco de sucessão no longo prazo",
+                ],
+                "barreira": (
+                    "A marca e o relacionamento de décadas com os grandes CEOs e CFOs do Brasil. "
+                    "Não é possível construir isso da noite para o dia. Quando a Vale vai emitir uma debênture "
+                    "ou o governo quer estruturar um projeto de infraestrutura, o BTG está na mesa. "
+                    "Isso vem de 40 anos de execução impecável e de uma cultura de partnership que "
+                    "atrai os melhores profissionais do mercado financeiro."
+                ),
+            },
+            "SANB3": {
+                "nome": "Santander Brasil",
+                "fundacao": "1982 (chegou ao Brasil)",
+                "sede": "São Paulo, SP",
+                "tagline": "O único banco internacional com escala no Brasil. Terceiro maior privado, mas ainda procurando o modelo certo para o mercado local.",
+                "modelo": (
+                    "O Santander é um banco universal (PF + PME + atacado), mas com uma particularidade: "
+                    "é subsidiária de um grupo global espanhol. Isso tem vantagens (acesso a tecnologia, "
+                    "melhores práticas globais, plataforma de câmbio internacional) e desvantagens "
+                    "(decisões estratégicas feitas em Madri podem não se adaptar à realidade brasileira, "
+                    "e parte do lucro 'vaza' para a matriz). Historicamente, o Santander teve dificuldade "
+                    "de encontrar seu nicho no Brasil: não tem o foco em alta renda do Itaú, não tem o "
+                    "agro do BB, não tem o interior do Bradesco, não tem o atacado do BTG. "
+                    "Em 2026, está buscando diferenciação em crédito imobiliário, alta renda e PME. "
+                    "O ROE ainda é o mais baixo entre os grandes privados — o mercado cobra prova."
+                ),
+                "receita": [
+                    ("Margem financeira (NII)", "~52%", "crédito PF + PME + corporate"),
+                    ("Receitas de serviços e tarifas", "~22%", "cartão, seguros, corretagem"),
+                    ("Seguros e previdência", "~12%", ""),
+                    ("Mercado de capitais e câmbio", "~14%", ""),
+                ],
+                "vantagens": [
+                    "Plataforma global: câmbio, trade finance e operações internacionais para clientes com negócios no exterior",
+                    "Acesso à tecnologia e melhores práticas do grupo global — Openbank (banco digital do grupo) chegando ao Brasil",
+                    "Valuation descontado em relação aos pares: se o ROE normalizar, há upside relevante",
+                    "Histórico consistente de pagamento de JCP — yield atrativo dado o valuation baixo",
+                ],
+                "riscos": [
+                    "ROE estruturalmente mais baixo que os pares privados — sem nicho definido que justifique prêmio",
+                    "Decisões estratégicas dependem da matriz espanhola — nem sempre otimizadas para o Brasil",
+                    "Exposição a PME e varejo de menor renda em ciclo de juro alto e inadimplência elevada",
+                    "Competição intensa: Itaú na alta renda, BTG no atacado, Nubank/Inter no varejo digital",
+                ],
+                "barreira": (
+                    "A plataforma global é a barreira real. Para uma empresa brasileira que exporta, "
+                    "importa ou tem sócios internacionais, ter um banco com presença em 10 países na mesa "
+                    "é conveniente. Mas no varejo PF doméstico, essa vantagem não aparece — o que explica "
+                    "o ROE mais baixo: a barreira não se traduz em rentabilidade no negócio principal."
+                ),
+            },
+            "ABCB4": {
+                "nome": "ABC Brasil",
+                "fundacao": "1989",
+                "sede": "São Paulo, SP",
+                "tagline": "O banco que nunca atendeu pessoa física. 100% atacado, 100% foco em empresa — e a menor inadimplência do setor.",
+                "modelo": (
+                    "O ABC Brasil é o mais puro exemplo de especialização no setor bancário brasileiro. "
+                    "Não tem agência para pessoa física. Não tem conta corrente de varejo. Não tem cartão de crédito PF. "
+                    "Atende exclusivamente médias e grandes empresas (segmento middle market, corporate e large corporate) "
+                    "com crédito, trade finance (financiamento ao comércio exterior), câmbio, derivativos, "
+                    "banco de investimento e seguros corporativos. "
+                    "Controlado pelo Arab Banking Corporation (banco árabe do Barein), tem acesso facilitado "
+                    "a funding internacional e a uma rede de relacionamentos no Oriente Médio que "
+                    "nenhum banco brasileiro replica. "
+                    "A inadimplência histórica abaixo de 1% é o resultado de 35 anos atendendo quem "
+                    "tem balanço para mostrar — empresas com faturamento mínimo de R$30 mi anuais."
+                ),
+                "receita": [
+                    ("Margem com clientes (crédito corporativo)", "~55%", "spread sobre carteira de R$32+ bi"),
+                    ("Margem com mercado e tesouraria", "~20%", "PL remunerado ao CDI + operações de mercado"),
+                    ("Receitas de serviços", "~15%", "banco de investimento, tarifas, câmbio"),
+                    ("Seguros e outros", "~10%", ""),
+                ],
+                "vantagens": [
+                    "Inadimplência histórica < 1% — resultado de 35 anos emprestando apenas para empresas com balanço",
+                    "Sem exposição ao varejo PF: não sofre com inadimplência de cartão, crédito pessoal ou PME de baixa renda",
+                    "Funding internacional (via Arab Banking Corp) com custo menor que captação doméstica — vantagem de spread",
+                    "Modelo de negócio simples, previsível e escalável — sem a complexidade operacional de um banco universal",
+                    "Alta correlação de receitas com o CDI: PL remunerado a CDI + margem com clientes = proteção natural em juro alto",
+                ],
+                "riscos": [
+                    "Concentração: poucas carteiras grandes — uma inadimplência relevante pontual impacta mais que num banco pulverizado",
+                    "Crescimento limitado: não tem varejo para escalar rapidamente — cresce no ritmo das empresas que serve",
+                    "Controlador estrangeiro: decisões podem ser influenciadas por dinâmicas do Arab Banking Corporation",
+                    "Exposição ao ciclo corporativo: recessão severa aumenta inadimplência mesmo no atacado",
+                ],
+                "barreira": (
+                    "35 anos de relacionamento com o middle e large corporate brasileiro. "
+                    "Empresa de faturamento R$300 mi não troca de banco por conveniência — "
+                    "o relacionamento, o limite de crédito aprovado e as operações estruturadas em curso "
+                    "criam um lock-in real. Mais o funding árabe, que nenhum banco brasileiro vai replicar."
+                ),
+            },
+            "BRSR6": {
+                "nome": "Banrisul",
+                "fundacao": "1928",
+                "sede": "Porto Alegre, RS",
+                "tagline": "O banco do Rio Grande do Sul. Seu destino é o destino do RS — e do contrato com o governo estadual.",
+                "modelo": (
+                    "O Banrisul é um banco estatal regional — o que significa que seu modelo de negócio "
+                    "é fundamentalmente diferente de todos os outros nesta lista. "
+                    "Ele existe porque o governo do RS quer um banco público estadual. "
+                    "O coração do negócio é a folha de pagamento dos servidores públicos gaúchos: "
+                    "294 mil servidores ativos, inativos e pensionistas cujo salário passa pelo Banrisul, "
+                    "gerando uma base captiva de consignado, conta corrente e produtos financeiros. "
+                    "Em julho de 2026, renovou esse contrato por R$1,26 bi — pago à vista, reconhecido como "
+                    "intangível e amortizado ao longo de 5 anos. O custo dobrou em relação à renovação "
+                    "anterior (que era de 10 anos). Fora a folha, atende PMEs gaúchas e o varejo do RS. "
+                    "Toda a sua força e seu risco estão concentrados em um único estado."
+                ),
+                "receita": [
+                    ("Crédito consignado público (servidores RS)", "~40%", "base captiva da folha estadual"),
+                    ("Varejo PF e PME gaúcha", "~35%", "clientes pessoas físicas e pequenas empresas do RS"),
+                    ("Receitas de serviços", "~15%", "tarifas, previdência, seguros"),
+                    ("Tesouraria", "~10%", "títulos públicos e operações de mercado"),
+                ],
+                "vantagens": [
+                    "Base captiva de consignado público — 294 mil servidores estaduais com desconto em folha",
+                    "Valuation muito barato (P/VP ~0,5x, P/L ~3x) — desconta o risco político e o ROE baixo",
+                    "Dividend yield alto (~9-11%) — governo precisa do dividendo do banco para compor receitas estaduais",
+                    "Presença capilar no interior do RS onde os grandes bancos privados não chegam",
+                ],
+                "riscos": [
+                    "100% concentrado no RS — enchentes, seca, recessão regional batem direto no resultado",
+                    "Dependência do contrato de folha: renovado a custo crescente (dobrou por ano de contrato na última renovação)",
+                    "ROE cronicamente baixo (~7-9%) — estruturalmente abaixo do custo de capital",
+                    "Risco político: troca de governo estadual pode mudar a relação ou condições do contrato",
+                    "Qualidade de crédito pressionada em PF e PME, com inadimplência subindo em 2026",
+                ],
+                "barreira": (
+                    "O contrato com o governo do RS é a barreira — e também o risco. "
+                    "Nenhum banco privado vai entrar no estado para fazer o que o Banrisul faz "
+                    "sem o benefício do funding barato do servidor e a capilaridade de 500+ agências no interior. "
+                    "Mas essa barreira tem preço: R$1,26 bi a cada 5 anos só para manter o que já tem."
+                ),
+            },
+            "BMGB4": {
+                "nome": "Banco BMG",
+                "fundacao": "1930 (família Pentagna Guimarães)",
+                "sede": "Belo Horizonte, MG",
+                "tagline": "O especialista em consignado INSS. Enquanto outros bancões atendem todo mundo, o BMG só atende aposentado — e isso é sua maior força.",
+                "modelo": (
+                    "O BMG é o banco mais nichado desta lista: 88% da carteira de crédito é formada "
+                    "por aposentados e pensionistas do INSS. "
+                    "O produto central é o empréstimo consignado, onde as parcelas são descontadas "
+                    "diretamente do benefício do INSS — a inadimplência é estruturalmente baixa porque "
+                    "o pagador não é a pessoa, é o governo federal. "
+                    "A distribuição é feita por correspondentes bancários (terceiros que originam o crédito), "
+                    "lojas próprias 'help! Loja de Crédito' (na cor laranja, reconhecível pelo público), "
+                    "e canais digitais. "
+                    "O desafio é que o governo regula a taxa máxima (hoje 1,85%/mês para o empréstimo e "
+                    "2,46%/mês para o cartão). Quando a Selic sobe, o custo de captação sobe, "
+                    "mas o teto de taxa não — o spread comprime. "
+                    "Em 2025-2026, a CPI do INSS investigando fraudes no consignado criou obrigação de "
+                    "biometria facial para cada contratação — adiciona fricção e pode frear a originação."
+                ),
+                "receita": [
+                    ("Empréstimo consignado INSS", "~55%", "produto principal — taxa máxima 1,85%/mês"),
+                    ("Cartão consignado INSS", "~25%", "desconto direto no benefício — taxa máxima 2,46%/mês"),
+                    ("Consignado privado (CLT)", "~10%", "iniciado em 2025 — menor escala, maior risco"),
+                    ("Seguros e outros produtos", "~10%", "Bmg Seguradora — vida, acidentes pessoais"),
+                ],
+                "vantagens": [
+                    "Inadimplência estruturalmente baixa: parcelas descontadas direto do INSS — o devedor não pode deixar de pagar",
+                    "Base de aposentados é demograficamente crescente — 35 milhões de beneficiários do INSS e crescendo",
+                    "Reconhecimento de marca no público INSS: a cor laranja é sinônimo de consignado no interior do Brasil",
+                    "Correspondentes bancários capilarizados onde bancos tradicionais não chegam",
+                ],
+                "riscos": [
+                    "Teto regulatório de taxa: Selic sobe, mas o banco não consegue repassar — spread comprime estruturalmente",
+                    "CPI do INSS e fraudes no consignado: biometria obrigatória adiciona fricção e pode reduzir origação",
+                    "Concentração extrema em um segmento: qualquer mudança regulatória no consignado INSS impacta 88% da carteira",
+                    "ROE limitado pelo teto de taxa: difícil escalar margem acima de 12-14% com spread comprimido",
+                    "Consignado privado (CLT) em expansão — risco maior que o INSS, e o banco ainda está aprendendo o segmento",
+                ],
+                "barreira": (
+                    "O reconhecimento de marca no público INSS e a rede de correspondentes são difíceis de replicar. "
+                    "O aposentado do interior que reconhece a loja laranja e confia no 'consignado BMG' "
+                    "não troca facilmente de banco. Além disso, os correspondentes que originam crédito "
+                    "têm relacionamentos de anos com o BMG — e comissões que constroem lealdade. "
+                    "A barreira não é tecnológica; é de relacionamento e presença física em regiões remotas."
+                ),
+            },
+        },
+    },
     "🛡️ Seguradoras": {"tickers": [], "em_construcao": True},
     "⚡ Utilities Elétricas": {"tickers": [], "em_construcao": True},
     "🏗️ Incorporadoras": {"tickers": [], "em_construcao": True},
@@ -637,3 +1133,5 @@ with tab3:
             🔒 {p.get("barreira","")}
         </div>
         """, unsafe_allow_html=True)
+
+
