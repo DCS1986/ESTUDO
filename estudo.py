@@ -2620,8 +2620,144 @@ SETORES = {
             },
         },
     },
+    "🌾 Agronegócio": {
+        "tickers": ["SLCE3", "KEPL3"],
+        "tagline": "Dois negócios dentro do agro: uma produtora de grãos pura e uma fabricante de equipamentos para armazenar esses grãos. O mesmo ciclo, posições diferentes na cadeia.",
+        "logica": {
+            "titulo": "O que move o agronegócio",
+            "texto": (
+                "A SLC Agrícola produz soja, milho e algodão — resultado ligado diretamente "
+                "ao preço da commodity em dólar. "
+                "A Kepler Weber fabrica silos para armazenar o que o produtor colheu — "
+                "ciclo menos volátil, sustentado pelo déficit estrutural de 145 mi t "
+                "de armazenagem no Brasil."
+            ),
+            "drivers": [
+                ("Preço das commodities", "Soja e milho cotados em dólar no CBOT. Queda de 20% no preço reduz receita da SLC proporcionalmente."),
+                ("Câmbio", "Toda receita do agro é em dólar; custos em real. Dólar alto beneficia a SLC e aumenta poder de compra do produtor para investir em silo."),
+                ("Déficit de armazenagem", "Brasil produz 320 mi t/safra, capacidade estática é 175 mi t. Déficit de 145 mi t cria demanda secular para a Kepler independente do preço."),
+                ("Arrendamento", "SLC arrenda ~70% das terras em sacos de soja/ha. Quando preço cai, custo cai junto — hedge natural de margem."),
+                ("Insumos", "Fertilizantes e defensivos têm componente de câmbio. Normalização 2023-2026 beneficiou margens da SLC."),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "O que faz de verdade",
+                "Posição na cadeia",
+                "Exposição à commodity",
+                "Exposição ao câmbio",
+                "Ciclicidade",
+                "Dividendo (DY)",
+                "Risco principal",
+            ],
+            "grupos": [
+                {"label": "Agronegócio", "tickers": ["SLCE3", "KEPL3"]},
+            ],
+            "empresas": {
+                "SLCE3": {
+                    "nome": "SLC Agrícola",
+                    "cor": "#22C55E",
+                    "O que faz de verdade": ("Produtora de grãos e algodão", "soja, milho e algodão — maior produtora agrícola listada do Brasil"),
+                    "Posição na cadeia": ("Produtora pura", "planta, colhe e vende a commodity diretamente"),
+                    "Exposição à commodity": ("Máxima", "receita = volume × preço em dólar", "badge-red"),
+                    "Exposição ao câmbio": ("Máxima positiva", "receita em dólar, custo em real — dólar alto amplifica resultado", "badge-green"),
+                    "Ciclicidade": ("Alta", "preço de commodity oscila 30-50% em ciclos de 2-4 anos", "badge-red"),
+                    "Dividendo (DY)": ("DY variável 5-12%", "payout 50%; oscila com o ciclo de preços"),
+                    "Risco principal": ("Preço de soja + câmbio apreciado + clima adverso = resultado negativo", ""),
+                },
+                "KEPL3": {
+                    "nome": "Kepler Weber",
+                    "cor": "#F59E0B",
+                    "O que faz de verdade": ("Silos e equipamentos de armazenagem de grãos", "~80% de market share em silos metálicos no Brasil"),
+                    "Posição na cadeia": ("Fornecedor de infraestrutura", "vende ao produtor, não produz — menos exposição ao preço"),
+                    "Exposição à commodity": ("Indireta", "produtor com resultado bom investe mais; déficit garante demanda base", "badge-yellow"),
+                    "Exposição ao câmbio": ("Positiva por proxy", "produtor em dólar tem mais caixa para investir em armazenagem", "badge-green"),
+                    "Ciclicidade": ("Moderada", "déficit de 145 mi t sustenta demanda base mesmo em ciclos fracos", "badge-yellow"),
+                    "Dividendo (DY)": ("DY 6-10%", "pagadora consistente; carteira de pedidos de 12+ meses"),
+                    "Risco principal": ("Safra ruim + queda de commodity = produtor adia investimento em silo", ""),
+                },
+            },
+        },
+        "perfis": {
+            "SLCE3": {
+                "nome": "SLC Agrícola S.A.",
+                "fundacao": "1977",
+                "sede": "Porto Alegre, RS",
+                "tagline": "A maior produtora agrícola listada do Brasil. 700 mil hectares, soja + milho + algodão, tudo vendido em dólar.",
+                "modelo": (
+                    "Produtora pura de commodities — não beneficia nem exporta diretamente. "
+                    "Opera ~18 fazendas em 7 estados do Cerrado. "
+                    "~70% das áreas são arrendadas em sacos de soja/hectare: "
+                    "quando o preço cai, o custo cai junto — proteção automática de margem. "
+                    "Em 2025-2026, queda de ~20% no preço da soja e câmbio mais forte "
+                    "pressionaram margens vs o pico de 2022-2023."
+                ),
+                "receita": [
+                    ("Soja", "~55%", "principal cultura; exportada via tradings"),
+                    ("Algodão", "~30%", "maior margem unitária; demanda global crescente"),
+                    ("Milho (safrinha)", "~15%", "segunda safra no mesmo solo — custo marginal menor"),
+                ],
+                "vantagens": [
+                    "Maior produtora listada: escala de 700 mil ha gera poder de negociação com fornecedores",
+                    "Arrendamento como hedge: custo em sacos de soja cai quando preço cai automaticamente",
+                    "Cerrado: produtividade acima da média nacional; logística para exportação otimizada",
+                    "Diversificação: soja + milho + algodão suaviza dependência de uma única commodity",
+                ],
+                "riscos": [
+                    "Preço de soja: queda de 20% no preço reduz receita proporcionalmente",
+                    "Câmbio apreciado: real forte comprime margens da receita em dólar",
+                    "Clima: seca ou excesso de chuva impacta produção nas 18 fazendas",
+                    "Arrendamento renovável: risco de não renovação ou aumento de custo pelo dono da terra",
+                ],
+                "barreira": (
+                    "40 anos de relacionamento com donos de terra para arrendamento de longo prazo. "
+                    "Gestão de 18 fazendas em 7 estados com agricultura de precisão é operação "
+                    "que levou décadas para construir. "
+                    "Novo entrante precisaria de capital, terra disponível e reputação ao mesmo tempo."
+                ),
+            },
+            "KEPL3": {
+                "nome": "Kepler Weber S.A.",
+                "fundacao": "1925 (Panambi, RS)",
+                "sede": "Panambi, RS",
+                "tagline": "O líder absoluto em armazenagem de grãos no Brasil. 80% de market share e déficit de 145 mi t de capacidade ainda a preencher.",
+                "modelo": (
+                    "Fabrica silos metálicos, secadores de grãos, elevadores de canecas e "
+                    "sistemas de transporte para armazenagem. "
+                    "Líder com ~80% de market share em silos metálicos. "
+                    "Motor secular: Brasil produz 320 mi t e tem capacidade de 175 mi t — "
+                    "déficit de 145 mi t cria demanda estrutural que não depende do preço da soja. "
+                    "Expansão do agro para MATOPIBA gera novas fazendas sem infraestrutura — "
+                    "demanda crescente por silos e secadores do zero."
+                ),
+                "receita": [
+                    ("Silos metálicos", "~55%", "produto principal; ~80% de market share"),
+                    ("Secadores de grãos", "~20%", "equipamento crítico pós-colheita; exigido para qualidade de exportação"),
+                    ("Sistemas de transporte", "~15%", "elevadores e correias — cross-sell natural com o silo"),
+                    ("Exportação e serviços", "~10%", "América do Sul, África; instalação e manutenção"),
+                ],
+                "vantagens": [
+                    "80% de market share: liderança de 100 anos — nenhum concorrente chega perto",
+                    "Déficit de 145 mi t: demanda estrutural secular independente do ciclo econômico",
+                    "Câmbio positivo por proxy: produtor em dólar tem mais poder de compra para investir",
+                    "Carteira de 12+ meses de pedidos: visibilidade excepcional no setor industrial",
+                ],
+                "riscos": [
+                    "Ciclicidade do agro: safra ruim + queda de commodity = produtor adia investimento",
+                    "Aço: preço internacional afeta custo dos silos",
+                    "Enchentes RS: sede em Panambi — desastres no Sul impactam operações",
+                    "Importados chineses: silos via dumping em câmbio apreciado",
+                ],
+                "barreira": (
+                    "100 anos de know-how e rede de revendedores em todo o Brasil agrícola. "
+                    "O produtor que compra um silo quer quem estará lá em 10 anos. "
+                    "A Kepler tem esse canal — um entrante precisaria de décadas para construir."
+                ),
+            },
+        },
+    },
     "🔩 Autopeças & Industrial": {
-        "tickers": ["LEVE3", "POMO4", "VULC3", "SHUL4", "KEPL3"],
+        "tickers": ["LEVE3", "POMO4", "VULC3", "SHUL4"],
         "tagline": "Cinco empresas de 'autopeças e industrial' — mas com modelos, clientes e ciclos completamente diferentes. A LEVE vende para mecânica no interior do Brasil. A KEPL vende para fazendas. A POMO vende ônibus para o governo.",
         "logica": {
             "titulo": "O que move o setor — e por que cada empresa tem seu próprio ciclo",
@@ -2686,7 +2822,7 @@ SETORES = {
             ],
             "grupos": [
                 {"label": "Autopeças e componentes", "tickers": ["LEVE3", "SHUL4"]},
-                {"label": "Equipamentos e industrial", "tickers": ["POMO4", "KEPL3", "VULC3"]},
+                {"label": "Equipamentos e industrial", "tickers": ["POMO4", "VULC3"]},
             ],
             "empresas": {
                 "LEVE3": {
@@ -2999,6 +3135,7 @@ SETORES = {
             },
         },
     },
+    "🏪 Shoppings": {"tickers": ["ALOS3"], "em_construcao": True},
 }
 
 
@@ -3066,6 +3203,7 @@ st.markdown(f"""
         {"".join(f"<span class='ticker-tag'>{t}</span>" for t in dados_setor.get("tickers", []))}
         {("<br><span style='font-size:0.65rem;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.8px;margin-right:6px;'>" + dados_setor.get("label_sub","") + ":</span>" + "".join(f"<span class='ticker-tag' style='opacity:0.65;'>{t}</span>" for t in dados_setor.get("tickers_sub",[]))) if dados_setor.get("tickers_sub") else ""}
     </div>
+</div>
 """, unsafe_allow_html=True)
 
 # Abas principais
