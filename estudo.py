@@ -2620,7 +2620,385 @@ SETORES = {
             },
         },
     },
-    "🔩 Autopeças & Industrial": {"tickers": [], "em_construcao": True},
+    "🔩 Autopeças & Industrial": {
+        "tickers": ["LEVE3", "POMO4", "VULC3", "SHUL4", "KEPL3"],
+        "tagline": "Cinco empresas de 'autopeças e industrial' — mas com modelos, clientes e ciclos completamente diferentes. A LEVE vende para mecânica no interior do Brasil. A KEPL vende para fazendas. A POMO vende ônibus para o governo.",
+        "logica": {
+            "titulo": "O que move o setor — e por que cada empresa tem seu próprio ciclo",
+            "texto": (
+                "Autopeças e industrial é o setor mais heterogêneo da bolsa. "
+                "LEVE3, POMO4, VULC3, SHUL4 e KEPL3 estão no mesmo índice setorial — "
+                "mas têm clientes, ciclos e riscos completamente diferentes. "
+                "A Mahle (LEVE3) vende velas e filtros para o aftermarket de carros. "
+                "A Marcopolo (POMO4) fabrica carrocerias de ônibus para o governo e para exportação. "
+                "A Vulcabras (VULC3) faz tênis Under Armour e Olympikus no Brasil. "
+                "A Schuler (SHUL4) fabrica peças de aço estampado para montadoras. "
+                "A Kepler Weber (KEPL3) fabrica silos e equipamentos para armazenagem de grãos. "
+                "Entender o cliente final de cada uma é mais importante do que qualquer múltiplo."
+            ),
+            "drivers": [
+                ("Frota circulante e idade média do veículo — o motor do aftermarket", (
+                    "Quanto mais velha a frota, maior a demanda por peças de reposição. "
+                    "O Brasil tem frota média de 11+ anos — uma das mais velhas do mundo desenvolvido. "
+                    "Isso cria demanda estrutural para o aftermarket independente do ciclo econômico. "
+                    "A Mahle (LEVE3) é o maior beneficiário: quanto mais velhos os carros, "
+                    "mais filtros, velas e kits de motor são trocados nas mecânicas."
+                )),
+                ("Câmbio — o duplo efeito para exportadores", (
+                    "Empresas que exportam (Mahle, Marcopolo, Kepler) faturam em dólar "
+                    "mas têm custos em real. Dólar alto = margens melhores. "
+                    "Mas câmbio também afeta custo de matéria-prima: aço e borracha têm "
+                    "componente de preço internacional. Importadoras de componentes sofrem com dólar alto."
+                )),
+                ("Investimento em infraestrutura e frotas — o ciclo da Marcopolo", (
+                    "Ônibus são comprados por prefeituras (frota municipal), "
+                    "empresas de turismo e operadores de fretamento. "
+                    "Prefeituras compram quando têm orçamento (BNDES, verbas federais). "
+                    "Exportação para Américas, África e Ásia adiciona diversificação geográfica. "
+                    "Em 2026, BRT (Bus Rapid Transit) em capitais brasileiras é catalisador."
+                )),
+                ("Agronegócio e safra — o ciclo da Kepler Weber", (
+                    "A Kepler fabrica silos, secadores e transportadores de grãos. "
+                    "Quando o agronegócio vai bem (preço de commodity alto, câmbio favorável), "
+                    "produtores e cooperativas investem em armazenagem. "
+                    "Com a safra recorde brasileira e déficit de armazenagem, "
+                    "a Kepler opera com carteira de pedidos de 12+ meses."
+                )),
+                ("OEM vs aftermarket — dois mercados com lógicas opostas", (
+                    "OEM (Original Equipment Manufacturer): vende para montadoras (Ford, GM, Toyota) "
+                    "que colocam as peças nos carros novos. Segue o ciclo de produção de veículos. "
+                    "Aftermarket: vende para o mercado de reposição (mecânicas, distribuidores). "
+                    "Segue a frota circulante — anticíclico. "
+                    "Schuler (SHUL4) é OEM puro. Mahle tem os dois, com predominância do aftermarket."
+                )),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "O que faz de verdade",
+                "Cliente principal",
+                "Modelo OEM vs aftermarket",
+                "Exposição ao câmbio",
+                "Ciclicidade do negócio",
+                "Margem bruta (ref.)",
+                "Dividendo (DY)",
+                "Risco principal",
+            ],
+            "grupos": [
+                {"label": "Autopeças e componentes", "tickers": ["LEVE3", "SHUL4"]},
+                {"label": "Equipamentos e industrial", "tickers": ["POMO4", "KEPL3", "VULC3"]},
+            ],
+            "empresas": {
+                "LEVE3": {
+                    "nome": "Mahle Metal Leve",
+                    "cor": "#3B82F6",
+                    "O que faz de verdade": ("Peças de motor — pistões, filtros, velas", "componentes de motor para carros leves e pesados"),
+                    "Cliente principal": ("Aftermarket (mecânicas e distribuidores)", "~70% das receitas; OEM (montadoras) ~30%"),
+                    "Modelo OEM vs aftermarket": ("Aftermarket dominante", "anticíclico — frota velha gera demanda constante", "badge-green"),
+                    "Exposição ao câmbio": ("Alta positiva", "exporta para Europa e EUA; dólar alto aumenta margens", "badge-green"),
+                    "Ciclicidade do negócio": ("Baixa", "aftermarket não para em recessão — carro velho precisa de peça", "badge-green"),
+                    "Margem bruta (ref.)": ("~38-40%", "uma das mais altas do setor industrial brasileiro"),
+                    "Dividendo (DY)": ("DY 8-12%", "payout elevado; controladora Mahle alemã quer dividendo"),
+                    "Risco principal": ("Eletrificação da frota: carro elétrico tem menos peças de motor — ameaça estrutural de longo prazo", ""),
+                },
+                "SHUL4": {
+                    "nome": "Schuler (Schuler S.A.)",
+                    "cor": "#6B7280",
+                    "O que faz de verdade": ("Peças estampadas de aço para carrocerias", "componentes estruturais para montadoras — portas, chassi, reforços"),
+                    "Cliente principal": ("Montadoras (OEM puro)", "Ford, GM, Toyota, Stellantis — 100% B2B com grandes clientes"),
+                    "Modelo OEM vs aftermarket": ("OEM 100%", "segue ciclo de produção de veículos das montadoras", "badge-red"),
+                    "Exposição ao câmbio": ("Moderada", "matéria-prima (aço) tem componente dólar; cliente paga em real", "badge-yellow"),
+                    "Ciclicidade do negócio": ("Alta", "produção de veículos cai em recessão; montadoras reduzem pedidos", "badge-red"),
+                    "Margem bruta (ref.)": ("~18-22%", "menor que aftermarket por ser commodity industrial"),
+                    "Dividendo (DY)": ("DY variável ~5%", "payout dependente de resultado — mais variável que pares"),
+                    "Risco principal": ("OEM concentrado em poucos clientes + risco de eletrificação (precisa adaptar estamparia) + ciclo automotivo", ""),
+                },
+                "POMO4": {
+                    "nome": "Marcopolo",
+                    "cor": "#22C55E",
+                    "O que faz de verdade": ("Carrocerias de ônibus", "líder mundial em ônibus; exporta para 100+ países"),
+                    "Cliente principal": ("Prefeituras + operadoras de ônibus + exportação", "Brasil ~50%; exterior ~50%"),
+                    "Modelo OEM vs aftermarket": ("OEM (não é autopeças)", "faz o produto final — não a peça; cada ônibus é um projeto", "badge-yellow"),
+                    "Exposição ao câmbio": ("Alta positiva", "~50% das receitas em moeda estrangeira (dólar, euro, peso)", "badge-green"),
+                    "Ciclicidade do negócio": ("Moderada", "exportação suaviza o ciclo doméstico; renovação de frotas tem demanda estrutural", "badge-yellow"),
+                    "Margem bruta (ref.)": ("~20-24%", "margens crescendo com mix favorável de exportação e BRT"),
+                    "Dividendo (DY)": ("DY 5-8%", "payout consistente; histórico de JCP trimestral"),
+                    "Risco principal": ("Eletrificação de ônibus: BYD e Volvo elétricos competem por frotas novas; Marcopolo precisa adaptar", ""),
+                },
+                "KEPL3": {
+                    "nome": "Kepler Weber",
+                    "cor": "#F59E0B",
+                    "O que faz de verdade": ("Silos e equipamentos para armazenagem de grãos", "líder no Brasil em armazenagem; 80% de market share em silos"),
+                    "Cliente principal": ("Produtores rurais + cooperativas + tradings", "agronegócio brasileiro; exportação para Américas e África"),
+                    "Modelo OEM vs aftermarket": ("Capital goods (bens de capital)", "não é autopeça — é equipamento de fazenda; ciclo de investimento rural", "badge-yellow"),
+                    "Exposição ao câmbio": ("Alta positiva", "cliente rural vende soja em dólar — quando dólar sobe, produtor tem mais poder de compra", "badge-green"),
+                    "Ciclicidade do negócio": ("Alta (mas ciclo diferente)", "segue o agro, não o automobilístico; safra recorde = demanda por armazenagem", "badge-yellow"),
+                    "Margem bruta (ref.)": ("~28-32%", "liderança de mercado permite precificação — margem acima de pares industriais"),
+                    "Dividendo (DY)": ("DY 6-10%", "pagadora consistente; carteira de pedidos de 12+ meses dá visibilidade"),
+                    "Risco principal": ("Ciclicidade do agro: safra ruim + queda de commodity reduz investimento do produtor rural", ""),
+                },
+                "VULC3": {
+                    "nome": "Vulcabras Azaleia",
+                    "cor": "#EF4444",
+                    "O que faz de verdade": ("Calçados esportivos e casual", "Under Armour + Olympikus no Brasil; 50+ mi de pares/ano"),
+                    "Cliente principal": ("Consumidor final via varejo", "Renner, Riachuelo, lojas próprias, e-commerce — B2C"),
+                    "Modelo OEM vs aftermarket": ("Não é autopeça", "fabricante de calçados — confusão de classificação setorial", "badge-yellow"),
+                    "Exposição ao câmbio": ("Moderada negativa", "licença Under Armour paga royalty em dólar; matéria-prima com componente importado", "badge-yellow"),
+                    "Ciclicidade do negócio": ("Moderada", "consumo de calçados é menos cíclico que bens duráveis, mas sensível à renda", "badge-yellow"),
+                    "Margem bruta (ref.)": ("~42-45%", "a mais alta do grupo — brand premium da Under Armour e escala de produção"),
+                    "Dividendo (DY)": ("DY 3-5%", "crescimento reinvestido; capex em automação de produção"),
+                    "Risco principal": ("Renovação do contrato Under Armour + concorrência de importados asiáticos + sensibilidade ao consumo de baixa renda", ""),
+                },
+            },
+        },
+        "perfis": {
+            "LEVE3": {
+                "nome": "Mahle Metal Leve S.A.",
+                "fundacao": "1950 (como Metal Leve; controlada pela Mahle alemã desde 1996)",
+                "sede": "São Paulo, SP",
+                "tagline": "O negócio que prospera quando o carro envelhece. Aftermarket anticíclico, controladora alemã que financia o P&D, e a única empresa do grupo que a Mahle listou fora da Alemanha.",
+                "modelo": (
+                    "A Mahle Metal Leve é a subsidiária brasileira do grupo Mahle — "
+                    "um dos maiores fabricantes de componentes automotivos do mundo, "
+                    "com sede em Stuttgart, Alemanha. "
+                    "No Brasil, fabrica pistões, anéis de segmento, buchas, "
+                    "filtros (óleo, ar, combustível) e velas de ignição. "
+                    "O modelo tem duas frentes: OEM (~30%), onde vende diretamente para "
+                    "GM, Ford, Stellantis e Volkswagen que montam os carros novos; "
+                    "e aftermarket (~70%), onde vende para distribuidores e mecânicas "
+                    "que trocam peças em carros usados. "
+                    "O aftermarket é o diferencial: com frota média de 11+ anos no Brasil, "
+                    "cada motor exige troca de pistão, filtro ou vela em média a cada 2-3 anos. "
+                    "Quanto mais velha a frota, mais demanda — é anticíclico por natureza. "
+                    "A controladora alemã custeia o P&D global (€1 bi/ano em inovação) "
+                    "e o Brasil se beneficia do know-how sem pagar por isso diretamente. "
+                    "Exporta componentes para Europa e América do Norte, capturando o câmbio favorável."
+                ),
+                "receita": [
+                    ("Aftermarket Brasil", "~55%", "mecânicas, distribuidores, varejo de autopeças — anticíclico e recorrente"),
+                    ("OEM Brasil (montadoras)", "~25%", "GM, Ford, Stellantis, VW — segue produção de veículos novos"),
+                    ("Exportação (OEM global)", "~20%", "componentes para Europa e EUA; dólar alto melhora margens"),
+                ],
+                "vantagens": [
+                    "Aftermarket anticíclico: frota velha gera demanda constante independente do PIB",
+                    "P&D financiado pela matriz: Mahle alemã investe €1 bi/ano em inovação — LEVE3 acessa sem pagar",
+                    "Margem bruta de 38-40%: entre as mais altas do setor industrial — brand reconhecido pelo mecânico",
+                    "Exportação em dólar: ~20% das receitas em moeda forte protege em desvalorizações do real",
+                    "Único papel do grupo Mahle listado fora da Alemanha: acesso a gestão global com liquidez local",
+                ],
+                "riscos": [
+                    "Eletrificação da frota: carro elétrico não tem pistão, filtro de óleo nem vela — ameaça estrutural de 10-20 anos",
+                    "Concentração no motor a combustão: 90%+ das receitas dependem de tecnologia em transição",
+                    "OEM sujeito ao ciclo automotivo: montadoras param produção em crise e afeta 25% da receita",
+                    "Controladora estrangeira: dividendo certo, mas decisões estratégicas vêm de Stuttgart — potencial de conflito com minoritários",
+                ],
+                "barreira": (
+                    "Marca reconhecida pelo mecânico. No aftermarket, quem decide a peça é o mecânico — "
+                    "não o dono do carro. E o mecânico de Franca, Uberlândia ou Manaus "
+                    "conhece e confia na Mahle há décadas. "
+                    "Construir essa confiança com 50.000 mecânicos no Brasil inteiro "
+                    "é um ativo invisível que nenhum concorrente recompra. "
+                    "Mais o know-how técnico da matriz alemã: "
+                    "qualidade de produto que importados asiáticos ainda não replicam no motor."
+                ),
+            },
+            "POMO4": {
+                "nome": "Marcopolo S.A.",
+                "fundacao": "1949 (em Caxias do Sul, RS — por Reinaldo Pasa)",
+                "sede": "Caxias do Sul, RS",
+                "tagline": "O maior fabricante de carrocerias de ônibus do mundo. Exporta para 100+ países, e cada ônibus é um projeto de engenharia — não uma linha de produção em série.",
+                "modelo": (
+                    "A Marcopolo não fabrica o chassi do ônibus — fabrica a carroceria. "
+                    "O chassi vem da Volvo, Mercedes ou Scania; a Marcopolo coloca em cima "
+                    "a estrutura de passageiros (o que o passageiro vê e sente). "
+                    "É a maior fabricante de carrocerias de ônibus do mundo em volume. "
+                    "Opera em dois mercados distintos: Brasil (~50% da receita), "
+                    "onde os clientes são prefeituras (ônibus urbano), empresas de turismo "
+                    "e fretamento; e exterior (~50%), onde exporta para América Latina, "
+                    "África, Índia, Austrália e Europa, com fabricação local em alguns países. "
+                    "O produto é customizado — cada pedido tem especificações diferentes. "
+                    "Isso cria barreiras de engenharia e relacionamento com o cliente "
+                    "que produtos padronizados não têm. "
+                    "Em 2025-2026, o BRT (Bus Rapid Transit) nas capitais brasileiras "
+                    "e o programa de eletrificação de frotas municipais são os maiores catalisadores. "
+                    "A Marcopolo já fabrica carrocerias para ônibus elétricos — "
+                    "é uma das poucas do setor que mitigou o risco de eletrificação."
+                ),
+                "receita": [
+                    ("Ônibus urbano — Brasil", "~30%", "prefeituras e operadoras; BRT e eletrificação são catalisadores 2025-2026"),
+                    ("Ônibus rodoviário e turismo — Brasil", "~20%", "empresas de fretamento e turismo; ciclo ligado à economia"),
+                    ("Exportação (América Latina + África + outros)", "~35%", "dólar/euro nas receitas; margens melhores que o mercado doméstico"),
+                    ("Fabricação local no exterior (JVs)", "~15%", "Índia, Austrália, Colômbia — receita em moeda local"),
+                ],
+                "vantagens": [
+                    "Líder mundial em carrocerias de ônibus: escala que nenhum concorrente brasileiro alcança",
+                    "50% de exportação: diversificação geográfica que suaviza o ciclo doméstico",
+                    "Produto customizado: cada ônibus é um projeto — barreiras de engenharia e relacionamento",
+                    "Já fabrica para elétricos: adaptação estratégica que evita a armadilha da eletrificação",
+                    "Caxias do Sul: cluster industrial gaúcho com fornecedores especializados e mão de obra qualificada",
+                ],
+                "riscos": [
+                    "Dependência de orçamento público: prefeituras compram quando têm verba — ciclo político afeta demanda doméstica",
+                    "Eletrificação em andamento: BYD e Volvo Elétrico competem pela carroceria de ônibus elétrico",
+                    "Câmbio de dois gumes: exportação beneficia margem, mas matéria-prima importada sobe junto",
+                    "Enchentes RS (2024): sede em Caxias do Sul sofreu impacto operacional — risco geográfico concentrado",
+                ],
+                "barreira": (
+                    "75 anos de know-how em engenharia de carrocerias de ônibus. "
+                    "O ônibus urbano de São Paulo, de Lagos, de Melbourne e de Montevidéu "
+                    "pode ser da Marcopolo — e cada cidade tem normas técnicas, "
+                    "dimensões e especificações diferentes. "
+                    "Dominar isso em 100+ países é uma barreira de conhecimento técnico e "
+                    "relacionamento institucional que nenhum entrante replica em menos de décadas."
+                ),
+            },
+            "VULC3": {
+                "nome": "Vulcabras Azaleia S.A.",
+                "fundacao": "1952 (como Calçados Azaleia; Vulcabras desde 2011)",
+                "sede": "Jundiaí, SP",
+                "tagline": "O maior fabricante de calçados esportivos do Brasil. Faz Under Armour para o Brasil e Olympikus — 50 milhões de pares por ano, saindo de Horizonte (CE).",
+                "modelo": (
+                    "A Vulcabras é a maior fabricante de calçados esportivos do Brasil — "
+                    "em volume de produção, não em receita de marca. "
+                    "Opera com duas marcas: Olympikus (própria, focada em performance popular) "
+                    "e Under Armour (licença exclusiva para o Brasil — fabrica, distribui e vende). "
+                    "A fábrica principal fica em Horizonte (CE) — maior complexo industrial "
+                    "de calçados do hemisfério sul, com mais de 13.000 funcionários. "
+                    "O Nordeste tem dois benefícios estruturais: custo de mão de obra menor "
+                    "e incentivos fiscais do estado do Ceará. "
+                    "O modelo de licença da Under Armour é o diferencial: "
+                    "a Vulcabras paga royalty (em dólar, um custo), "
+                    "mas recebe o brand premium de uma marca global de alta performance "
+                    "que ela não precisaria construir do zero. "
+                    "Vende via varejo (Renner, Riachuelo), e-commerce e lojas multimarcas."
+                ),
+                "receita": [
+                    ("Under Armour Brasil (licença)", "~48%", "marca premium — maior ticket médio; paga royalty em dólar; contrato vigente"),
+                    ("Olympikus", "~40%", "marca própria — boa penetração no interior e classes B/C; maior margem líquida"),
+                    ("Outros (exportação, private label)", "~12%", "exportação para América Latina; produção para terceiros"),
+                ],
+                "vantagens": [
+                    "Maior complexo industrial de calçados do hemisfério sul: escala de 50 mi de pares/ano gera custo unitário imbatível",
+                    "Under Armour: brand premium sem o risco de construir uma marca global do zero",
+                    "Nordeste: custo de mão de obra menor + incentivos fiscais do Ceará = estrutura de custo competitiva",
+                    "Margem bruta 42-45%: a mais alta do grupo — mix de marca premium com produção eficiente",
+                    "Olympikus como proteção: marca própria cresce sem depender de contrato de licença",
+                ],
+                "riscos": [
+                    "Renovação do contrato Under Armour: se perder a licença, perde ~48% da receita do dia para a noite",
+                    "Royalty em dólar: custo da licença sobe com o dólar — margem comprimida em desvalorizações do real",
+                    "Importados asiáticos: concorrência de calçados chineses e vietnamitas comprime preços no varejo",
+                    "Exposição à renda da classe C: Olympikus e Under Armour entry-level sensíveis a crises de renda",
+                ],
+                "barreira": (
+                    "Escala industrial e a licença Under Armour. "
+                    "Construir um complexo de 13.000 funcionários especializados em calçados esportivos "
+                    "leva décadas — e criar o conhecimento técnico de solado, "
+                    "espuma de amortecimento e cabedal esportivo é barreira de processo. "
+                    "A Under Armour escolheu a Vulcabras porque ela é a única no Brasil "
+                    "com capacidade de produzir em escala e qualidade para uma marca premium global."
+                ),
+            },
+            "SHUL4": {
+                "nome": "Schuler S.A.",
+                "fundacao": "1937 (em São Bento do Sul, SC)",
+                "sede": "São Bento do Sul, SC",
+                "tagline": "A maior estamparia de aço do Brasil. Fabrica as partes metálicas que ninguém vê — mas que todo carro tem. Puro OEM, puro ciclo automotivo.",
+                "modelo": (
+                    "A Schuler é uma OEM pura — fabrica exclusivamente para montadoras. "
+                    "O produto são peças estampadas de aço: portas, capôs, para-lamas, "
+                    "reforços estruturais de chassi, componentes de suspensão. "
+                    "É o que o cliente nunca vê, mas que está em todo veículo. "
+                    "A demanda segue diretamente a produção de veículos no Brasil — "
+                    "quando as montadoras produzem mais, a Schuler fatura mais; "
+                    "quando param (crise de semicondutores, recessão), a Schuler para junto. "
+                    "A matéria-prima principal é o aço plano — cujo preço é cotado internacionalmente "
+                    "e tem componente de câmbio, criando risco de margem quando o real desvaloriza "
+                    "sem que o cliente (montadora) aceite reajuste imediato. "
+                    "Opera em Santa Catarina, com uma estrutura industrial robusta "
+                    "e relacionamento de décadas com as principais montadoras do Brasil."
+                ),
+                "receita": [
+                    ("Peças estampadas para carros de passeio", "~60%", "GM, Ford, Stellantis, VW, Toyota — clientes concentrados"),
+                    ("Peças para veículos comerciais e pesados", "~30%", "caminhões e ônibus — ciclo diferente do passeio"),
+                    ("Ferramental e outros serviços", "~10%", "matrizes e ferramentas para clientes industriais"),
+                ],
+                "vantagens": [
+                    "Relacionamento de décadas com montadoras: trocam de fornecedor raramente — custo de mudança é enorme",
+                    "Santa Catarina: polo industrial consolidado com fornecedores especializados e logística para portos",
+                    "Especialização técnica: estampagem de alta precisão é barreira de processo que startups não replicam",
+                    "Veículos comerciais: diversificação com caminhões e ônibus que têm ciclo diferente do passeio",
+                ],
+                "riscos": [
+                    "OEM 100%: qualquer queda na produção de veículos impacta diretamente a receita",
+                    "Concentração de clientes: poucos clientes grandes — perder um é perder fatia relevante",
+                    "Aço como risco: commodity internacional com componente cambial; repricing com montadora é lento",
+                    "Eletrificação: carros elétricos têm menos peças estampadas de aço (estrutura diferente) — risco de médio prazo",
+                ],
+                "barreira": (
+                    "O processo de qualificação de um novo fornecedor numa montadora leva 2-3 anos "
+                    "de testes, auditorias e certificações. "
+                    "A Schuler já passou por esse processo com todos os clientes — "
+                    "a barreira de entrada não é o equipamento (pode-se comprar uma prensa), "
+                    "mas o histórico de qualidade que dá confiança à montadora para homologar. "
+                    "E São Bento do Sul concentra um cluster de indústrias de metal-mecânica "
+                    "que cria um ambiente de fornecedores especializados difícil de replicar."
+                ),
+            },
+            "KEPL3": {
+                "nome": "Kepler Weber S.A.",
+                "fundacao": "1925 (em Panambi, RS)",
+                "sede": "Panambi, RS",
+                "tagline": "O líder absoluto em armazenagem de grãos no Brasil. 80% de market share em silos — e a safra recorde do agro brasileiro ainda está criando demanda por mais capacidade.",
+                "modelo": (
+                    "A Kepler Weber não é autopeça — é uma empresa de bens de capital para o agronegócio. "
+                    "Fabrica silos (metálicos e de concreto), secadores de grãos, "
+                    "transportadores (elevadores de canecas, correias) e sistemas de controle "
+                    "para armazenagem de soja, milho, trigo e outros grãos. "
+                    "É líder absoluta no Brasil com ~80% de market share em silos metálicos — "
+                    "o produto mais vendido do portfólio. "
+                    "O mercado-alvo são produtores rurais individuais, cooperativas e tradings "
+                    "(Bunge, ADM, Cargill, LDC). "
+                    "O diferencial do modelo: o Brasil tem grave déficit de armazenagem. "
+                    "A capacidade estática nacional é de ~175 milhões de toneladas, "
+                    "enquanto a produção de grãos superou 320 milhões em 2025. "
+                    "Cada tonelada de grão produzida sem armazém adequado é prejuízo para o produtor. "
+                    "Isso cria demanda estrutural que não depende do ciclo econômico convencional — "
+                    "depende do ciclo do agronegócio."
+                ),
+                "receita": [
+                    ("Silos metálicos e acessórios", "~55%", "produto principal; liderança de 80% de mercado; vende a produtores e cooperativas"),
+                    ("Secadores de grãos", "~20%", "equipamento crítico pós-colheita; crescimento com qualidade exigida para exportação"),
+                    ("Sistemas de transporte (elevadores, correias)", "~15%", "logística interna do silo — cross-sell natural com a venda do silo"),
+                    ("Exportação e serviços", "~10%", "América do Sul, África e outros; instalação e manutenção"),
+                ],
+                "vantagens": [
+                    "80% de market share em silos: nenhum concorrente chega perto — liderança consolidada em décadas",
+                    "Déficit estrutural de armazenagem: Brasil produz 320 mi t de grãos com capacidade de 175 mi t — runway de crescimento secular",
+                    "Câmbio positivo por proxy: cliente rural vende soja em dólar — dólar alto dá mais poder de compra para investir em armazenagem",
+                    "Carteira de pedidos de 12+ meses: visibilidade de receita acima da média industrial",
+                    "Panambi como polo: 100 anos de know-how em equipamentos agroindustriais no RS — cluster com fornecedores especializados",
+                ],
+                "riscos": [
+                    "Ciclicidade do agro: safra ruim + queda de commodity = produtor adia investimento em armazenagem",
+                    "Aço como matéria-prima: preço internacional afeta custo dos silos; repasse ao cliente tem defasagem",
+                    "Concentração geográfica: RS como base industrial — enchentes de 2024 impactaram operações",
+                    "Concorrência de importados: silos chineses entram via dumping em períodos de câmbio apreciado",
+                ],
+                "barreira": (
+                    "100 anos de know-how e 80% de mercado criam uma barreira quase intransponível. "
+                    "O produtor rural que vai comprar um silo de R$500 mil "
+                    "não arrisca com um fornecedor desconhecido — "
+                    "ele quer quem estará lá para dar assistência em 10 anos. "
+                    "A Kepler tem rede de revendedores e assistência técnica em todo o Brasil agrícola — "
+                    "um entrante precisaria de décadas para construir esse canal. "
+                    "E a posição de liderança cria um efeito de rede: "
+                    "cooperativa que já tem silos Kepler compra mais Kepler "
+                    "porque os sistemas são integrados."
+                ),
+            },
+        },
+    },
 }
 
 
@@ -2688,7 +3066,6 @@ st.markdown(f"""
         {"".join(f"<span class='ticker-tag'>{t}</span>" for t in dados_setor.get("tickers", []))}
         {("<br><span style='font-size:0.65rem;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.8px;margin-right:6px;'>" + dados_setor.get("label_sub","") + ":</span>" + "".join(f"<span class='ticker-tag' style='opacity:0.65;'>{t}</span>" for t in dados_setor.get("tickers_sub",[]))) if dados_setor.get("tickers_sub") else ""}
     </div>
-</div>
 """, unsafe_allow_html=True)
 
 # Abas principais
