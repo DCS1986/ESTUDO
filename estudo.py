@@ -33,13 +33,16 @@ html, body, [class*="css"] {
     border-right: 1px solid rgba(255,255,255,0.06);
 }
 [data-testid="stSidebar"] .stButton > button {
-    width: 100%; background: transparent; border: none;
-    color: #6B7280; text-align: left; padding: 10px 16px;
-    border-radius: 8px; font-size: 0.875rem; font-weight: 500;
-    cursor: pointer; transition: all 0.15s;
+    width: 100%; background: transparent !important; border: none !important;
+    color: transparent !important; padding: 0 !important; margin-top: -50px !important;
+    height: 42px !important; cursor: pointer; position: relative; z-index: 2;
+    box-shadow: none !important; font-size: 0 !important;
 }
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: rgba(212,175,55,0.10); color: #D4AF37;
+    background: transparent !important; border: none !important;
+}
+[data-testid="stSidebar"] .stButton > button:focus {
+    box-shadow: none !important; outline: none !important;
 }
 
 h1 { font-family: 'Playfair Display', serif !important; color: #E6E1D6 !important; }
@@ -3546,13 +3549,48 @@ with st.sidebar:
     if "setor_ativo" not in st.session_state:
         st.session_state.setor_ativo = "📄 Papel & Celulose"
 
+    # Cor de fundo por setor
+    _COR_SETOR = {
+        "📄 Papel & Celulose":      ("#2D4A2D", "#6EE37A"),
+        "🏦 Bancos":                 ("#1E3A5F", "#60A5FA"),
+        "🛡️ Seguradoras":            ("#3B2A5C", "#A78BFA"),
+        "⚡ Utilities Elétricas":    ("#4A3A00", "#FCD34D"),
+        "🏗️ Incorporadoras":         ("#4A2020", "#F87171"),
+        "💧 Saneamento":             ("#1A3D4F", "#38BDF8"),
+        "⛏️ Mineração":              ("#3D2E10", "#FBBF24"),
+        "🛢️ Petróleo & Gás":         ("#2A1F0E", "#FB923C"),
+        "🌾 Agronegócio":            ("#1F3D1A", "#86EFAC"),
+        "🔩 Autopeças & Industrial":  ("#2A2A2A", "#D1D5DB"),
+        "🏪 Shoppings":              ("#3D1F3D", "#E879F9"),
+    }
+    _COR_DEFAULT = ("#1F2937", "#9CA3AF")
+
     for nome_setor in SETORES:
         dados = SETORES[nome_setor]
         em_construcao = dados.get("em_construcao", False)
-        label = nome_setor if not em_construcao else f"{nome_setor}  ·  em breve"
-        if st.button(label, key=f"btn_{nome_setor}", disabled=em_construcao):
-            st.session_state.setor_ativo = nome_setor
-            st.rerun()
+        ativo = (st.session_state.setor_ativo == nome_setor)
+        bg, fg = _COR_SETOR.get(nome_setor, _COR_DEFAULT)
+
+        if em_construcao:
+            st.markdown(
+                f"<div style='margin:3px 8px;padding:9px 14px;border-radius:8px;"
+                f"background:#111827;opacity:0.4;font-size:0.82rem;color:#6B7280;'>"
+                f"{nome_setor} <span style='font-size:0.65rem;'>· em breve</span></div>",
+                unsafe_allow_html=True,
+            )
+        else:
+            borda = f"outline:2px solid {fg};" if ativo else ""
+            st.markdown(
+                f"<div style='margin:3px 8px;padding:9px 14px;border-radius:8px;"
+                f"background:{bg};{borda}cursor:pointer;'>"
+                f"<span style='font-size:0.84rem;font-weight:700;color:{fg};'>"
+                f"{nome_setor}</span></div>",
+                unsafe_allow_html=True,
+            )
+            if st.button(nome_setor, key=f"btn_{nome_setor}",
+                         use_container_width=True):
+                st.session_state.setor_ativo = nome_setor
+                st.rerun()
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
