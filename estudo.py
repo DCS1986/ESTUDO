@@ -2342,7 +2342,273 @@ SETORES = {
             },
         },
     },
-    "⛏️ Mineração": {"tickers": [], "em_construcao": True},
+    "⛏️ Mineração": {
+        "tickers": ["VALE3", "CMIN3"],
+        "tickers_sub": ["BRAP4"],
+        "label_sub": "Holding com participação na Vale",
+        "tagline": "O mesmo minério de ferro, três posições completamente diferentes na cadeia: a maior produtora do mundo, a segunda maior do Brasil com foco puro em ferro, e uma holding que dá exposição à Vale com desconto de NAV.",
+        "logica": {
+            "titulo": "O que move a mineração — e por que a China manda em tudo",
+            "texto": (
+                "Mineração de ferro é, antes de mais nada, uma tese sobre a China. "
+                "O país consome ~70% do minério de ferro comercializado globalmente — "
+                "para fazer aço, que vira construção civil, carros, navios e máquinas. "
+                "Quando a China estimula sua economia (infraestrutura, habitação), "
+                "a demanda por aço sobe, o preço do minério sobe, as mineradoras lucram mais. "
+                "Quando a China desacelera (como fez em 2023-2024 com a crise imobiliária), "
+                "o minério cai e leva o resultado das mineradoras junto. "
+                "O Brasil é o maior exportador mundial de minério de ferro — "
+                "a Vale responde por ~20% das exportações globais."
+            ),
+            "drivers": [
+                ("Preço do minério de ferro (62% Fe, CFR Qingdao)", (
+                    "É o driver que manda em tudo. Cotado em dólar por tonelada. "
+                    "Em 2021, chegou a US$230/t. Em 2024, caiu para US$90/t com a crise imobiliária chinesa. "
+                    "Em 2026, oscila entre US$95-110/t. "
+                    "Cada US$10 de variação no preço muda o EBITDA da Vale em ~US$3-4 bi/ano. "
+                    "É o risco e o upside mais importante do setor."
+                )),
+                ("China e o setor imobiliário — o maior comprador do mundo", (
+                    "A construção civil chinesa consome ~35% de todo o aço produzido. "
+                    "Com a crise das incorporadoras (Evergrande, Country Garden), "
+                    "a demanda por aço caiu e arrastou o minério. "
+                    "Estímulos do governo chinês (infraestrutura, veículos elétricos, "
+                    "energia renovável) são o principal gatilho de alta para o setor. "
+                    "Sem entender a China, não se entende mineração."
+                )),
+                ("Custo C1 — o que separa os eficientes dos vulneráveis", (
+                    "C1 é o custo operacional de extrair e entregar o minério no porto. "
+                    "Vale: ~US$23-25/t (referência mundial de eficiência). "
+                    "CMIN: ~US$23/t (1T26) — competitiva. "
+                    "Produtores australianos (Rio Tinto, BHP): US$18-20/t. "
+                    "Produtores marginais (alguns africanos, chineses): US$80+/t. "
+                    "Quando o minério cai para US$80, os marginais param e a oferta cai — "
+                    "sustenta o preço para os produtores de baixo custo."
+                )),
+                ("Câmbio (R$/USD)", (
+                    "Receita em dólar, custo em real. "
+                    "Real desvalorizado = margem maior para Vale e CMIN. "
+                    "Real apreciado = margem comprimida mesmo com preço do minério estável. "
+                    "Em 2025-2026, dólar a R$5,80-6,10 ajudou as margens em reais."
+                )),
+                ("Qualidade do minério (teor de Fe%)", (
+                    "Minério de maior teor de Fe (65%+) vale mais que o benchmark 62%. "
+                    "Vale tem o minério de maior qualidade do mundo (Sistema Norte, Carajás: 67% Fe). "
+                    "CMIN produz no Quadrilátero Ferrífero (MG): ~62-63% — padrão benchmark. "
+                    "A Vale consegue prêmio de preço de US$5-15/t sobre a CMIN por conta da qualidade."
+                )),
+                ("Metais básicos — o segundo motor da Vale", (
+                    "A Vale está diversificando além do ferro: cobre, níquel e outros metais. "
+                    "Cobre é o metal da transição energética (veículos elétricos, energia solar, cabos). "
+                    "CMIN não tem metais básicos — é ferro puro. "
+                    "Quem compra Vale compra uma opção no cobre; quem compra CMIN, não."
+                )),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "O que é de verdade",
+                "Produto principal",
+                "Custo C1 (referência)",
+                "Qualidade do minério",
+                "Diversificação de produto",
+                "Exposição ao câmbio",
+                "Governança",
+                "Dividendo (DY)",
+                "Risco principal",
+            ],
+            "grupos": [
+                {"label": "Mineradoras puras", "tickers": ["VALE3", "CMIN3"]},
+                {"label": "Holding com participação na Vale", "tickers": ["BRAP4"]},
+            ],
+            "empresas": {
+                "VALE3": {
+                    "nome": "Vale",
+                    "cor": "#22C55E",
+                    "O que é de verdade": ("Maior mineradora do mundo em ferro", "2ª maior em níquel; presença em 30+ países"),
+                    "Produto principal": ("Minério de ferro Carajás (~70% EBITDA)", "o melhor minério do mundo: 67% Fe, sistema Norte no Pará"),
+                    "Custo C1 (referência)": ("~US$23-25/t (ferro)", "referência mundial — um dos mais baixos do planeta", "badge-green"),
+                    "Qualidade do minério": ("Premium (67% Fe, Carajás)", "prêmio de US$5-15/t sobre benchmark — clientes pagam mais", "badge-green"),
+                    "Diversificação de produto": ("Alta", "ferro + níquel + cobre + manganês + carvão — aposta na transição energética", "badge-green"),
+                    "Exposição ao câmbio": ("Máxima positiva", "receita em dólar, custo predominante em real", "badge-green"),
+                    "Governança": ("Corporação privada", "sem controlador majoritário — gestão profissional; mais vulnerável a ativismo"),
+                    "Dividendo (DY)": ("DY variável 6-12%", "política: 30% do EBITDA ajustado; oscila com ciclo"),
+                    "Risco principal": ("China + Brumadinho (passivo ambiental em curso) + meta de produção de Carajás", ""),
+                },
+                "CMIN3": {
+                    "nome": "CSN Mineração",
+                    "cor": "#F59E0B",
+                    "O que é de verdade": ("2ª maior mineradora de ferro do Brasil", "focada em ferro; controlada pela CSN (78%)"),
+                    "Produto principal": ("Minério de ferro 62% Fe (QF, MG)", "benchmark de mercado; Quadrilátero Ferrífero em MG"),
+                    "Custo C1 (referência)": ("~US$23/t (1T26)", "competitivo; mas sem o prêmio de qualidade da Vale", "badge-yellow"),
+                    "Qualidade do minério": ("Padrão benchmark (62% Fe)", "sem prêmio — vende ao preço de referência do mercado", "badge-yellow"),
+                    "Diversificação de produto": ("Baixa", "minério de ferro puro; sem metais básicos — exposição máxima ao ciclo do ferro", "badge-red"),
+                    "Exposição ao câmbio": ("Máxima positiva", "receita em dólar, custo em real", "badge-green"),
+                    "Governança": ("Controlada pela CSN (78%)", "decisões estratégicas podem favorecer a controladora em detrimento dos minoritários", "badge-red"),
+                    "Dividendo (DY)": ("DY variável", "R$768 mi distribuídos em abr/2026 (ref. 2025); depende do resultado e da CSN"),
+                    "Risco principal": ("Minério de ferro puro — sem diversificação; risco de controladora (CSN) extraindo caixa", ""),
+                },
+                "BRAP4": {
+                    "nome": "Bradespar",
+                    "cor": "#8B5CF6",
+                    "O que é de verdade": ("Holding com participação na Vale", "~4,5% das ações da Vale; sem operação própria"),
+                    "Produto principal": ("Exposição à Vale via participação", "o resultado é o dividendo da Vale multiplicado pela participação"),
+                    "Custo C1 (referência)": ("N/A — holding", "não opera mina; resultado vem do dividendo da Vale", "badge-yellow"),
+                    "Qualidade do minério": ("N/A — holding", "exposição indireta à qualidade da Vale"),
+                    "Diversificação de produto": ("N/A — holding", "exposição 100% à Vale — tudo que move a Vale, move a Bradespar"),
+                    "Exposição ao câmbio": ("Via Vale", "indireta — beneficia quando Vale se beneficia"),
+                    "Governança": ("Controlada pelo Bradesco", "banco controla a holding; alinhado com distribuição de dividendos"),
+                    "Dividendo (DY)": ("DY alto quando Vale paga bem", "desconto de NAV aumenta o yield efetivo vs comprar Vale direto"),
+                    "Risco principal": ("Desconto de NAV pode não fechar; holding com custos que corroem o valor ao longo do tempo", ""),
+                },
+            },
+        },
+        "perfis": {
+            "VALE3": {
+                "nome": "Vale S.A.",
+                "fundacao": "1942 (como Companhia Vale do Rio Doce, estatal; privatizada em 1997)",
+                "sede": "Rio de Janeiro, RJ",
+                "tagline": "A maior mineradora de ferro do mundo. Carajás é o maior e melhor depósito de minério de ferro do planeta — e a Vale tem ele há 80 anos.",
+                "modelo": (
+                    "A Vale é uma das cinco maiores empresas de mineração do mundo e a maior exportadora "
+                    "de minério de ferro do planeta. Opera em dois grandes segmentos: "
+                    "Metais Ferrosos (~70% do EBITDA) e Metais Básicos (~15%). "
+                    "O coração do negócio é o Sistema Norte — a mina de Carajás, no Pará. "
+                    "Carajás tem o maior depósito de minério de ferro de alta qualidade do mundo: "
+                    "reservas de ~7 bilhões de toneladas com teor médio de 67% Fe "
+                    "(benchmark é 62%). A qualidade superior gera prêmio de preço de US$5-15/t. "
+                    "A logística é integrada: ferrovia EFC (Estrada de Ferro Carajás, 892 km) "
+                    "leva o minério diretamente ao Porto do Itaqui (MA) — "
+                    "sem baldeação, sem intermediário, menor custo. "
+                    "Em metais básicos, a Vale tem níquel no Canadá (Voisey's Bay) "
+                    "e cobre em projetos de desenvolvimento. "
+                    "Com a transição energética, cobre e níquel ganham relevância — "
+                    "o Sossego e o Salobo (cobre no PA) são apostas de longo prazo."
+                ),
+                "receita": [
+                    ("Minério de ferro e pelotas (Sistema Norte — Carajás)", "~55%", "67% Fe; premium sobre benchmark; EFC + Porto Itaqui"),
+                    ("Minério de ferro (Sistema Sudeste — MG)", "~20%", "62-63% Fe; Quadrilátero Ferrífero; sistema mais antigo e caro"),
+                    ("Níquel e subprodutos (cobre, cobalto, platina)", "~12%", "Canadá, Brasil, Indonesia; metal da bateria EV"),
+                    ("Cobre (Sossego, Salobo — PA)", "~8%", "crescimento acelerado; apoio da transição energética"),
+                    ("Outros (manganês, ferroligas, logística)", "~5%", ""),
+                ],
+                "vantagens": [
+                    "Carajás: o melhor minério do mundo em qualidade e reservas — inreplicável em qualquer outra jurisdição",
+                    "Custo C1 entre os mais baixos do planeta: ~US$23-25/t vs produtores marginais a US$80+/t",
+                    "Logística própria (EFC + Porto Itaqui): controle do custo de ponta a ponta sem dependência de terceiros",
+                    "Diversificação em metais da transição: cobre e níquel crescem em relevância com veículos elétricos",
+                    "Sem controlador majoritário: gestão profissional com foco em retorno ao acionista",
+                ],
+                "riscos": [
+                    "China: 70% das exportações vão para a China — qualquer desaceleração afeta diretamente",
+                    "Brumadinho: passivo ambiental e reputacional em curso desde 2019 — provisões continuam pesando",
+                    "Metais básicos: cobre e níquel ainda não são escala suficiente para compensar volatilidade do ferro",
+                    "Produção de Carajás com metas ambiciosas: execução de S11D a plena capacidade é desafio logístico",
+                    "Câmbio apreciado comprime margens em reais mesmo sem queda do preço do minério",
+                ],
+                "barreira": (
+                    "Carajás é a barreira definitiva. "
+                    "O depósito foi descoberto em 1967 por geólogos da Vale e da US Steel — "
+                    "e nunca se encontrou outro igual no mundo em qualidade e escala. "
+                    "Quem não tem Carajás não tem o mesmo produto. "
+                    "Adicione a ferrovia de 892 km e o porto próprio: "
+                    "construir essa logística hoje custaria US$15-20 bi e levaria 10-15 anos. "
+                    "A Vale tem isso funcionando há décadas."
+                ),
+            },
+            "CMIN3": {
+                "nome": "CSN Mineração S.A.",
+                "fundacao": "1977 (como área de mineração da CSN; IPO em 2021)",
+                "sede": "São Paulo, SP",
+                "tagline": "A segunda maior mineradora de ferro do Brasil. Operação concentrada no Quadrilátero Ferrífero — puro jogo de preço do minério, câmbio e custo C1.",
+                "modelo": (
+                    "A CSN Mineração é a operação de mineração da CSN (Companhia Siderúrgica Nacional), "
+                    "separada em empresa independente e aberta em IPO em 2021. "
+                    "Opera no Quadrilátero Ferrífero (MG), na mina Casa de Pedra — "
+                    "uma das maiores minas a céu aberto do Brasil. "
+                    "O modelo é simples e direto: extrai minério de ferro (62% Fe), "
+                    "transporta via MRS Logística até o Terminal de Carvão (TECAR) no Porto de Itaguaí (RJ) "
+                    "e exporta, principalmente para a China. "
+                    "Uma parte significativa do minério abastece a própria CSN "
+                    "(que produz aço e precisa de minério) — captivo interno com preço de mercado. "
+                    "Produziu recorde de 45,5 milhões de toneladas em 2025 (+4,6% acima do guidance). "
+                    "Custo C1 de US$23,1/t no 1T26 — competitivo, mas sem o prêmio de qualidade da Vale."
+                ),
+                "receita": [
+                    ("Exportação de minério de ferro (62% Fe)", "~70%", "China é o principal destino; preço benchmark 62% Fe CFR"),
+                    ("Vendas para CSN (mercado interno)", "~20%", "captivo — a controladora usa o minério para produzir aço"),
+                    ("Pelotas e outros produtos", "~10%", "valor agregado sobre o minério bruto"),
+                ],
+                "vantagens": [
+                    "Custo C1 competitivo (~US$23/t): eficiência operacional que sustenta margem mesmo com minério deprimido",
+                    "Produção recorde em 2025: 45,5 mi t — prova de capacidade operacional crescente",
+                    "Logística integrada via MRS até Itaguaí: escoamento eficiente sem gargalo logístico",
+                    "Captivo interno (CSN): parte da receita não depende do mercado internacional",
+                    "Alavancagem baixa: balanço saudável que permite dividendos mesmo em ciclo fraco",
+                ],
+                "riscos": [
+                    "Ferro puro sem diversificação: 100% do resultado depende do preço do minério 62% Fe",
+                    "Sem prêmio de qualidade: vende ao benchmark — não tem o diferencial da Vale em Carajás",
+                    "Controladora CSN (78%): conflito de interesse potencial — CSN pode extrair caixa da CMIN em detrimento de minoritários",
+                    "Dependência da China: perfil de exportação muito concentrado no mercado asiático",
+                    "FCF volátil: capex de crescimento e compras de minério de terceiros criam oscilações no caixa",
+                ],
+                "barreira": (
+                    "Casa de Pedra é uma das maiores reservas de minério de ferro do Quadrilátero Ferrífero. "
+                    "Mas a barreira da CMIN é menor que a da Vale — "
+                    "o minério 62% Fe é mais padronizado e os produtores australianos "
+                    "(Rio Tinto, BHP) têm custo C1 de US$18-20/t, abaixo da CMIN. "
+                    "A barreira real é operacional: a logística via MRS + Itaguaí "
+                    "e a integração com a CSN criam um sistema que funciona "
+                    "há décadas e não é fácil de desmontar."
+                ),
+            },
+            "BRAP4": {
+                "nome": "Bradespar S.A.",
+                "fundacao": "2000 (spin-off do Bradesco para concentrar participações industriais)",
+                "sede": "São Paulo, SP",
+                "tagline": "A forma de ter Vale com desconto. Holding que detém ~4,5% da Vale — sem operar uma única mina. O rendimento é o dividendo da Vale amplificado pelo desconto de NAV.",
+                "modelo": (
+                    "A Bradespar é uma holding de participações controlada pelo banco Bradesco. "
+                    "Seu único ativo relevante é uma participação de ~4,5% na Vale. "
+                    "Não opera mina, não tem receita operacional, não tem funcionários de mineração. "
+                    "O resultado é o dividendo recebido da Vale, menos as despesas da holding. "
+                    "A tese de investimento é simples: a Bradespar negocia com desconto de NAV "
+                    "(valor de mercado < valor das ações da Vale que ela possui). "
+                    "Por que o desconto existe? Custos da holding, liquidez menor que a Vale, "
+                    "risco de governança (Bradesco decide o que fazer com a participação) "
+                    "e impostos sobre o dividendo ao longo da cadeia. "
+                    "Quando o desconto se fecha — por buyback, venda de ações ou elevação do dividendo — "
+                    "o acionista da Bradespar captura um retorno extra além da variação da Vale."
+                ),
+                "receita": [
+                    ("Dividendos e JCP da Vale", "~95%", "proporcional à participação de ~4,5% e ao dividendo declarado pela Vale"),
+                    ("Resultado financeiro e outros", "~5%", "caixa próprio aplicado em renda fixa"),
+                ],
+                "vantagens": [
+                    "Desconto de NAV: comprar Bradespar = comprar Vale mais barato que o mercado",
+                    "DY amplificado pelo desconto: o yield efetivo sobre o NAV é maior que comprar Vale direto",
+                    "Exposição indireta ao cobre/níquel via Vale: tese de transição energética embutida",
+                    "Simplicidade: não tem risco operacional, ambiental nem de produção — só participação financeira",
+                ],
+                "riscos": [
+                    "Desconto de NAV pode persistir ou ampliar: holding costuma negociar com desconto estrutural",
+                    "Custos da holding corroem o NAV: despesas administrativas e impostos reduzem o retorno líquido",
+                    "Decisão do Bradesco: controlador pode vender a participação na Vale em momento ruim",
+                    "Dupla tributação: dividendo da Vale → Bradespar → acionista tem mais um passo tributário",
+                    "Liquidez menor que Vale: spread bid/ask maior; mais difícil de sair em momentos de estresse",
+                ],
+                "barreira": (
+                    "A barreira da Bradespar é o próprio desconto de NAV — "
+                    "quem quer comprar Vale com desconto precisa comprar a Bradespar. "
+                    "Mas não é uma barreira de negócio: "
+                    "qualquer um pode comprar Vale diretamente. "
+                    "A tese funciona enquanto o desconto existir e enquanto a Vale pagar dividendos. "
+                    "Se o desconto fechar, a vantagem da Bradespar desaparece."
+                ),
+            },
+        },
+    },
     "🛢️ Petróleo & Gás": {
         "tickers": ["PETR4", "PRIO3"],
         "tickers_sub": ["BRAV3"],
