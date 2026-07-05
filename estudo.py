@@ -21,185 +21,97 @@ st.markdown("""
 
 html, body, [class*="css"] {
     font-family: 'Inter', sans-serif;
-    background-color: #F7F6F2;
-    color: #1A1A1A;
+    background-color: #0D1117;
+    color: #E6E1D6;
 }
+[data-testid="stAppViewContainer"] { background-color: #0D1117; }
+[data-testid="stMain"] { background-color: #0D1117; }
+.main .block-container { background-color: #0D1117; }
 
-/* Fundo das áreas principais */
-[data-testid="stAppViewContainer"] {
-    background-color: #F7F6F2;
-}
-[data-testid="stMain"] {
-    background-color: #F7F6F2;
-}
-.main .block-container {
-    background-color: #F7F6F2;
-}
-
-/* Sidebar */
 [data-testid="stSidebar"] {
-    background: #EEECEA;
-    border-right: 1px solid #DDDBD6;
+    background: #161B22;
+    border-right: 1px solid rgba(255,255,255,0.06);
 }
 [data-testid="stSidebar"] .stButton > button {
-    width: 100%;
-    background: transparent;
-    border: none;
-    color: #374151;
-    text-align: left;
-    padding: 10px 16px;
-    border-radius: 8px;
-    font-size: 0.875rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.15s;
+    width: 100%; background: transparent; border: none;
+    color: #6B7280; text-align: left; padding: 10px 16px;
+    border-radius: 8px; font-size: 0.875rem; font-weight: 500;
+    cursor: pointer; transition: all 0.15s;
 }
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: rgba(180,140,20,0.10);
-    color: #8B6914;
+    background: rgba(212,175,55,0.10); color: #D4AF37;
 }
 
-/* Títulos */
-h1 { font-family: 'Playfair Display', serif !important; color: #111 !important; }
-h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !important; color: #111 !important; }
+h1 { font-family: 'Playfair Display', serif !important; color: #E6E1D6 !important; }
+h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !important; color: #E6E1D6 !important; }
 
-/* Cards base */
 .dossie-card {
-    background: #FFFFFF;
-    border: 1px solid #E5E2DC;
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 14px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 14px;
 }
 .dossie-card-gold {
-    background: #FFFBEF;
-    border: 1px solid #D4AF37;
-    border-radius: 12px;
-    padding: 20px 24px;
-    margin-bottom: 14px;
+    background: rgba(212,175,55,0.05);
+    border: 1px solid rgba(212,175,55,0.20);
+    border-radius: 12px; padding: 20px 24px; margin-bottom: 14px;
 }
 
-/* Label de seção */
 .section-label {
-    font-size: 0.70rem;
-    font-weight: 700;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
-    color: #6B4F10;
-    margin-bottom: 10px;
+    font-size: 0.70rem; font-weight: 700; letter-spacing: 1.2px;
+    text-transform: uppercase; color: #D4AF37; margin-bottom: 10px;
 }
 
-/* Battle card — colunas de empresa */
 .battle-header {
-    font-size: 0.78rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    padding: 8px 0 6px 0;
-    border-bottom: 2px solid;
-    margin-bottom: 14px;
+    font-size: 0.78rem; font-weight: 800; letter-spacing: 0.5px;
+    text-transform: uppercase; padding: 8px 0 6px 0;
+    border-bottom: 2px solid; margin-bottom: 14px;
 }
 .battle-row-label {
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: #4B5563;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 4px;
+    font-size: 0.72rem; font-weight: 600; color: #6B7280;
+    text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px;
 }
 .battle-row-value {
-    font-size: 0.92rem;
-    font-weight: 500;
-    color: #1A1A1A;
-    line-height: 1.5;
-    margin-bottom: 14px;
+    font-size: 0.92rem; font-weight: 500; color: #E6E1D6;
+    line-height: 1.5; margin-bottom: 14px;
 }
-.badge {
-    display: inline-block;
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 20px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-}
-.badge-green  { background: rgba(34,197,94,0.12);  color: #166534; }
-.badge-yellow { background: rgba(180,140,20,0.12); color: #8B6914; }
-.badge-red    { background: rgba(239,68,68,0.10);  color: #991B1B; }
-.badge-blue   { background: rgba(37,99,235,0.10);  color: #1D4ED8; }
+.badge { display: inline-block; font-size: 0.68rem; font-weight: 700;
+    padding: 2px 8px; border-radius: 20px; letter-spacing: 0.5px; text-transform: uppercase; }
+.badge-green  { background: rgba(34,197,94,0.15);  color: #22C55E; }
+.badge-yellow { background: rgba(212,175,55,0.15); color: #D4AF37; }
+.badge-red    { background: rgba(239,68,68,0.15);  color: #EF4444; }
+.badge-blue   { background: rgba(99,179,237,0.15); color: #63B3ED; }
 
-/* Ticker tag */
 .ticker-tag {
-    display: inline-block;
-    background: #FFFBEF;
-    border: 1px solid #D4AF37;
-    color: #8B6914;
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 3px 10px;
-    border-radius: 6px;
-    letter-spacing: 0.5px;
-    margin-right: 6px;
-    margin-bottom: 6px;
+    display: inline-block; background: rgba(212,175,55,0.12);
+    border: 1px solid rgba(212,175,55,0.30); color: #D4AF37;
+    font-size: 0.75rem; font-weight: 700; padding: 3px 10px;
+    border-radius: 6px; letter-spacing: 0.5px; margin-right: 6px; margin-bottom: 6px;
 }
 
-/* Divider */
-.thin-divider {
-    border: none;
-    border-top: 1px solid #E5E2DC;
-    margin: 20px 0;
-}
+.thin-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 20px 0; }
 
-/* Risco / vantagem pills */
 .pill-vantagem {
-    background: #F0FDF4;
-    border-left: 3px solid #22C55E;
-    border-radius: 0 8px 8px 0;
-    padding: 10px 14px;
-    margin-bottom: 8px;
-    font-size: 0.875rem;
-    color: #166534;
-    line-height: 1.5;
+    background: rgba(34,197,94,0.08); border-left: 3px solid #22C55E;
+    border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px;
+    font-size: 0.875rem; color: #D1FAE5; line-height: 1.5;
 }
 .pill-risco {
-    background: #FEF2F2;
-    border-left: 3px solid #EF4444;
-    border-radius: 0 8px 8px 0;
-    padding: 10px 14px;
-    margin-bottom: 8px;
-    font-size: 0.875rem;
-    color: #991B1B;
-    line-height: 1.5;
+    background: rgba(239,68,68,0.08); border-left: 3px solid #EF4444;
+    border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px;
+    font-size: 0.875rem; color: #FEE2E2; line-height: 1.5;
 }
 .pill-neutro {
-    background: #FFFBEF;
-    border-left: 3px solid #D4AF37;
-    border-radius: 0 8px 8px 0;
-    padding: 10px 14px;
-    margin-bottom: 8px;
-    font-size: 0.875rem;
-    color: #8B6914;
-    line-height: 1.5;
+    background: rgba(212,175,55,0.08); border-left: 3px solid #D4AF37;
+    border-radius: 0 8px 8px 0; padding: 10px 14px; margin-bottom: 8px;
+    font-size: 0.875rem; color: #FEF3C7; line-height: 1.5;
 }
 
-/* Tab styling */
-[data-testid="stTabs"] button {
-    font-size: 0.82rem !important;
-    font-weight: 600 !important;
-    color: #6B7280 !important;
-}
-[data-testid="stTabs"] button[aria-selected="true"] {
-    color: #8B6914 !important;
-    border-bottom-color: #D4AF37 !important;
-}
-
-/* Selectbox */
-[data-testid="stSelectbox"] { color: #1A1A1A; }
-
-/* Scrollbar */
+[data-testid="stTabs"] button { font-size: 0.82rem !important; font-weight: 600 !important; color: #6B7280 !important; }
+[data-testid="stTabs"] button[aria-selected="true"] { color: #D4AF37 !important; border-bottom-color: #D4AF37 !important; }
+[data-testid="stSelectbox"] { color: #E6E1D6; }
 ::-webkit-scrollbar { width: 5px; }
-::-webkit-scrollbar-track { background: #F7F6F2; }
-::-webkit-scrollbar-thumb { background: #DDDBD6; border-radius: 3px; }
+::-webkit-scrollbar-track { background: #0D1117; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
 </style>
 """, unsafe_allow_html=True)
 
@@ -3617,7 +3529,7 @@ with st.sidebar:
     st.markdown("""
     <div style='padding: 24px 16px 8px 16px;'>
         <div style='font-family: Playfair Display, serif; font-size: 1.3rem; font-weight: 800;
-                    color: #1A1A1A; line-height: 1.2; margin-bottom: 4px;'>
+                    color: #E6E1D6; line-height: 1.2; margin-bottom: 4px;'>
             Dossiê de Setores
         </div>
         <div style='font-size: 0.72rem; color: #4B5563; letter-spacing: 0.5px;'>
@@ -3626,7 +3538,7 @@ with st.sidebar:
     </div>
     <hr style='border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 12px 0;'>
     <div style='font-size: 0.65rem; font-weight: 700; letter-spacing: 1px;
-                text-transform: uppercase; color: #374151; padding: 0 16px 8px 16px;'>
+                text-transform: uppercase; color: #6B7280; padding: 0 16px 8px 16px;'>
         Setores
     </div>
     """, unsafe_allow_html=True)
@@ -3644,7 +3556,7 @@ with st.sidebar:
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("""
-    <div style='padding: 0 16px; font-size: 0.68rem; color: #374151; line-height: 1.6;'>
+    <div style='padding: 0 16px; font-size: 0.68rem; color: #6B7280; line-height: 1.6;'>
         Nenhuma empresa é igual à outra.<br>
         Aqui você estuda o negócio, não o preço.
     </div>
@@ -3661,7 +3573,7 @@ dados_setor = SETORES[setor]
 _sub_html = ""
 if dados_setor.get("tickers_sub"):
     _sub_html = (
-        "<br><span style='font-size:0.65rem;color:#9CA3AF;text-transform:uppercase;"
+        "<br><span style='font-size:0.65rem;color:#6B7280;text-transform:uppercase;"
         "letter-spacing:0.8px;margin-right:6px;'>"
         + dados_setor.get("label_sub", "") + ":</span>"
         + "".join(
@@ -3676,22 +3588,22 @@ _tickers_html = "".join(
 st.markdown(
     f"<div style='padding:32px 0 8px 0;'>"
     f"<span style='font-size:0.70rem;font-weight:700;letter-spacing:1.5px;"
-    f"text-transform:uppercase;color:#8B6914;'>"
+    f"text-transform:uppercase;color:#D4AF37;'>"
     f"Dossiê · {setor}</span></div>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    f"<h1 style='font-size:2.0rem;color:#1A1A1A;margin:0 0 10px 0;line-height:1.2;'>"
+    f"<h1 style='font-size:2.0rem;color:#E6E1D6;margin:0 0 10px 0;line-height:1.2;'>"
     f"{setor}</h1>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    f"<p style='font-size:0.95rem;color:#374151;max-width:680px;line-height:1.6;"
+    f"<p style='font-size:0.95rem;color:#6B7280;max-width:680px;line-height:1.6;"
     f"margin-bottom:14px;'>{dados_setor.get('tagline', '')}</p>",
     unsafe_allow_html=True,
 )
 st.markdown(
-    f"<div style='margin-bottom:28px;border-bottom:1px solid #E5E2DC;padding-bottom:16px;'>"
+    f"<div style='margin-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.06);padding-bottom:16px;background:transparent;'>"
     f"{_tickers_html}{_sub_html}</div>",
     unsafe_allow_html=True,
 )
@@ -3706,7 +3618,7 @@ with tab1:
 
     st.markdown(
         "<div class='section-label'>O que você precisa entender antes de qualquer número</div>"
-        f"<div class='dossie-card-gold'><div style='font-size:1.0rem;color:#1A1A1A;line-height:1.7;'>"
+        f"<div class='dossie-card-gold'><div style='font-size:1.0rem;color:#E6E1D6;line-height:1.7;'>"
         f"{logica.get('texto', '')}</div></div>",
         unsafe_allow_html=True,
     )
@@ -3718,9 +3630,9 @@ with tab1:
     for driver, descricao in logica.get("drivers", []):
         st.markdown(
             f"<div class='dossie-card' style='padding:16px 20px;'>"
-            f"<div style='font-size:0.80rem;font-weight:700;color:#6B4F10;"
+            f"<div style='font-size:0.80rem;font-weight:700;color:#D4AF37;"
             f"margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;'>{driver}</div>"
-            f"<div style='font-size:0.88rem;color:#374151;line-height:1.6;'>{descricao}</div>"
+            f"<div style='font-size:0.88rem;color:#6B7280;line-height:1.6;'>{descricao}</div>"
             f"</div>",
             unsafe_allow_html=True,
         )
@@ -3737,7 +3649,7 @@ with tab2:
         """Renderiza um grupo de colunas do battle card."""
         if label:
             st.markdown(
-                f"<div style='font-size:0.75rem;font-weight:700;color:#6B4F10;"
+                f"<div style='font-size:0.75rem;font-weight:700;color:#D4AF37;"
                 f"text-transform:uppercase;letter-spacing:1px;margin:18px 0 10px 0;'>"
                 f"{label}</div>",
                 unsafe_allow_html=True,
@@ -3752,7 +3664,7 @@ with tab2:
                 f"text-transform:uppercase;padding:8px 0 6px 0;"
                 f"border-bottom:2px solid {cor};margin-bottom:14px;color:{cor};'>"
                 f"{tk}<br>"
-                f"<span style='font-size:0.62rem;font-weight:500;color:#374151;"
+                f"<span style='font-size:0.62rem;font-weight:500;color:#6B7280;"
                 f"letter-spacing:0;text-transform:none;'>{emp['nome']}</span></div>",
                 unsafe_allow_html=True,
             )
@@ -3768,14 +3680,14 @@ with tab2:
                     col.markdown(
                         f"<div class='battle-row-value'>"
                         f"<span class='badge {val[2]}'>{val[0]}</span><br>"
-                        f"<span style='font-size:0.80rem;color:#374151;'>{val[1]}</span></div>",
+                        f"<span style='font-size:0.80rem;color:#6B7280;'>{val[1]}</span></div>",
                         unsafe_allow_html=True,
                     )
                 elif isinstance(val, tuple) and len(val) == 2:
                     col.markdown(
                         f"<div class='battle-row-value'>"
                         f"<strong style='font-size:0.88rem;'>{val[0]}</strong><br>"
-                        f"<span style='font-size:0.80rem;color:#374151;'>{val[1]}</span></div>",
+                        f"<span style='font-size:0.80rem;color:#6B7280;'>{val[1]}</span></div>",
                         unsafe_allow_html=True,
                     )
                 else:
@@ -3828,13 +3740,13 @@ with tab3:
 
         # Cabeçalho do perfil
         st.markdown(
-            f"<div style='margin:16px 0 24px 0;padding:24px;background:#FFFFFF;"
-            f"border:1px solid #E5E2DC;border-radius:12px;border-left:4px solid {_cor_empresa};'>"
-            f"<div style='font-size:0.65rem;font-weight:700;color:#374151;"
+            f"<div style='margin:16px 0 24px 0;padding:24px;background:rgba(255,255,255,0.03);"
+            f"border:1px solid rgba(255,255,255,0.07);border-radius:12px;border-left:4px solid {_cor_empresa};'>"
+            f"<div style='font-size:0.65rem;font-weight:700;color:#6B7280;"
             f"letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;'>"
             f"{ticker_sel} · Fundada em {p.get('fundacao','?')} · {p.get('sede','')}</div>"
-            f"<div style='font-size:1.4rem;font-weight:800;color:#1A1A1A;"
-            f"margin-bottom:6px;font-family:Playfair Display,serif;'>{p['nome']}</div>"
+            f"<div style='font-size:1.4rem;font-weight:800;color:#E6E1D6;"
+            f"margin-bottom:6px;color:#E6E1D6;font-family:Playfair Display,serif;'>{p['nome']}</div>"
             f"<div style='font-size:0.90rem;color:{_cor_empresa};font-style:italic;"
             f"font-weight:700;filter:brightness(0.72);'>{p.get('tagline','')}</div>"
             f"</div>",
@@ -3846,7 +3758,7 @@ with tab3:
                     unsafe_allow_html=True)
         st.markdown(
             f"<div class='dossie-card'>"
-            f"<div style='font-size:0.90rem;color:#111827;line-height:1.75;'>"
+            f"<div style='font-size:0.90rem;color:#E6E1D6;line-height:1.75;'>"
             f"{p.get('modelo','')}</div></div>",
             unsafe_allow_html=True,
         )
@@ -3857,12 +3769,12 @@ with tab3:
         for segmento, pct, detalhe in p.get("receita", []):
             st.markdown(
                 f"<div style='display:flex;align-items:flex-start;gap:16px;"
-                f"padding:12px 0;border-bottom:1px solid #E5E2DC;'>"
+                f"padding:12px 0;border-bottom:1px solid rgba(255,255,255,0.06);'>"
                 f"<div style='min-width:52px;text-align:right;font-size:1.1rem;"
-                f"font-weight:800;color:#8B6914;padding-top:1px;'>{pct}</div>"
-                f"<div><div style='font-size:0.88rem;font-weight:600;color:#1A1A1A;"
+                f"font-weight:800;color:#D4AF37;padding-top:1px;'>{pct}</div>"
+                f"<div><div style='font-size:0.88rem;font-weight:600;color:#E6E1D6;"
                 f"margin-bottom:2px;'>{segmento}</div>"
-                f"<div style='font-size:0.80rem;color:#374151;'>{detalhe}</div></div></div>",
+                f"<div style='font-size:0.80rem;color:#6B7280;'>{detalhe}</div></div></div>",
                 unsafe_allow_html=True,
             )
 
@@ -3875,12 +3787,12 @@ with tab3:
             for _seg, _num, _obs in p["composicao"]:
                 st.markdown(
                     f"<div style='display:flex;align-items:flex-start;gap:14px;"
-                    f"padding:10px 0;border-bottom:1px solid #E5E2DC;'>"
+                    f"padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.06);'>"
                     f"<div style='min-width:160px;text-align:right;font-size:0.78rem;"
-                    f"font-weight:700;color:#8B6914;padding-top:2px;'>{_num}</div>"
-                    f"<div><div style='font-size:0.85rem;font-weight:600;color:#111;"
+                    f"font-weight:700;color:#D4AF37;padding-top:2px;'>{_num}</div>"
+                    f"<div><div style='font-size:0.85rem;font-weight:600;color:#E6E1D6;"
                     f"margin-bottom:1px;'>{_seg}</div>"
-                    f"<div style='font-size:0.78rem;color:#374151;'>{_obs}</div></div></div>",
+                    f"<div style='font-size:0.78rem;color:#6B7280;'>{_obs}</div></div></div>",
                     unsafe_allow_html=True,
                 )
 
