@@ -33,13 +33,14 @@ html, body, [class*="css"] {
     border-right: 1px solid rgba(255,255,255,0.06);
 }
 [data-testid="stSidebar"] .stButton > button {
-    width: 100%; background: transparent !important; border: none !important;
-    color: transparent !important; padding: 0 !important; margin-top: -50px !important;
-    height: 42px !important; cursor: pointer; position: relative; z-index: 2;
-    box-shadow: none !important; font-size: 0 !important;
+    width: 100%; border: none; text-align: left;
+    padding: 10px 14px; border-radius: 8px;
+    font-size: 0.84rem; font-weight: 700;
+    cursor: pointer; transition: all 0.15s;
+    margin: 2px 0;
 }
 [data-testid="stSidebar"] .stButton > button:hover {
-    background: transparent !important; border: none !important;
+    filter: brightness(1.15);
 }
 [data-testid="stSidebar"] .stButton > button:focus {
     box-shadow: none !important; outline: none !important;
@@ -3549,44 +3550,49 @@ with st.sidebar:
     if "setor_ativo" not in st.session_state:
         st.session_state.setor_ativo = "📄 Papel & Celulose"
 
-    # Cor de fundo por setor
-    _COR_SETOR = {
-        "📄 Papel & Celulose":      ("#2D4A2D", "#6EE37A"),
-        "🏦 Bancos":                 ("#1E3A5F", "#60A5FA"),
-        "🛡️ Seguradoras":            ("#3B2A5C", "#A78BFA"),
-        "⚡ Utilities Elétricas":    ("#4A3A00", "#FCD34D"),
-        "🏗️ Incorporadoras":         ("#4A2020", "#F87171"),
-        "💧 Saneamento":             ("#1A3D4F", "#38BDF8"),
-        "⛏️ Mineração":              ("#3D2E10", "#FBBF24"),
-        "🛢️ Petróleo & Gás":         ("#2A1F0E", "#FB923C"),
-        "🌾 Agronegócio":            ("#1F3D1A", "#86EFAC"),
-        "🔩 Autopeças & Industrial":  ("#2A2A2A", "#D1D5DB"),
-        "🏪 Shoppings":              ("#3D1F3D", "#E879F9"),
-    }
-    _COR_DEFAULT = ("#1F2937", "#9CA3AF")
+    # CSS: colorir cada botão da sidebar pela sua posição (nth-of-type)
+    # Ordem: Papel(1) Bancos(2) Seguradoras(3) Utilities(4) Incorporadoras(5)
+    #        Saneamento(6) Mineração(7) Petróleo(8) Agro(9) Autopeças(10) Shoppings(11)
+    st.markdown("""<style>
+[data-testid="stSidebar"] .stButton:nth-of-type(1) > button
+  { background:#1A3320 !important; color:#6EE37A !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(2) > button
+  { background:#0F2540 !important; color:#60A5FA !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(3) > button
+  { background:#251640 !important; color:#A78BFA !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(4) > button
+  { background:#2E2400 !important; color:#FCD34D !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(5) > button
+  { background:#2E1010 !important; color:#F87171 !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(6) > button
+  { background:#0A2535 !important; color:#38BDF8 !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(7) > button
+  { background:#251C08 !important; color:#FBBF24 !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(8) > button
+  { background:#1A1208 !important; color:#FB923C !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(9) > button
+  { background:#122510 !important; color:#86EFAC !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(10) > button
+  { background:#1A1A1A !important; color:#D1D5DB !important; }
+[data-testid="stSidebar"] .stButton:nth-of-type(11) > button
+  { background:#251025 !important; color:#E879F9 !important; }
+[data-testid="stSidebar"] .stButton > button:hover
+  { filter: brightness(1.2) !important; }
+[data-testid="stSidebar"] .stButton > button:focus
+  { box-shadow: none !important; outline: none !important; }
+</style>""", unsafe_allow_html=True)
 
     for nome_setor in SETORES:
         dados = SETORES[nome_setor]
         em_construcao = dados.get("em_construcao", False)
-        ativo = (st.session_state.setor_ativo == nome_setor)
-        bg, fg = _COR_SETOR.get(nome_setor, _COR_DEFAULT)
-
         if em_construcao:
             st.markdown(
-                f"<div style='margin:3px 8px;padding:9px 14px;border-radius:8px;"
-                f"background:#111827;opacity:0.4;font-size:0.82rem;color:#6B7280;'>"
+                f"<div style='margin:2px 0;padding:10px 14px;border-radius:8px;"
+                f"background:#111827;opacity:0.35;font-size:0.82rem;color:#6B7280;'>"
                 f"{nome_setor} <span style='font-size:0.65rem;'>· em breve</span></div>",
                 unsafe_allow_html=True,
             )
         else:
-            borda = f"outline:2px solid {fg};" if ativo else ""
-            st.markdown(
-                f"<div style='margin:3px 8px;padding:9px 14px;border-radius:8px;"
-                f"background:{bg};{borda}cursor:pointer;'>"
-                f"<span style='font-size:0.84rem;font-weight:700;color:{fg};'>"
-                f"{nome_setor}</span></div>",
-                unsafe_allow_html=True,
-            )
             if st.button(nome_setor, key=f"btn_{nome_setor}",
                          use_container_width=True):
                 st.session_state.setor_ativo = nome_setor
