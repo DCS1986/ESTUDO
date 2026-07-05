@@ -3135,7 +3135,212 @@ SETORES = {
             },
         },
     },
-    "🏪 Shoppings": {"tickers": ["ALOS3"], "em_construcao": True},
+    "🏪 Shoppings": {
+        "tickers": ["ALOS3"],
+        "tickers_sub": ["MULT3"],
+        "label_sub": "Fora do RADAR — no dossiê",
+        "tagline": "Mesma licença de shopping, dois modelos opostos: Allos aposta em escala (44 shoppings, diversificação geográfica); Multiplan aposta em qualidade (20 shoppings, os melhores do Brasil). A métrica que os diferencia é a conversão de vendas em aluguel.",
+        "logica": {
+            "titulo": "O que move o setor de shoppings",
+            "texto": (
+                "Shopping center é, conceitualmente, um negócio de imóvel comercial com receita variável. "
+                "O dono do shopping não vende o produto — o lojista vende. "
+                "O shopping cobra aluguel, que tem duas partes: uma fixa (mínimo garantido) "
+                "e uma variável (percentual sobre as vendas do lojista). "
+                "Quanto mais o lojista vende, mais o shopping recebe. "
+                "Por isso, o crescimento de vendas dos lojistas (SSS — Same Store Sales) "
+                "é o termômetro principal do setor. "
+                "A grande virada pós-pandemia: shoppings deixaram de ser só lugares de compra "
+                "e viraram destinos de experiência — gastronomia, lazer, academia, clínica. "
+                "Isso aumenta o tempo de permanência e o ticket do consumidor."
+            ),
+            "drivers": [
+                ("SSS — Vendas nas Mesmas Lojas: o termômetro do setor", (
+                    "SSS mede o crescimento de vendas das lojas que estavam abertas no mesmo período do ano anterior. "
+                    "É o indicador mais importante — afasta distorções de abertura de lojas novas. "
+                    "Em 2025-2026, Allos, Multiplan cresceram 6-9% de SSS, acima da inflação. "
+                    "Quando SSS cresce, o aluguel variável cresce junto — e há espaço para reajustar o fixo."
+                )),
+                ("IGP-M e IPCA — a indexação dos contratos", (
+                    "A maioria dos contratos de aluguel de shopping é reajustada pelo IGP-M ou IPCA anualmente. "
+                    "IGP-M alto = bom para o shopping (receita sobe mais); IGP-M baixo = receita cresce menos. "
+                    "Em 2024, IGP-M negativo comprimiu receitas. Em 2025-2026, normalização foi positiva. "
+                    "É o driver que explica por que a receita de aluguel pode crescer ou cair sem mudar o fluxo de clientes."
+                )),
+                ("Taxa de ocupação e custo de ocupação", (
+                    "Vacância alta = aluguel médio menor + pressão para reduzir o fixo. "
+                    "Allos e Multiplan operam com vacância abaixo de 5% — sinal de demanda forte por espaço. "
+                    "Custo de ocupação = aluguel ÷ vendas do lojista. Abaixo de 12% é confortável. "
+                    "Quando o SSS cresce, o custo de ocupação cai automaticamente — "
+                    "abrindo espaço para o shopping subir o aluguel no próximo contrato."
+                )),
+                ("Selic e NTN-B — o risco de duration", (
+                    "Shopping é um ativo de longa duração (os fluxos de caixa vêm por décadas). "
+                    "Selic alta aumenta a taxa de desconto e comprime o valor presente dos fluxos — "
+                    "por isso a ação de shopping cai quando os juros sobem, mesmo com resultado operacional bom. "
+                    "É o mesmo efeito de uma NTN-B: quando os juros de mercado sobem, o preço cai."
+                )),
+                ("Mix de lojas — a transformação estrutural pós-pandemia", (
+                    "O mix de lojas mudou radicalmente: vestuário caiu de 40%+ para ~32% da ABL; "
+                    "alimentação subiu para 15%; serviços (academia, clínica, coworking) chegam a 24%. "
+                    "Esse reposicionamento é importante porque lojas de serviço e gastronomia "
+                    "têm menor risco de serem substituídas pelo e-commerce — "
+                    "você não compra um corte de cabelo ou uma consulta médica online."
+                )),
+                ("NOI e FFO — as métricas certas para avaliar shoppings", (
+                    "P/L não funciona para shoppings (depreciação distorce). "
+                    "NOI (Net Operating Income) = receita de aluguel - despesas operacionais do imóvel. "
+                    "FFO (Funds From Operations) = lucro + depreciação + amortização — proxy do caixa recorrente. "
+                    "P/FFO é o múltiplo correto: Allos negocia ~10x, Multiplan ~12x FFO 2026."
+                )),
+            ],
+        },
+        "comparativo": {
+            "dimensoes": [
+                "Estratégia",
+                "Portfólio",
+                "Qualidade dos ativos",
+                "Conversão vendas → aluguel",
+                "Receita por m²",
+                "Diversificação geográfica",
+                "Múltiplo (P/FFO 2026)",
+                "Dividendo (DY)",
+                "Risco principal",
+            ],
+            "grupos": [
+                {"label": "Shoppings listados", "tickers": ["ALOS3", "MULT3"]},
+            ],
+            "empresas": {
+                "ALOS3": {
+                    "nome": "Allos",
+                    "cor": "#3B82F6",
+                    "Estratégia": ("Escala e diversificação", "44 shoppings — o maior portfólio do Brasil em número de ativos"),
+                    "Portfólio": ("44 shoppings (11.000+ lojas)", "maior presença nacional; mix de médio e grande porte"),
+                    "Qualidade dos ativos": ("Médio-alta", "58% da receita vem de shoppings com vendas < R$1 bi/ano", "badge-yellow"),
+                    "Conversão vendas → aluguel": ("9,6%", "menor que Multiplan — mais espaço para crescer ou maior dificuldade de repassar?", "badge-yellow"),
+                    "Receita por m²": ("Próxima aos pares", "ABL de ~1,25 mi m²; receita de aluguel ~R$463 mi/tri"),
+                    "Diversificação geográfica": ("Alta", "presente em todas as regiões — risco concentrado menor", "badge-green"),
+                    "Múltiplo (P/FFO 2026)": ("~10x", "desconto vs Multiplan — reflete qualidade média do portfólio"),
+                    "Dividendo (DY)": ("DY ~9% (2026E)", "recompras + dividendos; alta distribuição de FCL"),
+                    "Risco principal": ("Portfólio com mais ativos de médio porte e incêndio no Tijuca (6% da receita) em 2026", ""),
+                },
+                "MULT3": {
+                    "nome": "Multiplan",
+                    "cor": "#EF4444",
+                    "Estratégia": ("Qualidade e concentração", "20 shoppings — poucos, mas entre os melhores do Brasil"),
+                    "Portfólio": ("20 shoppings (5.000+ lojas)", "portfólio menor, mais seletivo; dominante em cidades-chave"),
+                    "Qualidade dos ativos": ("Premium", "73% do portfólio com vendas > R$1 bi/ano — o melhor índice do setor", "badge-green"),
+                    "Conversão vendas → aluguel": ("10,5%", "maior do setor — poder de precificação superior justifica o prêmio de múltiplo", "badge-green"),
+                    "Receita por m²": ("A mais alta do setor", "vendas/m² cresceram 10,9% em 2025 — Multiplan lidera o ranking"),
+                    "Diversificação geográfica": ("Moderada", "concentrada em SP, RJ e Sul — risco geográfico maior que Allos", "badge-yellow"),
+                    "Múltiplo (P/FFO 2026)": ("~12x", "prêmio justificado pela qualidade — portfólio premium com menor risco"),
+                    "Dividendo (DY)": ("DY ~5-6%", "reinveste mais em expansão; dividendo menor que Allos"),
+                    "Risco principal": ("Valuation esticado em cenário de Selic alta; concentração geográfica em SP/RJ", ""),
+                },
+            },
+        },
+        "perfis": {
+            "ALOS3": {
+                "nome": "Allos S.A.",
+                "fundacao": "2019 (fusão Aliansce + Sonae Sierra Brasil; renomeada Allos em 2022)",
+                "sede": "Rio de Janeiro, RJ",
+                "tagline": "A maior plataforma de shoppings do Brasil em número de ativos. 44 shoppings, diversificação nacional e a Helloo como motor de receita de mídia.",
+                "modelo": (
+                    "A Allos nasceu da fusão entre a Aliansce Shopping Centers e a Sonae Sierra Brasil em 2019, "
+                    "e foi renomeada em 2022 para refletir o reposicionamento estratégico. "
+                    "Com 44 shoppings e mais de 11.000 lojas, é o maior portfólio do Brasil em número de ativos. "
+                    "A estratégia é de escala e diversificação geográfica: presente em todas as regiões, "
+                    "com shoppings de médio e grande porte que atendem diferentes perfis de consumidor. "
+                    "Além do aluguel tradicional, a Allos tem dois vetores de crescimento adicionais: "
+                    "a Helloo (plataforma de mídia em shoppings — painéis, aeroportos, mídia digital), "
+                    "que cresce rápido e tem margens melhores que o aluguel; "
+                    "e um pipeline de expansão via ABL incremental nos shoppings existentes. "
+                    "Em 2026, o incêndio no Shopping Tijuca (janeiro) impactou ~6% da receita de aluguel "
+                    "temporariamente — o ativo operou com capacidade reduzida no 1T26."
+                ),
+                "receita": [
+                    ("Aluguel mínimo garantido", "~55%", "base fixa dos contratos de locação, reajustada por IGP-M/IPCA"),
+                    ("Aluguel variável (% das vendas)", "~20%", "percentual sobre vendas dos lojistas — cresce com SSS"),
+                    ("Estacionamento e serviços", "~12%", "receita de rotatividade e serviços aos lojistas"),
+                    ("Helloo (mídia em shoppings e aeroportos)", "~8%", "crescimento acelerado; margens superiores ao aluguel"),
+                    ("Cessão de direito e outros", "~5%", "key money e receitas imobiliárias não recorrentes"),
+                ],
+                "vantagens": [
+                    "44 shoppings: maior diversificação geográfica do setor — nenhum ativo representa mais de 10% da receita",
+                    "Helloo: plataforma de mídia em crescimento com margens superiores ao aluguel e receitas crescentes",
+                    "DY de ~9% em 2026: alta distribuição de FCL atrativa para investidores de renda",
+                    "Valuation com desconto (10x FFO) vs Multiplan — potencial de re-rating se qualidade do portfólio melhorar",
+                    "Recompras de ações ativas: programa de buyback aumenta o FFO por ação sem crescimento operacional",
+                ],
+                "riscos": [
+                    "Portfólio de qualidade média: 58% da receita vem de shoppings com vendas < R$1 bi/ano",
+                    "Incêndio no Tijuca (jan/2026): impacto temporário mas real de ~6% da receita",
+                    "Selic alta comprime o valuation: shopping é ativo de duration longa — taxa de desconto importa",
+                    "Conversão de 9,6%: menor poder de precificação vs Multiplan — lojistas pagam menos por real de venda",
+                    "Integração ainda em andamento: fusão de 2019 ainda sendo otimizada em sistemas e processos",
+                ],
+                "barreira": (
+                    "44 concessões em pontos estratégicos das cidades. "
+                    "Um shopping bem localizado é inreplicável — não se constrói outro no mesmo quarteirão. "
+                    "O custo de construção de um shopping novo (R$500 mi a R$2 bi) e o tempo de maturação "
+                    "(5-7 anos para atingir ocupação plena) criam uma barreira de entrada altíssima. "
+                    "A Helloo adiciona uma barreira de rede: 44 shoppings + aeroportos criam escala de mídia "
+                    "que anunciantes pagam prêmio para acessar."
+                ),
+            },
+            "MULT3": {
+                "nome": "Multiplan Empreendimentos Imobiliários",
+                "fundacao": "1974 (por José Isaac Peres)",
+                "sede": "Rio de Janeiro, RJ",
+                "tagline": "A shopping premium do Brasil. 20 shoppings, 73% com vendas acima de R$1 bilhão — e a maior conversão de vendas em aluguel do setor. Qualidade justifica o prêmio de múltiplo.",
+                "modelo": (
+                    "A Multiplan foi fundada por José Isaac Peres em 1974 e construiu ao longo de 50 anos "
+                    "um portfólio de 20 shoppings concentrados em localidades premium: "
+                    "BarraShopping (RJ), MorumbiShopping (SP), ParkShopping (BSB), BH Shopping (MG), "
+                    "entre outros. A estratégia é o oposto da Allos: poucos ativos, mas os melhores. "
+                    "73% do portfólio tem vendas anuais superiores a R$1 bilhão — o melhor índice do setor. "
+                    "Isso se traduz na maior conversão de vendas em aluguel: 10,5% vs 9,6% da Allos. "
+                    "Em termos práticos: para cada R$100 que o lojista vende, "
+                    "a Multiplan captura R$10,50 em aluguel. Esse poder de precificação vem da qualidade "
+                    "— lojista que está no MorumbiShopping não tem alternativa de mesma qualidade próxima. "
+                    "A Multiplan também tem um componente imobiliário relevante: "
+                    "desenvolve apartamentos e escritórios no entorno dos shoppings — "
+                    "o projeto de cidade completa ao redor do shopping (multimix)."
+                ),
+                "receita": [
+                    ("Aluguel mínimo garantido", "~52%", "base fixa reajustada por IGP-DI/IPCA; portfólio premium permite mínimos maiores"),
+                    ("Aluguel variável (% das vendas)", "~22%", "maior percentual variável que os pares — reflexo da qualidade do lojista"),
+                    ("Estacionamento", "~13%", "alto fluxo de veículos em shoppings premium — receita relevante"),
+                    ("Desenvolvimento imobiliário (multimix)", "~8%", "apartamentos e escritórios no entorno dos shoppings — ciclo mais longo"),
+                    ("Cessão de direito e outros", "~5%", "key money e receitas não recorrentes"),
+                ],
+                "vantagens": [
+                    "73% do portfólio com vendas > R$1 bi/ano: qualidade de ativo incomum — lojistas pagam prêmio para estar lá",
+                    "10,5% de conversão: maior poder de precificação do setor — cada real de venda gera mais aluguel",
+                    "Vendas/m² cresceram 10,9% em 2025: maior taxa de crescimento entre os pares",
+                    "50 anos de track record: Multiplan construiu shoppings que viraram referência de consumo nas suas cidades",
+                    "Multimix: desenvolvimento imobiliário ao redor cria ecossistema de valor que valoriza o próprio shopping",
+                ],
+                "riscos": [
+                    "Valuation de prêmio (12x FFO): não tolera decepção — qualquer desaceleração é punida no preço",
+                    "Concentração geográfica: forte em SP, RJ e Sul — recessão regional impacta mais que portfólio nacional",
+                    "Selic alta é o maior inimigo: duration longa do ativo = valuation comprimido em cenário de juro alto",
+                    "DY mais baixo (~5-6%): reinveste mais; para investidores de renda pura, a Allos é mais atrativa",
+                    "Expansão limitada: portfólio premium tem menos oportunidades de crescimento via novos shoppings",
+                ],
+                "barreira": (
+                    "50 anos de curadoria de localização e de mix de lojistas. "
+                    "O MorumbiShopping em São Paulo ou o BarraShopping no Rio "
+                    "têm listas de espera de lojistas que querem entrar. "
+                    "Quando o Zara, a Apple ou a Nike quer estar em São Paulo, "
+                    "o MorumbiShopping está na lista curta — e a Multiplan sabe "
+                    "negociar esse poder de escassez em aluguel. "
+                    "Isso é uma vantagem competitiva de marca que levou meio século para construir "
+                    "e que nenhum shopping novo replica mesmo com capital infinito."
+                ),
+            },
+        },
+    },
 }
 
 
