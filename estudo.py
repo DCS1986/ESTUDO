@@ -67,7 +67,7 @@ h2, h3 { font-family: 'Inter', sans-serif !important; font-weight: 700 !importan
     border-bottom: 2px solid; margin-bottom: 14px;
 }
 .battle-row-label {
-    font-size: 0.72rem; font-weight: 600; color: #6B7280;
+    font-size: 0.72rem; font-weight: 600; color: #8A8580;
     text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px;
 }
 .battle-row-value {
@@ -3632,7 +3632,7 @@ with tab1:
             f"<div class='dossie-card' style='padding:16px 20px;'>"
             f"<div style='font-size:0.80rem;font-weight:700;color:#D4AF37;"
             f"margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;'>{driver}</div>"
-            f"<div style='font-size:0.88rem;color:#6B7280;line-height:1.6;'>{descricao}</div>"
+            f"<div style='font-size:0.88rem;color:#CFCAC0;line-height:1.6;'>{descricao}</div>"
             f"</div>",
             unsafe_allow_html=True,
         )
@@ -3680,14 +3680,14 @@ with tab2:
                     col.markdown(
                         f"<div class='battle-row-value'>"
                         f"<span class='badge {val[2]}'>{val[0]}</span><br>"
-                        f"<span style='font-size:0.80rem;color:#6B7280;'>{val[1]}</span></div>",
+                        f"<span style='font-size:0.80rem;color:#CFCAC0;'>{val[1]}</span></div>",
                         unsafe_allow_html=True,
                     )
                 elif isinstance(val, tuple) and len(val) == 2:
                     col.markdown(
                         f"<div class='battle-row-value'>"
                         f"<strong style='font-size:0.88rem;'>{val[0]}</strong><br>"
-                        f"<span style='font-size:0.80rem;color:#6B7280;'>{val[1]}</span></div>",
+                        f"<span style='font-size:0.80rem;color:#CFCAC0;'>{val[1]}</span></div>",
                         unsafe_allow_html=True,
                     )
                 else:
@@ -3758,7 +3758,7 @@ with tab3:
                     unsafe_allow_html=True)
         st.markdown(
             f"<div class='dossie-card'>"
-            f"<div style='font-size:0.90rem;color:#E6E1D6;line-height:1.75;'>"
+            f"<div style='font-size:0.90rem;color:#E8E3D9;line-height:1.75;'>"
             f"{p.get('modelo','')}</div></div>",
             unsafe_allow_html=True,
         )
@@ -3774,7 +3774,7 @@ with tab3:
                 f"font-weight:800;color:#D4AF37;padding-top:1px;'>{pct}</div>"
                 f"<div><div style='font-size:0.88rem;font-weight:600;color:#E6E1D6;"
                 f"margin-bottom:2px;'>{segmento}</div>"
-                f"<div style='font-size:0.80rem;color:#6B7280;'>{detalhe}</div></div></div>",
+                f"<div style='font-size:0.80rem;color:#CFCAC0;'>{detalhe}</div></div></div>",
                 unsafe_allow_html=True,
             )
 
