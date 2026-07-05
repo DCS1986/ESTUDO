@@ -3187,24 +3187,43 @@ setor = st.session_state.setor_ativo
 dados_setor = SETORES[setor]
 
 # Header do setor
-st.markdown(f"""
-<div style='padding: 32px 0 20px 0; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 28px;'>
-    <div style='font-size: 0.70rem; font-weight: 700; letter-spacing: 1.5px;
-                text-transform: uppercase; color: #8B6914; margin-bottom: 8px;'>
-        Dossiê · {setor}
-    </div>
-    <h1 style='font-size: 2.0rem; color: #1A1A1A; margin: 0 0 10px 0; line-height: 1.2;'>
-        {setor}
-    </h1>
-    <div style='font-size: 0.95rem; color: #374151; max-width: 680px; line-height: 1.6;'>
-        {dados_setor.get("tagline", "")}
-    </div>
-    <div style='margin-top: 14px;'>
-        {"".join(f"<span class='ticker-tag'>{t}</span>" for t in dados_setor.get("tickers", []))}
-        {("<br><span style='font-size:0.65rem;color:#9CA3AF;text-transform:uppercase;letter-spacing:0.8px;margin-right:6px;'>" + dados_setor.get("label_sub","") + ":</span>" + "".join(f"<span class='ticker-tag' style='opacity:0.65;'>{t}</span>" for t in dados_setor.get("tickers_sub",[]))) if dados_setor.get("tickers_sub") else ""}
-    </div>
-</div>
-""", unsafe_allow_html=True)
+_sub_html = ""
+if dados_setor.get("tickers_sub"):
+    _sub_html = (
+        "<br><span style='font-size:0.65rem;color:#9CA3AF;text-transform:uppercase;"
+        "letter-spacing:0.8px;margin-right:6px;'>"
+        + dados_setor.get("label_sub", "") + ":</span>"
+        + "".join(
+            f"<span class='ticker-tag' style='opacity:0.65;'>{t}</span>"
+            for t in dados_setor.get("tickers_sub", [])
+        )
+    )
+_tickers_html = "".join(
+    f"<span class='ticker-tag'>{t}</span>"
+    for t in dados_setor.get("tickers", [])
+)
+st.markdown(
+    f"<div style='padding:32px 0 8px 0;'>"
+    f"<span style='font-size:0.70rem;font-weight:700;letter-spacing:1.5px;"
+    f"text-transform:uppercase;color:#8B6914;'>"
+    f"Dossiê · {setor}</span></div>",
+    unsafe_allow_html=True,
+)
+st.markdown(
+    f"<h1 style='font-size:2.0rem;color:#1A1A1A;margin:0 0 10px 0;line-height:1.2;'>"
+    f"{setor}</h1>",
+    unsafe_allow_html=True,
+)
+st.markdown(
+    f"<p style='font-size:0.95rem;color:#374151;max-width:680px;line-height:1.6;"
+    f"margin-bottom:14px;'>{dados_setor.get('tagline', '')}</p>",
+    unsafe_allow_html=True,
+)
+st.markdown(
+    f"<div style='margin-bottom:28px;border-bottom:1px solid #E5E2DC;padding-bottom:16px;'>"
+    f"{_tickers_html}{_sub_html}</div>",
+    unsafe_allow_html=True,
+)
 
 # Abas principais
 tab1, tab2, tab3 = st.tabs(["🧠  Lógica do Setor", "⚔️  Comparativo", "🔍  Perfil Individual"])
@@ -3214,31 +3233,26 @@ tab1, tab2, tab3 = st.tabs(["🧠  Lógica do Setor", "⚔️  Comparativo", "�
 with tab1:
     logica = dados_setor.get("logica", {})
 
-    st.markdown(f"""
-    <div class='section-label'>O que você precisa entender antes de qualquer número</div>
-    <div class='dossie-card-gold'>
-        <div style='font-size: 1.0rem; color: #1A1A1A; line-height: 1.7;'>
-            {logica.get("texto", "")}
-        </div>
-    </div>
-    """, unsafe_allow_html=True)
+    st.markdown(
+        "<div class='section-label'>O que você precisa entender antes de qualquer número</div>"
+        f"<div class='dossie-card-gold'><div style='font-size:1.0rem;color:#1A1A1A;line-height:1.7;'>"
+        f"{logica.get('texto', '')}</div></div>",
+        unsafe_allow_html=True,
+    )
 
     st.markdown("<br>", unsafe_allow_html=True)
     st.markdown("<div class='section-label'>Drivers do setor — o que muda o resultado</div>",
                 unsafe_allow_html=True)
 
     for driver, descricao in logica.get("drivers", []):
-        st.markdown(f"""
-        <div class='dossie-card' style='padding: 16px 20px;'>
-            <div style='font-size: 0.80rem; font-weight: 700; color: #6B4F10;
-                        margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;'>
-                {driver}
-            </div>
-            <div style='font-size: 0.88rem; color: #374151; line-height: 1.6;'>
-                {descricao}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='dossie-card' style='padding:16px 20px;'>"
+            f"<div style='font-size:0.80rem;font-weight:700;color:#6B4F10;"
+            f"margin-bottom:6px;text-transform:uppercase;letter-spacing:0.5px;'>{driver}</div>"
+            f"<div style='font-size:0.88rem;color:#374151;line-height:1.6;'>{descricao}</div>"
+            f"</div>",
+            unsafe_allow_html=True,
+        )
 
 
 # ─── ABA 2: COMPARATIVO (BATTLE CARD) ────────────────────────────────────
@@ -3342,54 +3356,44 @@ with tab3:
         _cor_empresa = _emp_data.get("cor", "#8B6914")
 
         # Cabeçalho do perfil
-        st.markdown(f"""
-        <div style='margin: 16px 0 24px 0; padding: 24px; background: #FFFFFF;
-                    border: 1px solid #E5E2DC; border-radius: 12px;
-                    border-left: 4px solid {_cor_empresa};'>
-            <div style='font-size: 0.65rem; font-weight: 700; color: #374151;
-                        letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px;'>
-                {ticker_sel} · Fundada em {p.get("fundacao","?")} · {p.get("sede","")}
-            </div>
-            <div style='font-size: 1.4rem; font-weight: 800; color: #1A1A1A;
-                        margin-bottom: 6px; font-family: Playfair Display, serif;'>
-                {p["nome"]}
-            </div>
-            <div style='font-size: 0.90rem; color: {_cor_empresa}; font-style: italic;
-                        font-weight: 700; filter: brightness(0.72);'>
-                {p.get("tagline","")}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(
+            f"<div style='margin:16px 0 24px 0;padding:24px;background:#FFFFFF;"
+            f"border:1px solid #E5E2DC;border-radius:12px;border-left:4px solid {_cor_empresa};'>"
+            f"<div style='font-size:0.65rem;font-weight:700;color:#374151;"
+            f"letter-spacing:1px;text-transform:uppercase;margin-bottom:6px;'>"
+            f"{ticker_sel} · Fundada em {p.get('fundacao','?')} · {p.get('sede','')}</div>"
+            f"<div style='font-size:1.4rem;font-weight:800;color:#1A1A1A;"
+            f"margin-bottom:6px;font-family:Playfair Display,serif;'>{p['nome']}</div>"
+            f"<div style='font-size:0.90rem;color:{_cor_empresa};font-style:italic;"
+            f"font-weight:700;filter:brightness(0.72);'>{p.get('tagline','')}</div>"
+            f"</div>",
+            unsafe_allow_html=True,
+        )
 
         # Como funciona o negócio
         st.markdown("<div class='section-label'>Como funciona o negócio</div>",
                     unsafe_allow_html=True)
-        st.markdown(f"""
-        <div class='dossie-card'>
-            <div style='font-size: 0.90rem; color: #111827; line-height: 1.75;'>
-                {p.get("modelo","")}
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='dossie-card'>"
+            f"<div style='font-size:0.90rem;color:#111827;line-height:1.75;'>"
+            f"{p.get('modelo','')}</div></div>",
+            unsafe_allow_html=True,
+        )
 
         # De onde vem a receita
         st.markdown("<div class='section-label' style='margin-top:20px;'>De onde vem a receita</div>",
                     unsafe_allow_html=True)
         for segmento, pct, detalhe in p.get("receita", []):
-            st.markdown(f"""
-            <div style='display: flex; align-items: flex-start; gap: 16px;
-                        padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);'>
-                <div style='min-width: 52px; text-align: right; font-size: 1.1rem;
-                            font-weight: 800; color: #8B6914; padding-top: 1px;'>
-                    {pct}
-                </div>
-                <div>
-                    <div style='font-size: 0.88rem; font-weight: 600; color: #1A1A1A;
-                                margin-bottom: 2px;'>{segmento}</div>
-                    <div style='font-size: 0.80rem; color: #374151;'>{detalhe}</div>
-                </div>
-            </div>
-            """, unsafe_allow_html=True)
+            st.markdown(
+                f"<div style='display:flex;align-items:flex-start;gap:16px;"
+                f"padding:12px 0;border-bottom:1px solid #E5E2DC;'>"
+                f"<div style='min-width:52px;text-align:right;font-size:1.1rem;"
+                f"font-weight:800;color:#8B6914;padding-top:1px;'>{pct}</div>"
+                f"<div><div style='font-size:0.88rem;font-weight:600;color:#1A1A1A;"
+                f"margin-bottom:2px;'>{segmento}</div>"
+                f"<div style='font-size:0.80rem;color:#374151;'>{detalhe}</div></div></div>",
+                unsafe_allow_html=True,
+            )
 
         # Composição por segmento (aparece só quando o dado existe)
         if p.get("composicao"):
@@ -3398,18 +3402,16 @@ with tab3:
                 unsafe_allow_html=True,
             )
             for _seg, _num, _obs in p["composicao"]:
-                st.markdown(f"""
-                <div style='display:flex;align-items:flex-start;gap:14px;
-                            padding:10px 0;border-bottom:1px solid #E5E2DC;'>
-                    <div style='min-width:160px;text-align:right;font-size:0.78rem;
-                                font-weight:700;color:#8B6914;padding-top:2px;'>{_num}</div>
-                    <div>
-                        <div style='font-size:0.85rem;font-weight:600;color:#111;
-                                    margin-bottom:1px;'>{_seg}</div>
-                        <div style='font-size:0.78rem;color:#374151;'>{_obs}</div>
-                    </div>
-                </div>
-                """, unsafe_allow_html=True)
+                st.markdown(
+                    f"<div style='display:flex;align-items:flex-start;gap:14px;"
+                    f"padding:10px 0;border-bottom:1px solid #E5E2DC;'>"
+                    f"<div style='min-width:160px;text-align:right;font-size:0.78rem;"
+                    f"font-weight:700;color:#8B6914;padding-top:2px;'>{_num}</div>"
+                    f"<div><div style='font-size:0.85rem;font-weight:600;color:#111;"
+                    f"margin-bottom:1px;'>{_seg}</div>"
+                    f"<div style='font-size:0.78rem;color:#374151;'>{_obs}</div></div></div>",
+                    unsafe_allow_html=True,
+                )
 
         c1, c2 = st.columns(2)
 
@@ -3430,10 +3432,9 @@ with tab3:
         # Barreira de entrada
         st.markdown("<div class='section-label' style='margin-top:20px;'>Barreira de entrada</div>",
                     unsafe_allow_html=True)
-        st.markdown(f"""
-        <div class='pill-neutro'>
-            🔒 {p.get("barreira","")}
-        </div>
-        """, unsafe_allow_html=True)
+        st.markdown(
+            f"<div class='pill-neutro'>🔒 {p.get('barreira','')}</div>",
+            unsafe_allow_html=True,
+        )
 
 
